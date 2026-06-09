@@ -69,8 +69,6 @@ ssh tripnote 'fuser -k 42222/tcp; cd ~/tap-fight/server && nohup npx tsx src/mai
 ssh tripnote 'fuser -k 5173/tcp; cd ~/tap-fight/client && nohup npx vite --host 0.0.0.0 --port 5173 &'
 ```
 
-线上地址：`http://211.159.160.11:5173/`
-
 ## 4. 验证
 
 ```bash
