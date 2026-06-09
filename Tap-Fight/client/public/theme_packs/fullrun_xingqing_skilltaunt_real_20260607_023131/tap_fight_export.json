@@ -1,0 +1,48 @@
+{
+  "schema_version": "tap_fight_export.v0.1",
+  "generated_by": "video-pipeline",
+  "generated_at": "2026-06-06T22:21:40.521Z",
+  "theme_id": "fullrun_xingqing_skilltaunt_real_20260607_023131",
+  "source_package": "theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131",
+  "tap_fight_package": "theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131",
+  "stage_template": "cute_pet_001",
+  "registry": "theme_registry.json",
+  "video": {
+    "src": "./videos/fullrun_xingqing_skilltaunt_real_20260607_023131.mp4",
+    "file": "videos/fullrun_xingqing_skilltaunt_real_20260607_023131.mp4"
+  },
+  "validation": {
+    "can_load_in_tap_fight": true,
+    "status": "pass",
+    "missing": [],
+    "optional_missing": [],
+    "required": [
+      "manifest.json",
+      "background.png",
+      "platform_left.png",
+      "platform_mid.png",
+      "platform_right.png",
+      "hazard_debris.png",
+      "animation_preview/p1_animation_manifest.json",
+      "animation_preview/p2_animation_manifest.json",
+      "animation_preview/frames/p1/idle_0.png",
+      "animation_preview/frames/p1/idle_1.png",
+      "animation_preview/frames/p1/run_0.png",
+      "animation_preview/frames/p1/run_1.png",
+      "animation_preview/frames/p1/run_2.png",
+      "animation_preview/frames/p1/run_3.png",
+      "animation_preview/frames/p1/jump_0.png",
+      "animation_preview/frames/p1/fall_0.png",
+      "animation_preview/frames/p1/attack_0.png",
+      "animation_preview/frames/p2/idle_0.png",
+      "animation_preview/frames/p2/idle_1.png",
+      "animation_preview/frames/p2/run_0.png",
+      "animation_preview/frames/p2/run_1.png",
+      "animation_preview/frames/p2/run_2.png",
+      "animation_preview/frames/p2/run_3.png",
+      "animation_preview/frames/p2/jump_0.png",
+      "animation_preview/frames/p2/fall_0.png",
+      "animation_preview/frames/p2/attack_0.png"
+    ]
+  }
+}

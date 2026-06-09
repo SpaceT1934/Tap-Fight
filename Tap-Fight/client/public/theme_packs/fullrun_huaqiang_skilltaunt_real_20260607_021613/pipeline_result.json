@@ -1,0 +1,25 @@
+{
+  "schema_version": "video_to_theme_result.v0.1",
+  "generated_by": "video-pipeline",
+  "generated_at": "2026-06-06T18:19:52.103Z",
+  "source_video": "../视频源素材/有一个人前来买瓜(原视频) P1 有一个人前来买瓜(原视频).mp4",
+  "understanding_id": "understanding_p1_315565e6",
+  "understanding_reused": false,
+  "understanding_dir": "video_understandings/understanding_p1_315565e6",
+  "theme_id": "fullrun_huaqiang_skilltaunt_real_20260607_021613",
+  "output_dir": "theme_packs/fullrun_huaqiang_skilltaunt_real_20260607_021613",
+  "manifest": "theme_packs/fullrun_huaqiang_skilltaunt_real_20260607_021613/manifest.json",
+  "analysis_report": "theme_packs/fullrun_huaqiang_skilltaunt_real_20260607_021613/analysis_report.json",
+  "package_status": "theme_packs/fullrun_huaqiang_skilltaunt_real_20260607_021613/package_status.json",
+  "can_load_in_game": true,
+  "validation_status": "pass",
+  "strict": {
+    "llm": true,
+    "draw": true
+  },
+  "model": {
+    "understanding": "gpt-5.5",
+    "draw": "gpt-image-2"
+  },
+  "visual_mode": "faithful"
+}

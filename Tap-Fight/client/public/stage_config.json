@@ -1,0 +1,15 @@
+{
+  "mode": "climb",
+  "rise_speed": 40,
+  "ceiling_y": 30,
+  "death_floor_start_y": 1020,
+  "death_floor_rise_speed": 6,
+  "platform_spawn_interval_s": 1.8,
+  "platform_width_min": 120,
+  "platform_width_max": 220,
+  "platform_height": 12,
+  "platform_min_y": 980,
+  "platform_max_y": 200,
+  "min_gap_between": 60,
+  "spawns": { "p1_x": 150, "p2_x": 390 }
+}

@@ -1,0 +1,1578 @@
+{
+  "theme_id": "fullrun_huanhuan_skilltaunt_real_20260607_034114",
+  "input": {
+    "type": "video_ai_animation",
+    "source_video": "external_videos/嬛嬛，如果让他陪你过冬天，那朕…… P1 嬛嬛，如果让他陪你过冬天，那朕…….mp4",
+    "source_understanding": "video_understandings/understanding_p1_7288ffe7/video_understanding.json",
+    "source_generation_brief": "video_understandings/understanding_p1_7288ffe7/generation_brief.json"
+  },
+  "source_video_understanding_summary": {
+    "video_summary": "一段清宫剧混剪吐槽视频，用皇帝、嬛嬛与老十七相关画面配合字幕制造“陪你过冬天”的情感拉扯和荒诞吃醋感。",
+    "fighters": [
+      {
+        "id": "p1",
+        "name": "皇帝/朕",
+        "role_type": "hybrid",
+        "weapon": "御批折子与龙袍甩袖",
+        "attack_type": "hybrid",
+        "weapon_source": "derived_from_scene",
+        "creativity_level": "stylized",
+        "skill_taunt": "朕晚点就回家",
+        "confidence": 0.93
+      },
+      {
+        "id": "p2",
+        "name": "嬛嬛/甄嬛",
+        "role_type": "hybrid",
+        "weapon": "锦被飞枕与眼泪冰滴",
+        "attack_type": "hybrid",
+        "weapon_source": "absurd_creative",
+        "creativity_level": "absurd",
+        "skill_taunt": "难过只说给老十七",
+        "confidence": 0.8
+      }
+    ],
+    "conflict": {
+      "relationship": "皇帝与嬛嬛是清宫情感关系中的帝王与妃嫔/爱人关系，同时夹杂老十七带来的情感竞争与吃醋。",
+      "reason": "皇帝具有强烈的视觉辨识度和‘朕’的台词符号，嬛嬛是标题与字幕情绪的核心；两人的对抗不是单纯武力冲突，而是宫廷权力、感情疏离、吃醋和吐槽梗叠加，非常适合做成 1v1 白模对战中的荒诞情绪对打。",
+      "tone": "吐槽、荒诞、宫廷情感拉扯、略带悲情"
+    },
+    "taunt": {
+      "text": "能不能睡中间",
+      "source": "dialogue_or_subtitle",
+      "confidence": 0.84
+    },
+    "style_world": "清代宫廷情感混剪世界，场景在华丽寝殿、雪中宫门与夜晚河岸之间切换，核心氛围是冬天、宫廷、吃醋和压抑情绪。",
+    "confidence": 0.84
+  },
+  "generation_brief": {
+    "schema_version": "generation_brief.v0.1",
+    "generated_by": "video-pipeline",
+    "generated_at": "2026-06-06T19:43:06.608Z",
+    "source_understanding": "video_understanding.json",
+    "source_video": "external_videos/嬛嬛，如果让他陪你过冬天，那朕…… P1 嬛嬛，如果让他陪你过冬天，那朕…….mp4",
+    "status": {
+      "video_understanding_ready": true,
+      "nine_frame_generation": "pending_user_frame_spec",
+      "image_generation_started": false
+    },
+    "image_generation_channel": {
+      "endpoint": "https://right.codes/draw",
+      "candidate_models": [
+        "gpt-image-2-vip",
+        "gpt-image-2",
+        "nano-banana",
+        "nano-banana-2",
+        "nano-banana-pro"
+      ],
+      "note": "本阶段只产出生成说明，不调用画图模型。"
+    },
+    "shared_style": {
+      "world": "清代宫廷情感混剪世界，场景在华丽寝殿、雪中宫门与夜晚河岸之间切换，核心氛围是冬天、宫廷、吃醋和压抑情绪。",
+      "art_direction": "保持源视频的真人古装电视剧实拍质感：写实人体比例、清宫服化道、高细节刺绣、低码率截图式柔和清晰度和戏剧光影。后续动作帧可以增强对战姿态，但不要默认卡通化、Q版化、二次元化或像素化。",
+      "character_consistency": "皇帝必须保持剃发留辫、中年胡须、明黄色或金色龙纹服饰、威严压抑表情；嬛嬛必须保持年轻清宫女性真人比例、黑色宫廷发式、浅色或黄色宫装/披风、克制忧伤气质。两者都应保留丝绸锦缎材质、清代服饰轮廓和宫廷剧写实光影。",
+      "color_notes": "皇帝主色为明黄、金色、深棕和龙纹刺绣；嬛嬛主色为浅黄、米白、淡紫、黑发和柔和肤色；环境可用红色寝殿被褥、雪景白灰、夜河蓝绿作为辅助色。",
+      "generation_prompt_base": "真人清宫古装电视剧质感，写实成人比例，清代剃发留辫皇帝与清宫女子对峙，明黄色龙纹袍、浅色宫装披风、丝绸锦缎刺绣，高细节宫廷服饰，冬夜与宫殿氛围，压抑吃醋的情绪张力，低码率视频截图感，dramatic Qing dynasty palace lighting, no cartoon, no anime, no chibi, no modern objects"
+    },
+    "conflict": {
+      "relationship": "皇帝与嬛嬛是清宫情感关系中的帝王与妃嫔/爱人关系，同时夹杂老十七带来的情感竞争与吃醋。",
+      "reason": "皇帝具有强烈的视觉辨识度和‘朕’的台词符号，嬛嬛是标题与字幕情绪的核心；两人的对抗不是单纯武力冲突，而是宫廷权力、感情疏离、吃醋和吐槽梗叠加，非常适合做成 1v1 白模对战中的荒诞情绪对打。",
+      "tone": "吐槽、荒诞、宫廷情感拉扯、略带悲情"
+    },
+    "taunt": {
+      "text": "能不能睡中间",
+      "source": "dialogue_or_subtitle",
+      "confidence": 0.84
+    },
+    "player_taunts": {
+      "p1": {
+        "text": "朕晚点就回家",
+        "source": "dialogue_or_subtitle",
+        "speaker": "皇帝/朕",
+        "evidence_frames": [
+          "analysis_frames/frame_06.jpg"
+        ],
+        "reason": "字幕中直接出现“朕”，最适合分配给皇帝作为带有吐槽感和破防感的长按技能语句。",
+        "confidence": 0.86,
+        "fallback_text": "嘿！"
+      },
+      "p2": {
+        "text": "难过只说给老十七",
+        "source": "dialogue_or_subtitle",
+        "speaker": "嬛嬛/甄嬛",
+        "evidence_frames": [
+          "analysis_frames/frame_04.jpg"
+        ],
+        "reason": "该字幕出现在嬛嬛与河边男子相依的画面中，语义上像嬛嬛把难过倾诉给老十七，适合作为她触发技能时的情感反击台词。",
+        "confidence": 0.78,
+        "fallback_text": "哼！"
+      }
+    },
+    "characters": [
+      {
+        "id": "p1",
+        "name": "皇帝/朕",
+        "archetype_name": "吃醋清宫皇帝",
+        "role_type": "hybrid",
+        "visual_prompt": "一名真人清宫剧风格的中年皇帝，剃发留长辫，额头光亮，八字胡和短须，面部厚重严肃；穿明黄色龙纹袍或金色清代宫廷服，肩胸有精细刺绣和高领纹样，身形写实，姿态低头皱眉、压抑凝视，整体带有帝王威严和情感受伤的疲惫感。；性格/战斗气质：威严但破防，靠皇权和酸涩嫉妒发动攻击，战斗时像是在用御令压人、用眼神审判对手。。",
+        "form_constraints": {
+          "entity_type": "真人古装剧角色",
+          "body_plan": "双足人形，真实成年男性人体结构",
+          "proportions": "写实成人比例，非夸张头身比，肩宽中等，面部与四肢比例符合真人电视剧演员",
+          "silhouette": "剃发光额、后垂长辫、圆顶帽或光头轮廓、宽大的清代长袍外轮廓，明黄色龙袍形成核心识别形状",
+          "surface_material": "真人皮肤、胡须毛发、丝绸锦缎布料、金线刺绣、宫廷织物光泽",
+          "detail_density": "高；保留龙纹、织锦、领口纹样、胡须和辫子，不额外添加现代机械、科幻装甲或卡通变形细节",
+          "rendering_style": "源视频为真人古装电视剧实拍画面，低码率视频截图质感，写实布景和服饰，不是动画、像素或二次元",
+          "motion_style": "动作克制缓慢，以低头、皱眉、袖袍挥动、压抑转身为主，攻击时可放大为宫廷式甩袖与御令投掷",
+          "must_keep": [
+            "清代剃发留辫",
+            "中年男性胡须",
+            "明黄色或金色龙纹宫廷服",
+            "真人写实比例",
+            "压抑严肃的帝王表情"
+          ],
+          "must_not_change": [
+            "不要改成动物、怪物、Q版或二次元角色",
+            "不要去掉清代发式和胡须",
+            "不要替换为现代西装、机甲或奇幻重甲",
+            "不要把明黄色龙袍改成完全无关的颜色体系"
+          ]
+        },
+        "weapon_prompt": "御批折子与龙袍甩袖：一卷金边朱批奏折和宽大的明黄色龙袍袖口；近战时用沉重袖袍横扫，远程时把卷轴般的御批折子甩出，卷轴带有红色朱批和金色龙纹光效。",
+        "projectile_prompt": "飞行的朱批奏折卷轴，展开时出现红色墨迹、金色龙纹和细小雪花，像一道压迫感很强的皇命弹幕。",
+        "weapon_source": "derived_from_scene",
+        "creativity_level": "stylized",
+        "attack_type": "hybrid",
+        "evidence_frames": [
+          "analysis_frames/frame_01.jpg",
+          "analysis_frames/frame_03.jpg",
+          "analysis_frames/frame_05.jpg"
+        ],
+        "skill_taunt": {
+          "text": "朕晚点就回家",
+          "source": "dialogue_or_subtitle",
+          "speaker": "皇帝/朕",
+          "evidence_frames": [
+            "analysis_frames/frame_06.jpg"
+          ],
+          "reason": "字幕中直接出现“朕”，最适合分配给皇帝作为带有吐槽感和破防感的长按技能语句。",
+          "confidence": 0.86,
+          "fallback_text": "嘿！"
+        },
+        "prompt_seed": "真人清宫古装电视剧质感，写实成人比例，清代剃发留辫皇帝与清宫女子对峙，明黄色龙纹袍、浅色宫装披风、丝绸锦缎刺绣，高细节宫廷服饰，冬夜与宫殿氛围，压抑吃醋的情绪张力，低码率视频截图感，dramatic Qing dynasty palace lighting, no cartoon, no anime, no chibi, no modern objects; 一名真人清宫剧风格的中年皇帝，剃发留长辫，额头光亮，八字胡和短须，面部厚重严肃；穿明黄色龙纹袍或金色清代宫廷服，肩胸有精细刺绣和高领纹样，身形写实，姿态低头皱眉、压抑凝视，整体带有帝王威严和情感受伤的疲惫感。; entity_type=真人古装剧角色; body_plan=双足人形，真实成年男性人体结构; proportions=写实成人比例，非夸张头身比，肩宽中等，面部与四肢比例符合真人电视剧演员; silhouette=剃发光额、后垂长辫、圆顶帽或光头轮廓、宽大的清代长袍外轮廓，明黄色龙袍形成核心识别形状; surface_material=真人皮肤、胡须毛发、丝绸锦缎布料、金线刺绣、宫廷织物光泽; detail_density=高；保留龙纹、织锦、领口纹样、胡须和辫子，不额外添加现代机械、科幻装甲或卡通变形细节; rendering_style=源视频为真人古装电视剧实拍画面，低码率视频截图质感，写实布景和服饰，不是动画、像素或二次元; motion_style=动作克制缓慢，以低头、皱眉、袖袍挥动、压抑转身为主，攻击时可放大为宫廷式甩袖与御令投掷; must_keep=清代剃发留辫, 中年男性胡须, 明黄色或金色龙纹宫廷服, 真人写实比例, 压抑严肃的帝王表情; must_not_change=不要改成动物、怪物、Q版或二次元角色, 不要去掉清代发式和胡须, 不要替换为现代西装、机甲或奇幻重甲, 不要把明黄色龙袍改成完全无关的颜色体系; 一卷金边朱批奏折和宽大的明黄色龙袍袖口；近战时用沉重袖袍横扫，远程时把卷轴般的御批折子甩出，卷轴带有红色朱批和金色龙纹光效。; 飞行的朱批奏折卷轴，展开时出现红色墨迹、金色龙纹和细小雪花，像一道压迫感很强的皇命弹幕。; skill taunt: 朕晚点就回家"
+      },
+      {
+        "id": "p2",
+        "name": "嬛嬛/甄嬛",
+        "archetype_name": "冬夜疏离宫妃",
+        "role_type": "hybrid",
+        "visual_prompt": "一名真人清宫剧风格的年轻宫廷女子，面容白净，黑色中分贴发或清宫发饰，神情平静疏离；可穿浅黄、米白或淡紫色宫装披风，局部有精细刺绣，既可表现为躺在华丽厚被中的侧卧姿态，也可表现为夜晚河边披着浅色披风、带着忧伤目光的形象。；性格/战斗气质：冷静、疏离、隐忍，战斗中不直接暴怒，而是用柔软道具和情绪反击，让对手被‘眼泪’和‘冬夜’击中。。",
+        "form_constraints": {
+          "entity_type": "真人古装剧角色",
+          "body_plan": "双足人形，真实成年女性人体结构",
+          "proportions": "写实成人女性比例，身形纤细，头身比和五官比例保持电视剧真人感，不夸张放大眼睛或缩短身体",
+          "silhouette": "清宫女性平滑发髻或贴头发式、长袍披风、柔软宽袖和厚被/披风形成的圆润外轮廓",
+          "surface_material": "真人皮肤、黑色头发、丝绸宫装、锦缎被褥、刺绣边饰、夜景中略带冷光的布料",
+          "detail_density": "中高；保留宫装纹样、披风层次、发饰和被褥质感，不额外添加现代饰品、魔法铠甲或过度奇幻花纹",
+          "rendering_style": "源视频为真人清宫电视剧实拍，写实光影与服化道，带有压缩视频截图颗粒感和中文字幕覆盖感",
+          "motion_style": "动作含蓄克制，以侧卧、依靠、回望、轻甩袖、抛出小物件为主，攻击不应变成夸张超英式动作",
+          "must_keep": [
+            "清宫女性古装发式",
+            "年轻女性真人比例",
+            "浅黄或浅色宫装/披风",
+            "克制忧伤的表情",
+            "丝绸与锦缎材质"
+          ],
+          "must_not_change": [
+            "不要改成现代少女、动物或怪物",
+            "不要使用二次元大眼萌化",
+            "不要去掉清宫服饰和发式",
+            "不要加入现代枪械、电子设备或科幻材质"
+          ]
+        },
+        "weapon_prompt": "锦被飞枕与眼泪冰滴：一条来自寝殿的黄色锦被和小巧绣花软枕；近战时用厚被卷住对手或扫开攻击，远程时从袖中抛出绣花枕和晶莹泪滴。",
+        "projectile_prompt": "透明蓝白色的眼泪冰滴，带一点夜河冷光，飞行时拖出细小水痕；命中后像字幕里的‘眼泪已滑落好几滴’一样造成连续小打击。",
+        "weapon_source": "absurd_creative",
+        "creativity_level": "absurd",
+        "attack_type": "hybrid",
+        "evidence_frames": [
+          "analysis_frames/frame_01.jpg",
+          "analysis_frames/frame_04.jpg"
+        ],
+        "skill_taunt": {
+          "text": "难过只说给老十七",
+          "source": "dialogue_or_subtitle",
+          "speaker": "嬛嬛/甄嬛",
+          "evidence_frames": [
+            "analysis_frames/frame_04.jpg"
+          ],
+          "reason": "该字幕出现在嬛嬛与河边男子相依的画面中，语义上像嬛嬛把难过倾诉给老十七，适合作为她触发技能时的情感反击台词。",
+          "confidence": 0.78,
+          "fallback_text": "哼！"
+        },
+        "prompt_seed": "真人清宫古装电视剧质感，写实成人比例，清代剃发留辫皇帝与清宫女子对峙，明黄色龙纹袍、浅色宫装披风、丝绸锦缎刺绣，高细节宫廷服饰，冬夜与宫殿氛围，压抑吃醋的情绪张力，低码率视频截图感，dramatic Qing dynasty palace lighting, no cartoon, no anime, no chibi, no modern objects; 一名真人清宫剧风格的年轻宫廷女子，面容白净，黑色中分贴发或清宫发饰，神情平静疏离；可穿浅黄、米白或淡紫色宫装披风，局部有精细刺绣，既可表现为躺在华丽厚被中的侧卧姿态，也可表现为夜晚河边披着浅色披风、带着忧伤目光的形象。; entity_type=真人古装剧角色; body_plan=双足人形，真实成年女性人体结构; proportions=写实成人女性比例，身形纤细，头身比和五官比例保持电视剧真人感，不夸张放大眼睛或缩短身体; silhouette=清宫女性平滑发髻或贴头发式、长袍披风、柔软宽袖和厚被/披风形成的圆润外轮廓; surface_material=真人皮肤、黑色头发、丝绸宫装、锦缎被褥、刺绣边饰、夜景中略带冷光的布料; detail_density=中高；保留宫装纹样、披风层次、发饰和被褥质感，不额外添加现代饰品、魔法铠甲或过度奇幻花纹; rendering_style=源视频为真人清宫电视剧实拍，写实光影与服化道，带有压缩视频截图颗粒感和中文字幕覆盖感; motion_style=动作含蓄克制，以侧卧、依靠、回望、轻甩袖、抛出小物件为主，攻击不应变成夸张超英式动作; must_keep=清宫女性古装发式, 年轻女性真人比例, 浅黄或浅色宫装/披风, 克制忧伤的表情, 丝绸与锦缎材质; must_not_change=不要改成现代少女、动物或怪物, 不要使用二次元大眼萌化, 不要去掉清宫服饰和发式, 不要加入现代枪械、电子设备或科幻材质; 一条来自寝殿的黄色锦被和小巧绣花软枕；近战时用厚被卷住对手或扫开攻击，远程时从袖中抛出绣花枕和晶莹泪滴。; 透明蓝白色的眼泪冰滴，带一点夜河冷光，飞行时拖出细小水痕；命中后像字幕里的‘眼泪已滑落好几滴’一样造成连续小打击。; skill taunt: 难过只说给老十七"
+      }
+    ],
+    "constraints": [
+      "后续九帧生成时保持同一角色服饰、体型、发型和武器一致。",
+      "角色素材优先透明背景，动作轮廓清楚，适配小游戏白模验证。",
+      "不要把武器 source=derived_from_scene 或 absurd_creative 误标为视频真实出现。"
+    ]
+  },
+  "contract_role_mapping": {
+    "p1": {
+      "original_role_type": "hybrid",
+      "original_attack_type": "hybrid",
+      "mapped_role": "melee"
+    },
+    "p2": {
+      "original_role_type": "hybrid",
+      "original_attack_type": "hybrid",
+      "mapped_role": "ranged"
+    },
+    "warnings": []
+  },
+  "pipeline_steps": [
+    {
+      "name": "load_generation_brief",
+      "mode": "json",
+      "status": "ok",
+      "source": "video_understandings/understanding_p1_7288ffe7/generation_brief.json"
+    },
+    {
+      "name": "map_roles_to_contract",
+      "mode": "deterministic",
+      "status": "ok",
+      "notes": []
+    },
+    {
+      "name": "generate_sprite_asset",
+      "player_id": "p1",
+      "mode": "right_codes_draw",
+      "status": "ok",
+      "model": "gpt-image-2",
+      "response_kind": "url"
+    },
+    {
+      "name": "generate_sprite_asset",
+      "player_id": "p2",
+      "mode": "right_codes_draw",
+      "status": "ok",
+      "model": "gpt-image-2",
+      "response_kind": "url"
+    },
+    {
+      "name": "postprocess_sheets",
+      "mode": "python_pillow",
+      "status": "ok"
+    }
+  ],
+  "image_generation": {
+    "endpoint": "https://right.codes/draw",
+    "model": "gpt-image-2",
+    "visual_mode": "faithful",
+    "records": [
+      {
+        "player_id": "p1",
+        "character_name": "皇帝/朕",
+        "role": "melee",
+        "original_role_type": "hybrid",
+        "original_attack_type": "hybrid",
+        "visual_mode": "faithful",
+        "prompt": "Create a 3x3 sprite sheet for a 2D mobile fighting game on a perfectly flat solid #00ff00 chroma-key background.\nVisual target: game-ready animation frames that preserve the source video's own visual medium, shape language, detail density, line weight, flatness, color palette, and rendering style; not abstract, not a placeholder.\nUse the attached source-video keyframes as visual references. Match their simplicity, facial feature style, outline thickness, shading amount, accessory count, and material treatment. Do not beautify, polish, upscale, or add detail beyond the source evidence.\nThe reference keyframes may contain other characters or background elements; use them only for the named subject and source style evidence. Do not include extra characters or background in the sprite sheet.\nFaithful mode: use the video analysis as the primary visual reference and preserve the recognizable source character identity, entity type, body plan, costume/surface, weapon, color logic, proportions, and silhouette as much as the image model permits.\nDo not silently redesign the source entity into a different species, object category, body plan, or art medium. Do not make a non-human source humanoid unless the video clearly shows a humanoid.\nOne 皇帝/朕 melee fighter/entity, facing right in all 9 frames. The subject must be fully visible in every cell in a form compatible with the source video.\nVideo-derived character description: 一名真人清宫剧风格的中年皇帝，剃发留长辫，额头光亮，八字胡和短须，面部厚重严肃；穿明黄色龙纹袍或金色清代宫廷服，肩胸有精细刺绣和高领纹样，身形写实，姿态低头皱眉、压抑凝视，整体带有帝王威严和情感受伤的疲惫感。；性格/战斗气质：威严但破防，靠皇权和酸涩嫉妒发动攻击，战斗时像是在用御令压人、用眼神审判对手。。\nSource form constraints: entity_type=真人古装剧角色; body_plan=双足人形，真实成年男性人体结构; proportions=写实成人比例，非夸张头身比，肩宽中等，面部与四肢比例符合真人电视剧演员; silhouette=剃发光额、后垂长辫、圆顶帽或光头轮廓、宽大的清代长袍外轮廓，明黄色龙袍形成核心识别形状; surface_material=真人皮肤、胡须毛发、丝绸锦缎布料、金线刺绣、宫廷织物光泽; detail_density=高；保留龙纹、织锦、领口纹样、胡须和辫子，不额外添加现代机械、科幻装甲或卡通变形细节; rendering_style=源视频为真人古装电视剧实拍画面，低码率视频截图质感，写实布景和服饰，不是动画、像素或二次元; motion_style=动作克制缓慢，以低头、皱眉、袖袍挥动、压抑转身为主，攻击时可放大为宫廷式甩袖与御令投掷; must_keep=清代剃发留辫, 中年男性胡须, 明黄色或金色龙纹宫廷服, 真人写实比例, 压抑严肃的帝王表情; must_not_change=不要改成动物、怪物、Q版或二次元角色, 不要去掉清代发式和胡须, 不要替换为现代西装、机甲或奇幻重甲, 不要把明黄色龙袍改成完全无关的颜色体系\nWeapon and attack prop: 御批折子与龙袍甩袖：一卷金边朱批奏折和宽大的明黄色龙袍袖口；近战时用沉重袖袍横扫，远程时把卷轴般的御批折子甩出，卷轴带有红色朱批和金色龙纹光效。\nProjectile idea for separate asset: 飞行的朱批奏折卷轴，展开时出现红色墨迹、金色龙纹和细小雪花，像一道压迫感很强的皇命弹幕。\nShared art direction: 保持源视频的真人古装电视剧实拍质感：写实人体比例、清宫服化道、高细节刺绣、低码率截图式柔和清晰度和戏剧光影。后续动作帧可以增强对战姿态，但不要默认卡通化、Q版化、二次元化或像素化。\nWorld/style evidence: 清代宫廷情感混剪世界，场景在华丽寝殿、雪中宫门与夜晚河岸之间切换，核心氛围是冬天、宫廷、吃醋和压抑情绪。; 皇帝主色为明黄、金色、深棕和龙纹刺绣；嬛嬛主色为浅黄、米白、淡紫、黑发和柔和肤色；环境可用红色寝殿被褥、雪景白灰、夜河蓝绿作为辅助色。\nConsistency requirements: 皇帝必须保持剃发留辫、中年胡须、明黄色或金色龙纹服饰、威严压抑表情；嬛嬛必须保持年轻清宫女性真人比例、黑色宫廷发式、浅色或黄色宫装/披风、克制忧伤气质。两者都应保留丝绸锦缎材质、清代服饰轮廓和宫廷剧写实光影。\nUse an invisible 3-column by 3-row grid with equal cells and generous spacing. Do not draw visible panel borders.\nLeave a clean #00ff00 safety gutter around every cell. No body part, weapon, slash effect, cable, debris, shadow, or projectile may cross into a neighboring cell.\nKeep each pose centered inside its own cell, with a consistent feet baseline for grounded poses and enough green margin on all sides.\nEach cell contains exactly one complete pose of the same source-derived subject, with the source body plan visible, clean edges, and readable silhouette.\nKeep the same source-derived face/surface details, head or front shape, outfit or material, colors, body scale, weapon, and art style across all nine frames.\nKeep details at the source video's level: if the source is flat, low-shadow, sticker-like, low-detail, pixel-like, live-action, 3D, mechanical, or painterly, keep that same level and medium instead of upgrading it to another illustration style.\nFeet should stay aligned to a consistent baseline for grounded poses; jump and fall may lift off the baseline while staying centered in their cells.\nFrame order left-to-right, top-to-bottom: idle standing, idle breathing, run 1, run 2, run 3, run 4, jump, fall, attack.\nThe attack frame must clearly show a melee swing, slash, or strike with the weapon extended.\nAvoid silhouettes, stick figures, flat color mannequins, geometric blobs, toy blocks, rough thumbnails, icons, UI sprites, unintended low-poly forms, or any visual style not supported by the source video evidence.\nNo text, no labels, no watermark, no shadows, no floor, no extra characters, no UI, no panel borders.\nThe background must be one uniform #00ff00 color with no gradient, texture, lighting variation, floor plane, reflection, or shadow.\nAvoid #00ff00 anywhere on the character or weapon.",
+        "reference_images": [
+          "../../video_understandings/understanding_p1_7288ffe7/analysis_frames/frame_01.jpg",
+          "../../video_understandings/understanding_p1_7288ffe7/analysis_frames/frame_03.jpg"
+        ],
+        "draw": {
+          "name": "draw_image",
+          "mode": "right_codes_draw",
+          "status": "ok",
+          "visual_mode": "faithful",
+          "base_url": "https://right.codes/draw",
+          "model": "gpt-image-2",
+          "response_kind": "url",
+          "attempts": 1,
+          "reference_image_count": 2,
+          "output": "p1_sprite_sheet_raw.png"
+        },
+        "postprocess": {
+          "status": "ok",
+          "sheet_size": [
+            1536,
+            1536
+          ],
+          "frame_size": {
+            "width": 512,
+            "height": 512
+          },
+          "layout": [
+            3,
+            3
+          ],
+          "alpha": {
+            "transparent_ratio": 0.7302,
+            "opaque_ratio": 0.2698
+          },
+          "frames": [
+            {
+              "name": "idle_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1/idle_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                167,
+                23,
+                345,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  194,
+                  27,
+                  372,
+                  496
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  167,
+                  23,
+                  345,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  0,
+                  512,
+                  512
+                ],
+                "expanded_box": [
+                  0,
+                  0,
+                  583,
+                  583
+                ]
+              }
+            },
+            {
+              "name": "idle_1",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1/idle_1.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                167,
+                23,
+                344,
+                492
+              ],
+              "cleanup": {
+                "component_count": 3,
+                "kept_count": 1,
+                "rejected_count": 2,
+                "main_bbox": [
+                  229,
+                  27,
+                  406,
+                  496
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  167,
+                  23,
+                  344,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  0,
+                  1024,
+                  512
+                ],
+                "expanded_box": [
+                  441,
+                  0,
+                  1095,
+                  583
+                ]
+              }
+            },
+            {
+              "name": "run_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1/run_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                84,
+                43,
+                428,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  70,
+                  46,
+                  414,
+                  495
+                ],
+                "main_cell_ratio": 0.9995,
+                "alpha_bbox": [
+                  84,
+                  43,
+                  428,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  0,
+                  1536,
+                  512
+                ],
+                "expanded_box": [
+                  953,
+                  0,
+                  1536,
+                  583
+                ]
+              }
+            },
+            {
+              "name": "run_1",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1/run_1.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                90,
+                55,
+                421,
+                492
+              ],
+              "cleanup": {
+                "component_count": 4,
+                "kept_count": 1,
+                "rejected_count": 3,
+                "main_bbox": [
+                  91,
+                  109,
+                  422,
+                  546
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  90,
+                  55,
+                  421,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  512,
+                  512,
+                  1024
+                ],
+                "expanded_box": [
+                  0,
+                  441,
+                  583,
+                  1095
+                ]
+              }
+            },
+            {
+              "name": "run_2",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1/run_2.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                86,
+                55,
+                425,
+                492
+              ],
+              "cleanup": {
+                "component_count": 6,
+                "kept_count": 1,
+                "rejected_count": 5,
+                "main_bbox": [
+                  133,
+                  110,
+                  472,
+                  547
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  86,
+                  55,
+                  425,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  512,
+                  1024,
+                  1024
+                ],
+                "expanded_box": [
+                  441,
+                  441,
+                  1095,
+                  1095
+                ]
+              }
+            },
+            {
+              "name": "run_3",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1/run_3.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                81,
+                56,
+                431,
+                492
+              ],
+              "cleanup": {
+                "component_count": 3,
+                "kept_count": 1,
+                "rejected_count": 2,
+                "main_bbox": [
+                  101,
+                  112,
+                  451,
+                  548
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  81,
+                  56,
+                  431,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  512,
+                  1536,
+                  1024
+                ],
+                "expanded_box": [
+                  953,
+                  441,
+                  1536,
+                  1095
+                ]
+              }
+            },
+            {
+              "name": "jump_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1/jump_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                103,
+                107,
+                409,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  114,
+                  64,
+                  420,
+                  449
+                ],
+                "main_cell_ratio": 0.9972,
+                "alpha_bbox": [
+                  103,
+                  107,
+                  409,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  1024,
+                  512,
+                  1536
+                ],
+                "expanded_box": [
+                  0,
+                  953,
+                  583,
+                  1536
+                ]
+              }
+            },
+            {
+              "name": "fall_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1/fall_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                21,
+                23,
+                504,
+                492
+              ],
+              "cleanup": {
+                "component_count": 3,
+                "kept_count": 2,
+                "rejected_count": 1,
+                "main_bbox": [
+                  171,
+                  107,
+                  432,
+                  528
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  21,
+                  23,
+                  504,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  1024,
+                  1024,
+                  1536
+                ],
+                "expanded_box": [
+                  441,
+                  953,
+                  1095,
+                  1536
+                ]
+              }
+            },
+            {
+              "name": "attack_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1/attack_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                4,
+                59,
+                495,
+                493
+              ],
+              "cleanup": {
+                "component_count": 5,
+                "kept_count": 1,
+                "rejected_count": 4,
+                "main_bbox": [
+                  0,
+                  88,
+                  528,
+                  554
+                ],
+                "main_cell_ratio": 0.8802,
+                "alpha_bbox": [
+                  4,
+                  59,
+                  495,
+                  493
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  1024,
+                  1536,
+                  1536
+                ],
+                "expanded_box": [
+                  953,
+                  953,
+                  1536,
+                  1536
+                ]
+              }
+            }
+          ]
+        },
+        "animation_manifest": "p1_animation_manifest.json",
+        "projectile": {
+          "prompt": "Create a 1x4 sprite sheet for a small 2D game projectile on a perfectly flat solid #00ff00 chroma-key background.\nVisual target: game-ready projectile frames that match the source video's own visual medium, detail density, line weight, color palette, and rendering style; not abstract, not a placeholder.\nUse the attached source-video keyframes as visual references for style, color, outline, and detail level. Do not beautify, polish, upscale, or add detail beyond the source evidence.\nThe reference keyframes may contain characters or background elements; use them only for style and weapon/projectile evidence. Do not include characters or background in the projectile sheet.\nFaithful mode: use the video-derived weapon/projectile as the primary visual reference and keep it recognizable as much as the image model permits.\nProjectile type: 飞行的朱批奏折卷轴，展开时出现红色墨迹、金色龙纹和细小雪花，像一道压迫感很强的皇命弹幕。\nOwner character: 皇帝/朕. Match the same style and color logic as: 一名真人清宫剧风格的中年皇帝，剃发留长辫，额头光亮，八字胡和短须，面部厚重严肃；穿明黄色龙纹袍或金色清代宫廷服，肩胸有精细刺绣和高领纹样，身形写实，姿态低头皱眉、压抑凝视，整体带有帝王威严和情感受伤的疲惫感。；性格/战斗气质：威严但破防，靠皇权和酸涩嫉妒发动攻击，战斗时像是在用御令压人、用眼神审判对手。。\nOwner source form constraints: entity_type=真人古装剧角色; body_plan=双足人形，真实成年男性人体结构; proportions=写实成人比例，非夸张头身比，肩宽中等，面部与四肢比例符合真人电视剧演员; silhouette=剃发光额、后垂长辫、圆顶帽或光头轮廓、宽大的清代长袍外轮廓，明黄色龙袍形成核心识别形状; surface_material=真人皮肤、胡须毛发、丝绸锦缎布料、金线刺绣、宫廷织物光泽; detail_density=高；保留龙纹、织锦、领口纹样、胡须和辫子，不额外添加现代机械、科幻装甲或卡通变形细节; rendering_style=源视频为真人古装电视剧实拍画面，低码率视频截图质感，写实布景和服饰，不是动画、像素或二次元; motion_style=动作克制缓慢，以低头、皱眉、袖袍挥动、压抑转身为主，攻击时可放大为宫廷式甩袖与御令投掷; must_keep=清代剃发留辫, 中年男性胡须, 明黄色或金色龙纹宫廷服, 真人写实比例, 压抑严肃的帝王表情; must_not_change=不要改成动物、怪物、Q版或二次元角色, 不要去掉清代发式和胡须, 不要替换为现代西装、机甲或奇幻重甲, 不要把明黄色龙袍改成完全无关的颜色体系\nWeapon context: 御批折子与龙袍甩袖：一卷金边朱批奏折和宽大的明黄色龙袍袖口；近战时用沉重袖袍横扫，远程时把卷轴般的御批折子甩出，卷轴带有红色朱批和金色龙纹光效。\nShared art direction: 保持源视频的真人古装电视剧实拍质感：写实人体比例、清宫服化道、高细节刺绣、低码率截图式柔和清晰度和戏剧光影。后续动作帧可以增强对战姿态，但不要默认卡通化、Q版化、二次元化或像素化。\nFour equal cells, one projectile per cell, facing right or moving right.\nLeave a clean #00ff00 safety gutter around every cell. No trail, sparks, shards, glow, or motion smear may cross into a neighboring cell.\nFrame order left-to-right: launch shape, flying rotation 1, flying rotation 2, looping flying shape.\nCentered composition in each cell, crisp edges, readable silhouette, consistent scale and colors.\nIf the projectile is magic or energy, make it a clearly designed object/effect from the video-derived idea, not a simple colored ball.\nDo not include character, hand, ground, explosion, impact feedback, text, label, watermark, shadow, or floor.\nThe background must be one uniform #00ff00 color with no gradient, texture, lighting variation, floor plane, reflection, or shadow.\nAvoid #00ff00 anywhere in the projectile.",
+          "reference_images": [
+            "../../video_understandings/understanding_p1_7288ffe7/analysis_frames/frame_01.jpg",
+            "../../video_understandings/understanding_p1_7288ffe7/analysis_frames/frame_03.jpg"
+          ],
+          "draw": {
+            "name": "draw_image",
+            "mode": "right_codes_draw",
+            "status": "ok",
+            "visual_mode": "faithful",
+            "base_url": "https://right.codes/draw",
+            "model": "gpt-image-2",
+            "response_kind": "url",
+            "attempts": 1,
+            "reference_image_count": 2,
+            "output": "p1_projectile_sheet_raw.png"
+          },
+          "postprocess": {
+            "status": "ok",
+            "sheet_size": [
+              1024,
+              256
+            ],
+            "frame_size": {
+              "width": 256,
+              "height": 256
+            },
+            "layout": [
+              4,
+              1
+            ],
+            "alpha": {
+              "transparent_ratio": 0.8238,
+              "opaque_ratio": 0.1762
+            },
+            "frames": [
+              {
+                "name": "projectile_0",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1_projectile/projectile_0.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  83,
+                  109,
+                  186,
+                  146
+                ],
+                "cleanup": {
+                  "component_count": 4,
+                  "kept_count": 1,
+                  "rejected_count": 3,
+                  "main_bbox": [
+                    188,
+                    138,
+                    291,
+                    175
+                  ],
+                  "main_cell_ratio": 0.6664,
+                  "alpha_bbox": [
+                    83,
+                    109,
+                    186,
+                    146
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    0,
+                    0,
+                    256,
+                    256
+                  ],
+                  "expanded_box": [
+                    0,
+                    0,
+                    291,
+                    256
+                  ]
+                }
+              },
+              {
+                "name": "projectile_1",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1_projectile/projectile_1.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  4,
+                  49,
+                  252,
+                  206
+                ],
+                "cleanup": {
+                  "component_count": 4,
+                  "kept_count": 4,
+                  "rejected_count": 0,
+                  "main_bbox": [
+                    0,
+                    138,
+                    326,
+                    175
+                  ],
+                  "main_cell_ratio": 0.7573,
+                  "alpha_bbox": [
+                    4,
+                    49,
+                    252,
+                    206
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    256,
+                    0,
+                    512,
+                    256
+                  ],
+                  "expanded_box": [
+                    221,
+                    0,
+                    547,
+                    256
+                  ]
+                }
+              },
+              {
+                "name": "projectile_2",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1_projectile/projectile_2.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  4,
+                  49,
+                  252,
+                  206
+                ],
+                "cleanup": {
+                  "component_count": 4,
+                  "kept_count": 4,
+                  "rejected_count": 0,
+                  "main_bbox": [
+                    0,
+                    140,
+                    326,
+                    176
+                  ],
+                  "main_cell_ratio": 0.7818,
+                  "alpha_bbox": [
+                    4,
+                    49,
+                    252,
+                    206
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    512,
+                    0,
+                    768,
+                    256
+                  ],
+                  "expanded_box": [
+                    477,
+                    0,
+                    803,
+                    256
+                  ]
+                }
+              },
+              {
+                "name": "projectile_3",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p1_projectile/projectile_3.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  60,
+                  81,
+                  182,
+                  174
+                ],
+                "cleanup": {
+                  "component_count": 2,
+                  "kept_count": 2,
+                  "rejected_count": 0,
+                  "main_bbox": [
+                    0,
+                    140,
+                    122,
+                    174
+                  ],
+                  "main_cell_ratio": 0.6691,
+                  "alpha_bbox": [
+                    60,
+                    81,
+                    182,
+                    174
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    768,
+                    0,
+                    1024,
+                    256
+                  ],
+                  "expanded_box": [
+                    733,
+                    0,
+                    1024,
+                    256
+                  ]
+                }
+              }
+            ]
+          },
+          "static": "assets/p1_projectile.png",
+          "sheet": "assets/p1_projectile_sheet.png",
+          "manifest": "p1_projectile_manifest.json",
+          "frames_dir": "frames/p1_projectile"
+        }
+      },
+      {
+        "player_id": "p2",
+        "character_name": "嬛嬛/甄嬛",
+        "role": "ranged",
+        "original_role_type": "hybrid",
+        "original_attack_type": "hybrid",
+        "visual_mode": "faithful",
+        "prompt": "Create a 3x3 sprite sheet for a 2D mobile fighting game on a perfectly flat solid #00ff00 chroma-key background.\nVisual target: game-ready animation frames that preserve the source video's own visual medium, shape language, detail density, line weight, flatness, color palette, and rendering style; not abstract, not a placeholder.\nUse the attached source-video keyframes as visual references. Match their simplicity, facial feature style, outline thickness, shading amount, accessory count, and material treatment. Do not beautify, polish, upscale, or add detail beyond the source evidence.\nThe reference keyframes may contain other characters or background elements; use them only for the named subject and source style evidence. Do not include extra characters or background in the sprite sheet.\nFaithful mode: use the video analysis as the primary visual reference and preserve the recognizable source character identity, entity type, body plan, costume/surface, weapon, color logic, proportions, and silhouette as much as the image model permits.\nDo not silently redesign the source entity into a different species, object category, body plan, or art medium. Do not make a non-human source humanoid unless the video clearly shows a humanoid.\nOne 嬛嬛/甄嬛 ranged fighter/entity, facing right in all 9 frames. The subject must be fully visible in every cell in a form compatible with the source video.\nVideo-derived character description: 一名真人清宫剧风格的年轻宫廷女子，面容白净，黑色中分贴发或清宫发饰，神情平静疏离；可穿浅黄、米白或淡紫色宫装披风，局部有精细刺绣，既可表现为躺在华丽厚被中的侧卧姿态，也可表现为夜晚河边披着浅色披风、带着忧伤目光的形象。；性格/战斗气质：冷静、疏离、隐忍，战斗中不直接暴怒，而是用柔软道具和情绪反击，让对手被‘眼泪’和‘冬夜’击中。。\nSource form constraints: entity_type=真人古装剧角色; body_plan=双足人形，真实成年女性人体结构; proportions=写实成人女性比例，身形纤细，头身比和五官比例保持电视剧真人感，不夸张放大眼睛或缩短身体; silhouette=清宫女性平滑发髻或贴头发式、长袍披风、柔软宽袖和厚被/披风形成的圆润外轮廓; surface_material=真人皮肤、黑色头发、丝绸宫装、锦缎被褥、刺绣边饰、夜景中略带冷光的布料; detail_density=中高；保留宫装纹样、披风层次、发饰和被褥质感，不额外添加现代饰品、魔法铠甲或过度奇幻花纹; rendering_style=源视频为真人清宫电视剧实拍，写实光影与服化道，带有压缩视频截图颗粒感和中文字幕覆盖感; motion_style=动作含蓄克制，以侧卧、依靠、回望、轻甩袖、抛出小物件为主，攻击不应变成夸张超英式动作; must_keep=清宫女性古装发式, 年轻女性真人比例, 浅黄或浅色宫装/披风, 克制忧伤的表情, 丝绸与锦缎材质; must_not_change=不要改成现代少女、动物或怪物, 不要使用二次元大眼萌化, 不要去掉清宫服饰和发式, 不要加入现代枪械、电子设备或科幻材质\nWeapon and attack prop: 锦被飞枕与眼泪冰滴：一条来自寝殿的黄色锦被和小巧绣花软枕；近战时用厚被卷住对手或扫开攻击，远程时从袖中抛出绣花枕和晶莹泪滴。\nProjectile idea for separate asset: 透明蓝白色的眼泪冰滴，带一点夜河冷光，飞行时拖出细小水痕；命中后像字幕里的‘眼泪已滑落好几滴’一样造成连续小打击。\nShared art direction: 保持源视频的真人古装电视剧实拍质感：写实人体比例、清宫服化道、高细节刺绣、低码率截图式柔和清晰度和戏剧光影。后续动作帧可以增强对战姿态，但不要默认卡通化、Q版化、二次元化或像素化。\nWorld/style evidence: 清代宫廷情感混剪世界，场景在华丽寝殿、雪中宫门与夜晚河岸之间切换，核心氛围是冬天、宫廷、吃醋和压抑情绪。; 皇帝主色为明黄、金色、深棕和龙纹刺绣；嬛嬛主色为浅黄、米白、淡紫、黑发和柔和肤色；环境可用红色寝殿被褥、雪景白灰、夜河蓝绿作为辅助色。\nConsistency requirements: 皇帝必须保持剃发留辫、中年胡须、明黄色或金色龙纹服饰、威严压抑表情；嬛嬛必须保持年轻清宫女性真人比例、黑色宫廷发式、浅色或黄色宫装/披风、克制忧伤气质。两者都应保留丝绸锦缎材质、清代服饰轮廓和宫廷剧写实光影。\nUse an invisible 3-column by 3-row grid with equal cells and generous spacing. Do not draw visible panel borders.\nLeave a clean #00ff00 safety gutter around every cell. No body part, weapon, slash effect, cable, debris, shadow, or projectile may cross into a neighboring cell.\nKeep each pose centered inside its own cell, with a consistent feet baseline for grounded poses and enough green margin on all sides.\nEach cell contains exactly one complete pose of the same source-derived subject, with the source body plan visible, clean edges, and readable silhouette.\nKeep the same source-derived face/surface details, head or front shape, outfit or material, colors, body scale, weapon, and art style across all nine frames.\nKeep details at the source video's level: if the source is flat, low-shadow, sticker-like, low-detail, pixel-like, live-action, 3D, mechanical, or painterly, keep that same level and medium instead of upgrading it to another illustration style.\nFeet should stay aligned to a consistent baseline for grounded poses; jump and fall may lift off the baseline while staying centered in their cells.\nFrame order left-to-right, top-to-bottom: idle standing, idle breathing, run 1, run 2, run 3, run 4, jump, fall, attack.\nThe attack frame must clearly show aiming, throwing, shooting, or casting; the flying object is generated separately, not only inside attack_0.\nAvoid silhouettes, stick figures, flat color mannequins, geometric blobs, toy blocks, rough thumbnails, icons, UI sprites, unintended low-poly forms, or any visual style not supported by the source video evidence.\nNo text, no labels, no watermark, no shadows, no floor, no extra characters, no UI, no panel borders.\nThe background must be one uniform #00ff00 color with no gradient, texture, lighting variation, floor plane, reflection, or shadow.\nAvoid #00ff00 anywhere on the character or weapon.",
+        "reference_images": [
+          "../../video_understandings/understanding_p1_7288ffe7/analysis_frames/frame_01.jpg",
+          "../../video_understandings/understanding_p1_7288ffe7/analysis_frames/frame_04.jpg"
+        ],
+        "draw": {
+          "name": "draw_image",
+          "mode": "right_codes_draw",
+          "status": "ok",
+          "visual_mode": "faithful",
+          "base_url": "https://right.codes/draw",
+          "model": "gpt-image-2",
+          "response_kind": "url",
+          "attempts": 1,
+          "reference_image_count": 2,
+          "output": "p2_sprite_sheet_raw.png"
+        },
+        "postprocess": {
+          "status": "ok",
+          "sheet_size": [
+            1536,
+            1536
+          ],
+          "frame_size": {
+            "width": 512,
+            "height": 512
+          },
+          "layout": [
+            3,
+            3
+          ],
+          "alpha": {
+            "transparent_ratio": 0.7339,
+            "opaque_ratio": 0.2661
+          },
+          "frames": [
+            {
+              "name": "idle_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2/idle_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                164,
+                77,
+                348,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  185,
+                  49,
+                  369,
+                  464
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  164,
+                  77,
+                  348,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  0,
+                  512,
+                  512
+                ],
+                "expanded_box": [
+                  0,
+                  0,
+                  583,
+                  583
+                ]
+              }
+            },
+            {
+              "name": "idle_1",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2/idle_1.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                159,
+                63,
+                353,
+                492
+              ],
+              "cleanup": {
+                "component_count": 3,
+                "kept_count": 1,
+                "rejected_count": 2,
+                "main_bbox": [
+                  196,
+                  46,
+                  390,
+                  475
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  159,
+                  63,
+                  353,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  0,
+                  1024,
+                  512
+                ],
+                "expanded_box": [
+                  441,
+                  0,
+                  1095,
+                  583
+                ]
+              }
+            },
+            {
+              "name": "run_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2/run_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                105,
+                76,
+                407,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  69,
+                  65,
+                  371,
+                  481
+                ],
+                "main_cell_ratio": 0.9994,
+                "alpha_bbox": [
+                  105,
+                  76,
+                  407,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  0,
+                  1536,
+                  512
+                ],
+                "expanded_box": [
+                  953,
+                  0,
+                  1536,
+                  583
+                ]
+              }
+            },
+            {
+              "name": "run_1",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2/run_1.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                91,
+                77,
+                420,
+                492
+              ],
+              "cleanup": {
+                "component_count": 5,
+                "kept_count": 1,
+                "rejected_count": 4,
+                "main_bbox": [
+                  87,
+                  110,
+                  416,
+                  525
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  91,
+                  77,
+                  420,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  512,
+                  512,
+                  1024
+                ],
+                "expanded_box": [
+                  0,
+                  441,
+                  583,
+                  1095
+                ]
+              }
+            },
+            {
+              "name": "run_2",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2/run_2.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                79,
+                81,
+                433,
+                492
+              ],
+              "cleanup": {
+                "component_count": 6,
+                "kept_count": 1,
+                "rejected_count": 5,
+                "main_bbox": [
+                  104,
+                  114,
+                  458,
+                  525
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  79,
+                  81,
+                  433,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  512,
+                  1024,
+                  1024
+                ],
+                "expanded_box": [
+                  441,
+                  441,
+                  1095,
+                  1095
+                ]
+              }
+            },
+            {
+              "name": "run_3",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2/run_3.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                77,
+                91,
+                434,
+                492
+              ],
+              "cleanup": {
+                "component_count": 4,
+                "kept_count": 1,
+                "rejected_count": 3,
+                "main_bbox": [
+                  21,
+                  125,
+                  378,
+                  526
+                ],
+                "main_cell_ratio": 0.9623,
+                "alpha_bbox": [
+                  77,
+                  91,
+                  434,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  512,
+                  1536,
+                  1024
+                ],
+                "expanded_box": [
+                  953,
+                  441,
+                  1536,
+                  1095
+                ]
+              }
+            },
+            {
+              "name": "jump_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2/jump_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                59,
+                109,
+                452,
+                492
+              ],
+              "cleanup": {
+                "component_count": 3,
+                "kept_count": 1,
+                "rejected_count": 2,
+                "main_bbox": [
+                  45,
+                  69,
+                  438,
+                  452
+                ],
+                "main_cell_ratio": 0.9994,
+                "alpha_bbox": [
+                  59,
+                  109,
+                  452,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  1024,
+                  512,
+                  1536
+                ],
+                "expanded_box": [
+                  0,
+                  953,
+                  583,
+                  1536
+                ]
+              }
+            },
+            {
+              "name": "fall_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2/fall_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                14,
+                150,
+                508,
+                495
+              ],
+              "cleanup": {
+                "component_count": 3,
+                "kept_count": 2,
+                "rejected_count": 1,
+                "main_bbox": [
+                  81,
+                  138,
+                  453,
+                  521
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  14,
+                  150,
+                  508,
+                  495
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  1024,
+                  1024,
+                  1536
+                ],
+                "expanded_box": [
+                  441,
+                  953,
+                  1095,
+                  1536
+                ]
+              }
+            },
+            {
+              "name": "attack_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2/attack_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                4,
+                127,
+                495,
+                494
+              ],
+              "cleanup": {
+                "component_count": 8,
+                "kept_count": 2,
+                "rejected_count": 6,
+                "main_bbox": [
+                  0,
+                  123,
+                  301,
+                  516
+                ],
+                "main_cell_ratio": 0.8405,
+                "alpha_bbox": [
+                  4,
+                  127,
+                  495,
+                  494
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  1024,
+                  1536,
+                  1536
+                ],
+                "expanded_box": [
+                  953,
+                  953,
+                  1536,
+                  1536
+                ]
+              }
+            }
+          ]
+        },
+        "animation_manifest": "p2_animation_manifest.json",
+        "projectile": {
+          "prompt": "Create a 1x4 sprite sheet for a small 2D game projectile on a perfectly flat solid #00ff00 chroma-key background.\nVisual target: game-ready projectile frames that match the source video's own visual medium, detail density, line weight, color palette, and rendering style; not abstract, not a placeholder.\nUse the attached source-video keyframes as visual references for style, color, outline, and detail level. Do not beautify, polish, upscale, or add detail beyond the source evidence.\nThe reference keyframes may contain characters or background elements; use them only for style and weapon/projectile evidence. Do not include characters or background in the projectile sheet.\nFaithful mode: use the video-derived weapon/projectile as the primary visual reference and keep it recognizable as much as the image model permits.\nProjectile type: 透明蓝白色的眼泪冰滴，带一点夜河冷光，飞行时拖出细小水痕；命中后像字幕里的‘眼泪已滑落好几滴’一样造成连续小打击。\nOwner character: 嬛嬛/甄嬛. Match the same style and color logic as: 一名真人清宫剧风格的年轻宫廷女子，面容白净，黑色中分贴发或清宫发饰，神情平静疏离；可穿浅黄、米白或淡紫色宫装披风，局部有精细刺绣，既可表现为躺在华丽厚被中的侧卧姿态，也可表现为夜晚河边披着浅色披风、带着忧伤目光的形象。；性格/战斗气质：冷静、疏离、隐忍，战斗中不直接暴怒，而是用柔软道具和情绪反击，让对手被‘眼泪’和‘冬夜’击中。。\nOwner source form constraints: entity_type=真人古装剧角色; body_plan=双足人形，真实成年女性人体结构; proportions=写实成人女性比例，身形纤细，头身比和五官比例保持电视剧真人感，不夸张放大眼睛或缩短身体; silhouette=清宫女性平滑发髻或贴头发式、长袍披风、柔软宽袖和厚被/披风形成的圆润外轮廓; surface_material=真人皮肤、黑色头发、丝绸宫装、锦缎被褥、刺绣边饰、夜景中略带冷光的布料; detail_density=中高；保留宫装纹样、披风层次、发饰和被褥质感，不额外添加现代饰品、魔法铠甲或过度奇幻花纹; rendering_style=源视频为真人清宫电视剧实拍，写实光影与服化道，带有压缩视频截图颗粒感和中文字幕覆盖感; motion_style=动作含蓄克制，以侧卧、依靠、回望、轻甩袖、抛出小物件为主，攻击不应变成夸张超英式动作; must_keep=清宫女性古装发式, 年轻女性真人比例, 浅黄或浅色宫装/披风, 克制忧伤的表情, 丝绸与锦缎材质; must_not_change=不要改成现代少女、动物或怪物, 不要使用二次元大眼萌化, 不要去掉清宫服饰和发式, 不要加入现代枪械、电子设备或科幻材质\nWeapon context: 锦被飞枕与眼泪冰滴：一条来自寝殿的黄色锦被和小巧绣花软枕；近战时用厚被卷住对手或扫开攻击，远程时从袖中抛出绣花枕和晶莹泪滴。\nShared art direction: 保持源视频的真人古装电视剧实拍质感：写实人体比例、清宫服化道、高细节刺绣、低码率截图式柔和清晰度和戏剧光影。后续动作帧可以增强对战姿态，但不要默认卡通化、Q版化、二次元化或像素化。\nFour equal cells, one projectile per cell, facing right or moving right.\nLeave a clean #00ff00 safety gutter around every cell. No trail, sparks, shards, glow, or motion smear may cross into a neighboring cell.\nFrame order left-to-right: launch shape, flying rotation 1, flying rotation 2, looping flying shape.\nCentered composition in each cell, crisp edges, readable silhouette, consistent scale and colors.\nIf the projectile is magic or energy, make it a clearly designed object/effect from the video-derived idea, not a simple colored ball.\nDo not include character, hand, ground, explosion, impact feedback, text, label, watermark, shadow, or floor.\nThe background must be one uniform #00ff00 color with no gradient, texture, lighting variation, floor plane, reflection, or shadow.\nAvoid #00ff00 anywhere in the projectile.",
+          "reference_images": [
+            "../../video_understandings/understanding_p1_7288ffe7/analysis_frames/frame_01.jpg",
+            "../../video_understandings/understanding_p1_7288ffe7/analysis_frames/frame_04.jpg"
+          ],
+          "draw": {
+            "name": "draw_image",
+            "mode": "right_codes_draw",
+            "status": "ok",
+            "visual_mode": "faithful",
+            "base_url": "https://right.codes/draw",
+            "model": "gpt-image-2",
+            "response_kind": "url",
+            "attempts": 1,
+            "reference_image_count": 2,
+            "output": "p2_projectile_sheet_raw.png"
+          },
+          "postprocess": {
+            "status": "ok",
+            "sheet_size": [
+              1024,
+              256
+            ],
+            "frame_size": {
+              "width": 256,
+              "height": 256
+            },
+            "layout": [
+              4,
+              1
+            ],
+            "alpha": {
+              "transparent_ratio": 0.4156,
+              "opaque_ratio": 0.5844
+            },
+            "frames": [
+              {
+                "name": "projectile_0",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2_projectile/projectile_0.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  4,
+                  19,
+                  252,
+                  237
+                ],
+                "cleanup": {
+                  "component_count": 117,
+                  "kept_count": 43,
+                  "rejected_count": 74,
+                  "main_bbox": [
+                    0,
+                    0,
+                    291,
+                    112
+                  ],
+                  "main_cell_ratio": 0.9601,
+                  "alpha_bbox": [
+                    4,
+                    19,
+                    252,
+                    237
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    0,
+                    0,
+                    256,
+                    256
+                  ],
+                  "expanded_box": [
+                    0,
+                    0,
+                    291,
+                    256
+                  ]
+                }
+              },
+              {
+                "name": "projectile_1",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2_projectile/projectile_1.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  4,
+                  30,
+                  252,
+                  225
+                ],
+                "cleanup": {
+                  "component_count": 168,
+                  "kept_count": 47,
+                  "rejected_count": 121,
+                  "main_bbox": [
+                    0,
+                    0,
+                    326,
+                    88
+                  ],
+                  "main_cell_ratio": 0.7716,
+                  "alpha_bbox": [
+                    4,
+                    30,
+                    252,
+                    225
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    256,
+                    0,
+                    512,
+                    256
+                  ],
+                  "expanded_box": [
+                    221,
+                    0,
+                    547,
+                    256
+                  ]
+                }
+              },
+              {
+                "name": "projectile_2",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2_projectile/projectile_2.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  4,
+                  30,
+                  252,
+                  225
+                ],
+                "cleanup": {
+                  "component_count": 123,
+                  "kept_count": 22,
+                  "rejected_count": 101,
+                  "main_bbox": [
+                    0,
+                    0,
+                    326,
+                    112
+                  ],
+                  "main_cell_ratio": 0.8059,
+                  "alpha_bbox": [
+                    4,
+                    30,
+                    252,
+                    225
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    512,
+                    0,
+                    768,
+                    256
+                  ],
+                  "expanded_box": [
+                    477,
+                    0,
+                    803,
+                    256
+                  ]
+                }
+              },
+              {
+                "name": "projectile_3",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_huanhuan_skilltaunt_real_20260607_034114/frames/p2_projectile/projectile_3.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  4,
+                  19,
+                  252,
+                  237
+                ],
+                "cleanup": {
+                  "component_count": 127,
+                  "kept_count": 35,
+                  "rejected_count": 92,
+                  "main_bbox": [
+                    0,
+                    0,
+                    291,
+                    96
+                  ],
+                  "main_cell_ratio": 0.9316,
+                  "alpha_bbox": [
+                    4,
+                    19,
+                    252,
+                    237
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    768,
+                    0,
+                    1024,
+                    256
+                  ],
+                  "expanded_box": [
+                    733,
+                    0,
+                    1024,
+                    256
+                  ]
+                }
+              }
+            ]
+          },
+          "static": "assets/p2_projectile.png",
+          "sheet": "assets/p2_projectile_sheet.png",
+          "manifest": "p2_projectile_manifest.json",
+          "frames_dir": "frames/p2_projectile"
+        }
+      }
+    ]
+  },
+  "warnings": []
+}

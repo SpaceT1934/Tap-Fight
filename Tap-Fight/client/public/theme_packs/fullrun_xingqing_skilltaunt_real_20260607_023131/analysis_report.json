@@ -1,0 +1,1585 @@
+{
+  "theme_id": "fullrun_xingqing_skilltaunt_real_20260607_023131",
+  "input": {
+    "type": "video_ai_animation",
+    "source_video": "../视频源素材/不要因一时的性情 决定一切 P1 1778848844014.mp4",
+    "source_understanding": "video_understandings/understanding_p1_1778848844014_853b3ca4/video_understanding.json",
+    "source_generation_brief": "video_understandings/understanding_p1_1778848844014_853b3ca4/generation_brief.json"
+  },
+  "source_video_understanding_summary": {
+    "video_summary": "一个拟人饮料瓶家族风格的3D短片，讲述透明水瓶女性产下可乐瓶婴儿后引发父亲身份与家庭关系冲突，随后橙味汽水男性出走、反思并与家人重聚。",
+    "fighters": [
+      {
+        "id": "p1",
+        "name": "牛奶瓶医生",
+        "role_type": "hybrid",
+        "weapon": "甩动听诊器",
+        "attack_type": "hybrid",
+        "weapon_source": "observed_from_video",
+        "creativity_level": "stylized",
+        "skill_taunt": "不能没爸爸！",
+        "confidence": 0.91
+      },
+      {
+        "id": "p2",
+        "name": "橙味汽水男性",
+        "role_type": "hybrid",
+        "weapon": "橙汽泡泡瓶盖弹",
+        "attack_type": "hybrid",
+        "weapon_source": "derived_from_scene",
+        "creativity_level": "stylized",
+        "skill_taunt": "我该做点什么！",
+        "confidence": 0.89
+      }
+    ],
+    "conflict": {
+      "relationship": "牛奶瓶医生与橙味汽水男性像是围绕水瓶女性和可乐婴儿产生父亲身份争议的两个男性角色，一个代表医院/责任/质问，另一个代表逃避后回归的疑似父亲或伴侣。",
+      "reason": "两人都拥有强烈饮料瓶拟人外观且颜色、职业、情绪形成鲜明对比：牛奶医生愤怒握拳，橙汽水男性雨夜奔跑并说要做点什么，天然适合做成家庭伦理短剧式1v1对抗。",
+      "tone": "荒诞家庭伦理、吐槽、带一点热血觉悟"
+    },
+    "taunt": {
+      "text": "不要因一时的性情决定一切",
+      "source": "derived_from_scene",
+      "confidence": 0.78
+    },
+    "style_world": "拟人饮料瓶家庭伦理动画世界，医院、客厅、雨夜街道等现实生活场景中生活着牛奶、水、可乐、橙汽水等半透明饮料瓶人。",
+    "confidence": 0.88
+  },
+  "generation_brief": {
+    "schema_version": "generation_brief.v0.1",
+    "generated_by": "video-pipeline",
+    "generated_at": "2026-06-06T18:33:21.885Z",
+    "source_understanding": "video_understanding.json",
+    "source_video": "../视频源素材/不要因一时的性情 决定一切 P1 1778848844014.mp4",
+    "status": {
+      "video_understanding_ready": true,
+      "nine_frame_generation": "pending_user_frame_spec",
+      "image_generation_started": false
+    },
+    "image_generation_channel": {
+      "endpoint": "https://right.codes/draw",
+      "candidate_models": [
+        "gpt-image-2-vip",
+        "gpt-image-2",
+        "nano-banana",
+        "nano-banana-2",
+        "nano-banana-pro"
+      ],
+      "note": "本阶段只产出生成说明，不调用画图模型。"
+    },
+    "shared_style": {
+      "world": "拟人饮料瓶家庭伦理动画世界，医院、客厅、雨夜街道等现实生活场景中生活着牛奶、水、可乐、橙汽水等半透明饮料瓶人。",
+      "art_direction": "保持源视频的竖屏3D动画短片质感：圆润塑料/液体材质、半透明饮料身体、明显瓶盖和瓶口、柔和灯光、高饱和饮料颜色、夸张但不复杂的面部表情。动作帧可以更有战斗姿态，但不能脱离原本商业动画式柔和渲染和中等细节密度。",
+      "character_consistency": "所有主要角色必须保持饮料瓶拟人实体类型、双足人形结构、头顶瓶盖、透明或半透明液体材质、简洁服装和圆润3D比例；牛奶瓶医生保留白色牛奶头、浅蓝医生服、听诊器和怒眉；橙汽水男性保留橙色汽水身体、橙色瓶盖、橙色背心、饮料标识、白袜拖鞋和慌张奔跑气质。",
+      "color_notes": "牛奶瓶医生以乳白、浅蓝、深蓝听诊器为主；橙味汽水男性以橙色、透明塑料高光、白袜和湿润夜景暖黄路灯为主；水瓶女性为浅蓝透明材质；医院背景偏冷蓝，家庭客厅偏暖米色，雨夜街道有橙黄灯光与地面积水反射。",
+      "generation_prompt_base": "Vertical 3D animated short film style, anthropomorphic beverage bottle characters, rounded plastic and translucent liquid material, expressive faces, soft cinematic lighting, medium detail, family drama tone, clean hospital or cozy home or rainy street background. Keep bottle caps and bottle-shaped heads visible. No realistic human skin, no anime 2D, no pixel art, no gritty violence."
+    },
+    "conflict": {
+      "relationship": "牛奶瓶医生与橙味汽水男性像是围绕水瓶女性和可乐婴儿产生父亲身份争议的两个男性角色，一个代表医院/责任/质问，另一个代表逃避后回归的疑似父亲或伴侣。",
+      "reason": "两人都拥有强烈饮料瓶拟人外观且颜色、职业、情绪形成鲜明对比：牛奶医生愤怒握拳，橙汽水男性雨夜奔跑并说要做点什么，天然适合做成家庭伦理短剧式1v1对抗。",
+      "tone": "荒诞家庭伦理、吐槽、带一点热血觉悟"
+    },
+    "taunt": {
+      "text": "不要因一时的性情决定一切",
+      "source": "derived_from_scene",
+      "confidence": 0.78
+    },
+    "player_taunts": {
+      "p1": {
+        "text": "不能没爸爸！",
+        "source": "dialogue_or_subtitle",
+        "speaker": "牛奶瓶医生",
+        "evidence_frames": [
+          "analysis_frames/frame_01.jpg",
+          "analysis_frames/frame_03.jpg"
+        ],
+        "reason": "字幕“不能刚出生就没爸爸”出现在医院父亲身份冲突语境中，牛奶瓶医生正抱着婴儿并在后续愤怒握拳，适合作为他的长按攻击怒吼；说话者仍有一定不确定。",
+        "confidence": 0.72,
+        "fallback_text": "嘿！"
+      },
+      "p2": {
+        "text": "我该做点什么！",
+        "source": "dialogue_or_subtitle",
+        "speaker": "橙味汽水男性",
+        "evidence_frames": [
+          "analysis_frames/frame_04.jpg"
+        ],
+        "reason": "字幕“我想我应该做点什么”直接出现在橙味汽水男性雨夜奔跑的画面上，适合作为其蓄力技能前的觉悟台词。",
+        "confidence": 0.95,
+        "fallback_text": "哼！"
+      }
+    },
+    "characters": [
+      {
+        "id": "p1",
+        "name": "牛奶瓶医生",
+        "archetype_name": "愤怒牛奶瓶医生",
+        "role_type": "hybrid",
+        "visual_prompt": "高大的男性拟人牛奶瓶3D角色，头部是装满白色牛奶的半透明塑料瓶体，顶部有白色螺纹瓶盖和瓶口，脸部圆润，浓黑眉毛，蓝色眼睛，穿浅蓝医生手术服，上衣口袋与裤子简洁，脖子挂深色听诊器，戴白色手套，整体像可动玩具般光滑圆润。战斗姿态为皱眉握拳、身体前倾，既像医生又像被激怒的父亲。；性格/战斗气质：被家庭伦理问题激怒的严肃医生型斗士，正面硬刚，带有父权式质问和职业道具反击的气势。。",
+        "form_constraints": {
+          "entity_type": "3D拟人饮料瓶模型",
+          "body_plan": "双足人形，瓶状头部与人形躯干结合，有双臂双腿和面部表情",
+          "proportions": "头部较大且瓶盖明显，成年男性高大比例，四肢圆润简化，非写实人体肌肉结构",
+          "silhouette": "白色瓶盖在头顶形成最醒目的圆柱轮廓，浅蓝医生服和胸前听诊器形成职业识别，整体直立宽肩",
+          "surface_material": "半透明白色牛奶塑料瓶质感，布料感较简化的浅蓝医生服，橡胶/塑料感白手套，金属与橡胶混合的听诊器",
+          "detail_density": "中等；保留瓶盖螺纹、听诊器、医生服口袋和眉眼表情，不应添加复杂盔甲、真实皮肤毛孔或过多医学设备",
+          "rendering_style": "源视频为圆润明亮的3D动画渲染，柔和光照、干净材质、夸张表情，不是2D插画、像素风或写实真人",
+          "motion_style": "动作夸张直接，握拳、前冲、挥甩听诊器，表情变化明显，带短视频动画的戏剧化节奏",
+          "must_keep": [
+            "白色牛奶瓶头",
+            "白色瓶盖",
+            "浅蓝医生服",
+            "听诊器",
+            "圆润3D动画材质",
+            "愤怒浓眉表情"
+          ],
+          "must_not_change": [
+            "不要改成普通真人医生",
+            "不要去掉瓶盖和瓶体头部",
+            "不要改成动物、机器人或怪物",
+            "不要使用写实血腥医疗风格",
+            "不要添加复杂铠甲破坏原本简洁轮廓"
+          ]
+        },
+        "weapon_prompt": "甩动听诊器：把脖子上的深色听诊器当作软鞭和钩索使用，金属听头像小流星锤，挥舞时带白色牛奶飞溅光效；近距离可抽打，蓄力后可把听头甩出去砸击对手。",
+        "projectile_prompt": "蓄力攻击时飞出圆形金属听诊器听头，拖着一串白色牛奶泡沫轨迹，命中后爆开成乳白色圆形冲击波。",
+        "weapon_source": "observed_from_video",
+        "creativity_level": "stylized",
+        "attack_type": "hybrid",
+        "evidence_frames": [
+          "analysis_frames/frame_01.jpg",
+          "analysis_frames/frame_02.jpg",
+          "analysis_frames/frame_03.jpg"
+        ],
+        "skill_taunt": {
+          "text": "不能没爸爸！",
+          "source": "dialogue_or_subtitle",
+          "speaker": "牛奶瓶医生",
+          "evidence_frames": [
+            "analysis_frames/frame_01.jpg",
+            "analysis_frames/frame_03.jpg"
+          ],
+          "reason": "字幕“不能刚出生就没爸爸”出现在医院父亲身份冲突语境中，牛奶瓶医生正抱着婴儿并在后续愤怒握拳，适合作为他的长按攻击怒吼；说话者仍有一定不确定。",
+          "confidence": 0.72,
+          "fallback_text": "嘿！"
+        },
+        "prompt_seed": "Vertical 3D animated short film style, anthropomorphic beverage bottle characters, rounded plastic and translucent liquid material, expressive faces, soft cinematic lighting, medium detail, family drama tone, clean hospital or cozy home or rainy street background. Keep bottle caps and bottle-shaped heads visible. No realistic human skin, no anime 2D, no pixel art, no gritty violence.; 高大的男性拟人牛奶瓶3D角色，头部是装满白色牛奶的半透明塑料瓶体，顶部有白色螺纹瓶盖和瓶口，脸部圆润，浓黑眉毛，蓝色眼睛，穿浅蓝医生手术服，上衣口袋与裤子简洁，脖子挂深色听诊器，戴白色手套，整体像可动玩具般光滑圆润。战斗姿态为皱眉握拳、身体前倾，既像医生又像被激怒的父亲。; entity_type=3D拟人饮料瓶模型; body_plan=双足人形，瓶状头部与人形躯干结合，有双臂双腿和面部表情; proportions=头部较大且瓶盖明显，成年男性高大比例，四肢圆润简化，非写实人体肌肉结构; silhouette=白色瓶盖在头顶形成最醒目的圆柱轮廓，浅蓝医生服和胸前听诊器形成职业识别，整体直立宽肩; surface_material=半透明白色牛奶塑料瓶质感，布料感较简化的浅蓝医生服，橡胶/塑料感白手套，金属与橡胶混合的听诊器; detail_density=中等；保留瓶盖螺纹、听诊器、医生服口袋和眉眼表情，不应添加复杂盔甲、真实皮肤毛孔或过多医学设备; rendering_style=源视频为圆润明亮的3D动画渲染，柔和光照、干净材质、夸张表情，不是2D插画、像素风或写实真人; motion_style=动作夸张直接，握拳、前冲、挥甩听诊器，表情变化明显，带短视频动画的戏剧化节奏; must_keep=白色牛奶瓶头, 白色瓶盖, 浅蓝医生服, 听诊器, 圆润3D动画材质, 愤怒浓眉表情; must_not_change=不要改成普通真人医生, 不要去掉瓶盖和瓶体头部, 不要改成动物、机器人或怪物, 不要使用写实血腥医疗风格, 不要添加复杂铠甲破坏原本简洁轮廓; 把脖子上的深色听诊器当作软鞭和钩索使用，金属听头像小流星锤，挥舞时带白色牛奶飞溅光效；近距离可抽打，蓄力后可把听头甩出去砸击对手。; 蓄力攻击时飞出圆形金属听诊器听头，拖着一串白色牛奶泡沫轨迹，命中后爆开成乳白色圆形冲击波。; skill taunt: 不能没爸爸！"
+      },
+      {
+        "id": "p2",
+        "name": "橙味汽水男性",
+        "archetype_name": "逃跑的橙汽水爸爸",
+        "role_type": "hybrid",
+        "visual_prompt": "成年男性拟人橙味汽水瓶3D角色，身体与头部呈橙色半透明液体质感，透明塑料瓶轮廓包裹头顶，顶部有橙色瓶盖，脸部表情焦虑又善良；穿橙色运动背心，胸前有类似Fanta的醒目饮料标志，搭配橙色短裤、白色长袜和拖鞋。战斗时像在雨夜街道奔跑，身体带汽水气泡和橙色高光，姿态灵活、闪躲、冲刺。；性格/战斗气质：逃避后又想弥补的敏捷型斗士，表面慌张，战斗中靠冲刺、汽水喷射和橙味泡泡进行扰乱。。",
+        "form_constraints": {
+          "entity_type": "3D拟人饮料瓶模型",
+          "body_plan": "双足人形，瓶状头部与人形躯干结合，有双臂双腿，头顶保留瓶口和瓶盖",
+          "proportions": "成年男性但更运动休闲，头部瓶盖较大，身体修长，四肢圆润，不是写实肌肉男",
+          "silhouette": "橙色瓶盖和透明瓶口在头顶突出，橙色背心和白袜拖鞋形成休闲奔跑者轮廓，身体内有汽水气泡",
+          "surface_material": "橙色半透明汽水液体和塑料瓶表面，服装为简化布料材质，整体光滑反光",
+          "detail_density": "中等；保留饮料标识、汽水气泡、瓶盖、背心短裤袜子拖鞋，不应添加复杂纹身、武装护具或大量真实皮肤细节",
+          "rendering_style": "与源视频一致的圆润3D动画短片渲染，暖色灯光、湿润街道反光、夸张面部表情",
+          "motion_style": "奔跑、急停、抛掷、冲刺撞击，带慌张和弥补式的快速动作",
+          "must_keep": [
+            "橙色半透明汽水身体",
+            "橙色瓶盖",
+            "橙色背心",
+            "Fanta风格胸前标识",
+            "白色长袜",
+            "拖鞋",
+            "气泡质感"
+          ],
+          "must_not_change": [
+            "不要改成普通真人运动员",
+            "不要去掉瓶盖和饮料瓶头部",
+            "不要把橙色汽水材质改成火焰怪物",
+            "不要改成二次元平面角色",
+            "不要添加硬核枪械或写实暴力装备"
+          ]
+        },
+        "weapon_prompt": "橙汽泡泡瓶盖弹：使用自己的橙色瓶盖和汽水压力作战：近战时用瓶盖当盾牌或飞盘边缘劈砍，远程时拧开瓶口喷射橙色汽水泡沫，形成短距离水柱冲击。",
+        "projectile_prompt": "橙色瓶盖飞盘和一串发光橙汽泡泡，泡泡像小型弹珠一样沿弧线飞出，命中后炸成橙色泡沫和糖浆光斑。",
+        "weapon_source": "derived_from_scene",
+        "creativity_level": "stylized",
+        "attack_type": "hybrid",
+        "evidence_frames": [
+          "analysis_frames/frame_04.jpg",
+          "analysis_frames/frame_05.jpg"
+        ],
+        "skill_taunt": {
+          "text": "我该做点什么！",
+          "source": "dialogue_or_subtitle",
+          "speaker": "橙味汽水男性",
+          "evidence_frames": [
+            "analysis_frames/frame_04.jpg"
+          ],
+          "reason": "字幕“我想我应该做点什么”直接出现在橙味汽水男性雨夜奔跑的画面上，适合作为其蓄力技能前的觉悟台词。",
+          "confidence": 0.95,
+          "fallback_text": "哼！"
+        },
+        "prompt_seed": "Vertical 3D animated short film style, anthropomorphic beverage bottle characters, rounded plastic and translucent liquid material, expressive faces, soft cinematic lighting, medium detail, family drama tone, clean hospital or cozy home or rainy street background. Keep bottle caps and bottle-shaped heads visible. No realistic human skin, no anime 2D, no pixel art, no gritty violence.; 成年男性拟人橙味汽水瓶3D角色，身体与头部呈橙色半透明液体质感，透明塑料瓶轮廓包裹头顶，顶部有橙色瓶盖，脸部表情焦虑又善良；穿橙色运动背心，胸前有类似Fanta的醒目饮料标志，搭配橙色短裤、白色长袜和拖鞋。战斗时像在雨夜街道奔跑，身体带汽水气泡和橙色高光，姿态灵活、闪躲、冲刺。; entity_type=3D拟人饮料瓶模型; body_plan=双足人形，瓶状头部与人形躯干结合，有双臂双腿，头顶保留瓶口和瓶盖; proportions=成年男性但更运动休闲，头部瓶盖较大，身体修长，四肢圆润，不是写实肌肉男; silhouette=橙色瓶盖和透明瓶口在头顶突出，橙色背心和白袜拖鞋形成休闲奔跑者轮廓，身体内有汽水气泡; surface_material=橙色半透明汽水液体和塑料瓶表面，服装为简化布料材质，整体光滑反光; detail_density=中等；保留饮料标识、汽水气泡、瓶盖、背心短裤袜子拖鞋，不应添加复杂纹身、武装护具或大量真实皮肤细节; rendering_style=与源视频一致的圆润3D动画短片渲染，暖色灯光、湿润街道反光、夸张面部表情; motion_style=奔跑、急停、抛掷、冲刺撞击，带慌张和弥补式的快速动作; must_keep=橙色半透明汽水身体, 橙色瓶盖, 橙色背心, Fanta风格胸前标识, 白色长袜, 拖鞋, 气泡质感; must_not_change=不要改成普通真人运动员, 不要去掉瓶盖和饮料瓶头部, 不要把橙色汽水材质改成火焰怪物, 不要改成二次元平面角色, 不要添加硬核枪械或写实暴力装备; 使用自己的橙色瓶盖和汽水压力作战：近战时用瓶盖当盾牌或飞盘边缘劈砍，远程时拧开瓶口喷射橙色汽水泡沫，形成短距离水柱冲击。; 橙色瓶盖飞盘和一串发光橙汽泡泡，泡泡像小型弹珠一样沿弧线飞出，命中后炸成橙色泡沫和糖浆光斑。; skill taunt: 我该做点什么！"
+      }
+    ],
+    "constraints": [
+      "后续九帧生成时保持同一角色服饰、体型、发型和武器一致。",
+      "角色素材优先透明背景，动作轮廓清楚，适配小游戏白模验证。",
+      "不要把武器 source=derived_from_scene 或 absurd_creative 误标为视频真实出现。"
+    ]
+  },
+  "contract_role_mapping": {
+    "p1": {
+      "original_role_type": "hybrid",
+      "original_attack_type": "hybrid",
+      "mapped_role": "melee"
+    },
+    "p2": {
+      "original_role_type": "hybrid",
+      "original_attack_type": "hybrid",
+      "mapped_role": "ranged"
+    },
+    "warnings": []
+  },
+  "pipeline_steps": [
+    {
+      "name": "load_generation_brief",
+      "mode": "json",
+      "status": "ok",
+      "source": "video_understandings/understanding_p1_1778848844014_853b3ca4/generation_brief.json"
+    },
+    {
+      "name": "map_roles_to_contract",
+      "mode": "deterministic",
+      "status": "ok",
+      "notes": []
+    },
+    {
+      "name": "generate_sprite_asset",
+      "player_id": "p1",
+      "mode": "right_codes_draw",
+      "status": "ok",
+      "model": "gpt-image-2",
+      "response_kind": "url"
+    },
+    {
+      "name": "generate_sprite_asset",
+      "player_id": "p2",
+      "mode": "right_codes_draw",
+      "status": "ok",
+      "model": "gpt-image-2",
+      "response_kind": "url"
+    },
+    {
+      "name": "postprocess_sheets",
+      "mode": "python_pillow",
+      "status": "ok"
+    }
+  ],
+  "image_generation": {
+    "endpoint": "https://right.codes/draw",
+    "model": "gpt-image-2",
+    "visual_mode": "faithful",
+    "records": [
+      {
+        "player_id": "p1",
+        "character_name": "牛奶瓶医生",
+        "role": "melee",
+        "original_role_type": "hybrid",
+        "original_attack_type": "hybrid",
+        "visual_mode": "faithful",
+        "prompt": "Create a 3x3 sprite sheet for a 2D mobile fighting game on a perfectly flat solid #00ff00 chroma-key background.\nVisual target: game-ready animation frames that preserve the source video's own visual medium, shape language, detail density, line weight, flatness, color palette, and rendering style; not abstract, not a placeholder.\nUse the attached source-video keyframes as visual references. Match their simplicity, facial feature style, outline thickness, shading amount, accessory count, and material treatment. Do not beautify, polish, upscale, or add detail beyond the source evidence.\nThe reference keyframes may contain other characters or background elements; use them only for the named subject and source style evidence. Do not include extra characters or background in the sprite sheet.\nFaithful mode: use the video analysis as the primary visual reference and preserve the recognizable source character identity, entity type, body plan, costume/surface, weapon, color logic, proportions, and silhouette as much as the image model permits.\nDo not silently redesign the source entity into a different species, object category, body plan, or art medium. Do not make a non-human source humanoid unless the video clearly shows a humanoid.\nOne 牛奶瓶医生 melee fighter/entity, facing right in all 9 frames. The subject must be fully visible in every cell in a form compatible with the source video.\nVideo-derived character description: 高大的男性拟人牛奶瓶3D角色，头部是装满白色牛奶的半透明塑料瓶体，顶部有白色螺纹瓶盖和瓶口，脸部圆润，浓黑眉毛，蓝色眼睛，穿浅蓝医生手术服，上衣口袋与裤子简洁，脖子挂深色听诊器，戴白色手套，整体像可动玩具般光滑圆润。战斗姿态为皱眉握拳、身体前倾，既像医生又像被激怒的父亲。；性格/战斗气质：被家庭伦理问题激怒的严肃医生型斗士，正面硬刚，带有父权式质问和职业道具反击的气势。。\nSource form constraints: entity_type=3D拟人饮料瓶模型; body_plan=双足人形，瓶状头部与人形躯干结合，有双臂双腿和面部表情; proportions=头部较大且瓶盖明显，成年男性高大比例，四肢圆润简化，非写实人体肌肉结构; silhouette=白色瓶盖在头顶形成最醒目的圆柱轮廓，浅蓝医生服和胸前听诊器形成职业识别，整体直立宽肩; surface_material=半透明白色牛奶塑料瓶质感，布料感较简化的浅蓝医生服，橡胶/塑料感白手套，金属与橡胶混合的听诊器; detail_density=中等；保留瓶盖螺纹、听诊器、医生服口袋和眉眼表情，不应添加复杂盔甲、真实皮肤毛孔或过多医学设备; rendering_style=源视频为圆润明亮的3D动画渲染，柔和光照、干净材质、夸张表情，不是2D插画、像素风或写实真人; motion_style=动作夸张直接，握拳、前冲、挥甩听诊器，表情变化明显，带短视频动画的戏剧化节奏; must_keep=白色牛奶瓶头, 白色瓶盖, 浅蓝医生服, 听诊器, 圆润3D动画材质, 愤怒浓眉表情; must_not_change=不要改成普通真人医生, 不要去掉瓶盖和瓶体头部, 不要改成动物、机器人或怪物, 不要使用写实血腥医疗风格, 不要添加复杂铠甲破坏原本简洁轮廓\nWeapon and attack prop: 甩动听诊器：把脖子上的深色听诊器当作软鞭和钩索使用，金属听头像小流星锤，挥舞时带白色牛奶飞溅光效；近距离可抽打，蓄力后可把听头甩出去砸击对手。\nProjectile idea for separate asset: 蓄力攻击时飞出圆形金属听诊器听头，拖着一串白色牛奶泡沫轨迹，命中后爆开成乳白色圆形冲击波。\nShared art direction: 保持源视频的竖屏3D动画短片质感：圆润塑料/液体材质、半透明饮料身体、明显瓶盖和瓶口、柔和灯光、高饱和饮料颜色、夸张但不复杂的面部表情。动作帧可以更有战斗姿态，但不能脱离原本商业动画式柔和渲染和中等细节密度。\nWorld/style evidence: 拟人饮料瓶家庭伦理动画世界，医院、客厅、雨夜街道等现实生活场景中生活着牛奶、水、可乐、橙汽水等半透明饮料瓶人。; 牛奶瓶医生以乳白、浅蓝、深蓝听诊器为主；橙味汽水男性以橙色、透明塑料高光、白袜和湿润夜景暖黄路灯为主；水瓶女性为浅蓝透明材质；医院背景偏冷蓝，家庭客厅偏暖米色，雨夜街道有橙黄灯光与地面积水反射。\nConsistency requirements: 所有主要角色必须保持饮料瓶拟人实体类型、双足人形结构、头顶瓶盖、透明或半透明液体材质、简洁服装和圆润3D比例；牛奶瓶医生保留白色牛奶头、浅蓝医生服、听诊器和怒眉；橙汽水男性保留橙色汽水身体、橙色瓶盖、橙色背心、饮料标识、白袜拖鞋和慌张奔跑气质。\nUse an invisible 3-column by 3-row grid with equal cells and generous spacing. Do not draw visible panel borders.\nLeave a clean #00ff00 safety gutter around every cell. No body part, weapon, slash effect, cable, debris, shadow, or projectile may cross into a neighboring cell.\nKeep each pose centered inside its own cell, with a consistent feet baseline for grounded poses and enough green margin on all sides.\nEach cell contains exactly one complete pose of the same source-derived subject, with the source body plan visible, clean edges, and readable silhouette.\nKeep the same source-derived face/surface details, head or front shape, outfit or material, colors, body scale, weapon, and art style across all nine frames.\nKeep details at the source video's level: if the source is flat, low-shadow, sticker-like, low-detail, pixel-like, live-action, 3D, mechanical, or painterly, keep that same level and medium instead of upgrading it to another illustration style.\nFeet should stay aligned to a consistent baseline for grounded poses; jump and fall may lift off the baseline while staying centered in their cells.\nFrame order left-to-right, top-to-bottom: idle standing, idle breathing, run 1, run 2, run 3, run 4, jump, fall, attack.\nThe attack frame must clearly show a melee swing, slash, or strike with the weapon extended.\nAvoid silhouettes, stick figures, flat color mannequins, geometric blobs, toy blocks, rough thumbnails, icons, UI sprites, unintended low-poly forms, or any visual style not supported by the source video evidence.\nNo text, no labels, no watermark, no shadows, no floor, no extra characters, no UI, no panel borders.\nThe background must be one uniform #00ff00 color with no gradient, texture, lighting variation, floor plane, reflection, or shadow.\nAvoid #00ff00 anywhere on the character or weapon.",
+        "reference_images": [
+          "../../video_understandings/understanding_p1_1778848844014_853b3ca4/analysis_frames/frame_01.jpg",
+          "../../video_understandings/understanding_p1_1778848844014_853b3ca4/analysis_frames/frame_02.jpg"
+        ],
+        "draw": {
+          "name": "draw_image",
+          "mode": "right_codes_draw",
+          "status": "ok",
+          "visual_mode": "faithful",
+          "base_url": "https://right.codes/draw",
+          "model": "gpt-image-2",
+          "response_kind": "url",
+          "attempts": 1,
+          "reference_image_count": 2,
+          "output": "p1_sprite_sheet_raw.png"
+        },
+        "postprocess": {
+          "status": "ok",
+          "sheet_size": [
+            1536,
+            1536
+          ],
+          "frame_size": {
+            "width": 512,
+            "height": 512
+          },
+          "layout": [
+            3,
+            3
+          ],
+          "alpha": {
+            "transparent_ratio": 0.7719,
+            "opaque_ratio": 0.2281
+          },
+          "frames": [
+            {
+              "name": "idle_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1/idle_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                151,
+                23,
+                361,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  117,
+                  38,
+                  327,
+                  507
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  151,
+                  23,
+                  361,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  0,
+                  512,
+                  512
+                ],
+                "expanded_box": [
+                  0,
+                  0,
+                  583,
+                  583
+                ]
+              }
+            },
+            {
+              "name": "idle_1",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1/idle_1.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                141,
+                21,
+                371,
+                492
+              ],
+              "cleanup": {
+                "component_count": 4,
+                "kept_count": 1,
+                "rejected_count": 3,
+                "main_bbox": [
+                  162,
+                  35,
+                  392,
+                  506
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  141,
+                  21,
+                  371,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  0,
+                  1024,
+                  512
+                ],
+                "expanded_box": [
+                  441,
+                  0,
+                  1095,
+                  583
+                ]
+              }
+            },
+            {
+              "name": "run_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1/run_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                83,
+                43,
+                428,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  102,
+                  51,
+                  447,
+                  500
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  83,
+                  43,
+                  428,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  0,
+                  1536,
+                  512
+                ],
+                "expanded_box": [
+                  953,
+                  0,
+                  1536,
+                  583
+                ]
+              }
+            },
+            {
+              "name": "run_1",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1/run_1.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                95,
+                76,
+                417,
+                492
+              ],
+              "cleanup": {
+                "component_count": 5,
+                "kept_count": 1,
+                "rejected_count": 4,
+                "main_bbox": [
+                  83,
+                  121,
+                  405,
+                  537
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  95,
+                  76,
+                  417,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  512,
+                  512,
+                  1024
+                ],
+                "expanded_box": [
+                  0,
+                  441,
+                  583,
+                  1095
+                ]
+              }
+            },
+            {
+              "name": "run_2",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1/run_2.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                97,
+                93,
+                415,
+                492
+              ],
+              "cleanup": {
+                "component_count": 7,
+                "kept_count": 1,
+                "rejected_count": 6,
+                "main_bbox": [
+                  119,
+                  125,
+                  437,
+                  524
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  97,
+                  93,
+                  415,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  512,
+                  1024,
+                  1024
+                ],
+                "expanded_box": [
+                  441,
+                  441,
+                  1095,
+                  1095
+                ]
+              }
+            },
+            {
+              "name": "run_3",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1/run_3.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                93,
+                74,
+                419,
+                492
+              ],
+              "cleanup": {
+                "component_count": 4,
+                "kept_count": 1,
+                "rejected_count": 3,
+                "main_bbox": [
+                  74,
+                  119,
+                  400,
+                  537
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  93,
+                  74,
+                  419,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  512,
+                  1536,
+                  1024
+                ],
+                "expanded_box": [
+                  953,
+                  441,
+                  1536,
+                  1095
+                ]
+              }
+            },
+            {
+              "name": "jump_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1/jump_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                79,
+                23,
+                433,
+                492
+              ],
+              "cleanup": {
+                "component_count": 5,
+                "kept_count": 1,
+                "rejected_count": 4,
+                "main_bbox": [
+                  42,
+                  57,
+                  396,
+                  526
+                ],
+                "main_cell_ratio": 0.9895,
+                "alpha_bbox": [
+                  79,
+                  23,
+                  433,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  1024,
+                  512,
+                  1536
+                ],
+                "expanded_box": [
+                  0,
+                  953,
+                  583,
+                  1536
+                ]
+              }
+            },
+            {
+              "name": "fall_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1/fall_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                13,
+                159,
+                508,
+                497
+              ],
+              "cleanup": {
+                "component_count": 3,
+                "kept_count": 2,
+                "rejected_count": 1,
+                "main_bbox": [
+                  57,
+                  128,
+                  461,
+                  493
+                ],
+                "main_cell_ratio": 0.9932,
+                "alpha_bbox": [
+                  13,
+                  159,
+                  508,
+                  497
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  1024,
+                  1024,
+                  1536
+                ],
+                "expanded_box": [
+                  441,
+                  953,
+                  1095,
+                  1536
+                ]
+              }
+            },
+            {
+              "name": "attack_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1/attack_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                4,
+                119,
+                498,
+                495
+              ],
+              "cleanup": {
+                "component_count": 11,
+                "kept_count": 4,
+                "rejected_count": 7,
+                "main_bbox": [
+                  0,
+                  111,
+                  540,
+                  533
+                ],
+                "main_cell_ratio": 0.8938,
+                "alpha_bbox": [
+                  4,
+                  119,
+                  498,
+                  495
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  1024,
+                  1536,
+                  1536
+                ],
+                "expanded_box": [
+                  953,
+                  953,
+                  1536,
+                  1536
+                ]
+              }
+            }
+          ]
+        },
+        "animation_manifest": "p1_animation_manifest.json",
+        "projectile": {
+          "prompt": "Create a 1x4 sprite sheet for a small 2D game projectile on a perfectly flat solid #00ff00 chroma-key background.\nVisual target: game-ready projectile frames that match the source video's own visual medium, detail density, line weight, color palette, and rendering style; not abstract, not a placeholder.\nUse the attached source-video keyframes as visual references for style, color, outline, and detail level. Do not beautify, polish, upscale, or add detail beyond the source evidence.\nThe reference keyframes may contain characters or background elements; use them only for style and weapon/projectile evidence. Do not include characters or background in the projectile sheet.\nFaithful mode: use the video-derived weapon/projectile as the primary visual reference and keep it recognizable as much as the image model permits.\nProjectile type: 蓄力攻击时飞出圆形金属听诊器听头，拖着一串白色牛奶泡沫轨迹，命中后爆开成乳白色圆形冲击波。\nOwner character: 牛奶瓶医生. Match the same style and color logic as: 高大的男性拟人牛奶瓶3D角色，头部是装满白色牛奶的半透明塑料瓶体，顶部有白色螺纹瓶盖和瓶口，脸部圆润，浓黑眉毛，蓝色眼睛，穿浅蓝医生手术服，上衣口袋与裤子简洁，脖子挂深色听诊器，戴白色手套，整体像可动玩具般光滑圆润。战斗姿态为皱眉握拳、身体前倾，既像医生又像被激怒的父亲。；性格/战斗气质：被家庭伦理问题激怒的严肃医生型斗士，正面硬刚，带有父权式质问和职业道具反击的气势。。\nOwner source form constraints: entity_type=3D拟人饮料瓶模型; body_plan=双足人形，瓶状头部与人形躯干结合，有双臂双腿和面部表情; proportions=头部较大且瓶盖明显，成年男性高大比例，四肢圆润简化，非写实人体肌肉结构; silhouette=白色瓶盖在头顶形成最醒目的圆柱轮廓，浅蓝医生服和胸前听诊器形成职业识别，整体直立宽肩; surface_material=半透明白色牛奶塑料瓶质感，布料感较简化的浅蓝医生服，橡胶/塑料感白手套，金属与橡胶混合的听诊器; detail_density=中等；保留瓶盖螺纹、听诊器、医生服口袋和眉眼表情，不应添加复杂盔甲、真实皮肤毛孔或过多医学设备; rendering_style=源视频为圆润明亮的3D动画渲染，柔和光照、干净材质、夸张表情，不是2D插画、像素风或写实真人; motion_style=动作夸张直接，握拳、前冲、挥甩听诊器，表情变化明显，带短视频动画的戏剧化节奏; must_keep=白色牛奶瓶头, 白色瓶盖, 浅蓝医生服, 听诊器, 圆润3D动画材质, 愤怒浓眉表情; must_not_change=不要改成普通真人医生, 不要去掉瓶盖和瓶体头部, 不要改成动物、机器人或怪物, 不要使用写实血腥医疗风格, 不要添加复杂铠甲破坏原本简洁轮廓\nWeapon context: 甩动听诊器：把脖子上的深色听诊器当作软鞭和钩索使用，金属听头像小流星锤，挥舞时带白色牛奶飞溅光效；近距离可抽打，蓄力后可把听头甩出去砸击对手。\nShared art direction: 保持源视频的竖屏3D动画短片质感：圆润塑料/液体材质、半透明饮料身体、明显瓶盖和瓶口、柔和灯光、高饱和饮料颜色、夸张但不复杂的面部表情。动作帧可以更有战斗姿态，但不能脱离原本商业动画式柔和渲染和中等细节密度。\nFour equal cells, one projectile per cell, facing right or moving right.\nLeave a clean #00ff00 safety gutter around every cell. No trail, sparks, shards, glow, or motion smear may cross into a neighboring cell.\nFrame order left-to-right: launch shape, flying rotation 1, flying rotation 2, looping flying shape.\nCentered composition in each cell, crisp edges, readable silhouette, consistent scale and colors.\nIf the projectile is magic or energy, make it a clearly designed object/effect from the video-derived idea, not a simple colored ball.\nDo not include character, hand, ground, explosion, impact feedback, text, label, watermark, shadow, or floor.\nThe background must be one uniform #00ff00 color with no gradient, texture, lighting variation, floor plane, reflection, or shadow.\nAvoid #00ff00 anywhere in the projectile.",
+          "reference_images": [
+            "../../video_understandings/understanding_p1_1778848844014_853b3ca4/analysis_frames/frame_01.jpg",
+            "../../video_understandings/understanding_p1_1778848844014_853b3ca4/analysis_frames/frame_02.jpg"
+          ],
+          "draw": {
+            "name": "draw_image",
+            "mode": "right_codes_draw",
+            "status": "ok",
+            "visual_mode": "faithful",
+            "base_url": "https://right.codes/draw",
+            "model": "gpt-image-2",
+            "response_kind": "url",
+            "attempts": 1,
+            "reference_image_count": 2,
+            "output": "p1_projectile_sheet_raw.png"
+          },
+          "postprocess": {
+            "status": "ok",
+            "sheet_size": [
+              1024,
+              256
+            ],
+            "frame_size": {
+              "width": 256,
+              "height": 256
+            },
+            "layout": [
+              4,
+              1
+            ],
+            "alpha": {
+              "transparent_ratio": 0.9051,
+              "opaque_ratio": 0.0949
+            },
+            "frames": [
+              {
+                "name": "projectile_0",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1_projectile/projectile_0.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  39,
+                  29,
+                  230,
+                  226
+                ],
+                "cleanup": {
+                  "component_count": 29,
+                  "kept_count": 22,
+                  "rejected_count": 7,
+                  "main_bbox": [
+                    123,
+                    220,
+                    291,
+                    229
+                  ],
+                  "main_cell_ratio": 0.6708,
+                  "alpha_bbox": [
+                    39,
+                    29,
+                    230,
+                    226
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    0,
+                    0,
+                    256,
+                    256
+                  ],
+                  "expanded_box": [
+                    0,
+                    0,
+                    291,
+                    256
+                  ]
+                }
+              },
+              {
+                "name": "projectile_1",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1_projectile/projectile_1.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  4,
+                  50,
+                  252,
+                  206
+                ],
+                "cleanup": {
+                  "component_count": 14,
+                  "kept_count": 12,
+                  "rejected_count": 2,
+                  "main_bbox": [
+                    0,
+                    32,
+                    326,
+                    47
+                  ],
+                  "main_cell_ratio": 0.7884,
+                  "alpha_bbox": [
+                    4,
+                    50,
+                    252,
+                    206
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    256,
+                    0,
+                    512,
+                    256
+                  ],
+                  "expanded_box": [
+                    221,
+                    0,
+                    547,
+                    256
+                  ]
+                }
+              },
+              {
+                "name": "projectile_2",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1_projectile/projectile_2.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  4,
+                  48,
+                  252,
+                  208
+                ],
+                "cleanup": {
+                  "component_count": 4,
+                  "kept_count": 4,
+                  "rejected_count": 0,
+                  "main_bbox": [
+                    0,
+                    213,
+                    326,
+                    233
+                  ],
+                  "main_cell_ratio": 0.7029,
+                  "alpha_bbox": [
+                    4,
+                    48,
+                    252,
+                    208
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    512,
+                    0,
+                    768,
+                    256
+                  ],
+                  "expanded_box": [
+                    477,
+                    0,
+                    803,
+                    256
+                  ]
+                }
+              },
+              {
+                "name": "projectile_3",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p1_projectile/projectile_3.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  35,
+                  26,
+                  207,
+                  229
+                ],
+                "cleanup": {
+                  "component_count": 4,
+                  "kept_count": 4,
+                  "rejected_count": 0,
+                  "main_bbox": [
+                    0,
+                    30,
+                    172,
+                    51
+                  ],
+                  "main_cell_ratio": 0.8659,
+                  "alpha_bbox": [
+                    35,
+                    26,
+                    207,
+                    229
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    768,
+                    0,
+                    1024,
+                    256
+                  ],
+                  "expanded_box": [
+                    733,
+                    0,
+                    1024,
+                    256
+                  ]
+                }
+              }
+            ]
+          },
+          "static": "assets/p1_projectile.png",
+          "sheet": "assets/p1_projectile_sheet.png",
+          "manifest": "p1_projectile_manifest.json",
+          "frames_dir": "frames/p1_projectile"
+        }
+      },
+      {
+        "player_id": "p2",
+        "character_name": "橙味汽水男性",
+        "role": "ranged",
+        "original_role_type": "hybrid",
+        "original_attack_type": "hybrid",
+        "visual_mode": "faithful",
+        "prompt": "Create a 3x3 sprite sheet for a 2D mobile fighting game on a perfectly flat solid #00ff00 chroma-key background.\nVisual target: game-ready animation frames that preserve the source video's own visual medium, shape language, detail density, line weight, flatness, color palette, and rendering style; not abstract, not a placeholder.\nUse the attached source-video keyframes as visual references. Match their simplicity, facial feature style, outline thickness, shading amount, accessory count, and material treatment. Do not beautify, polish, upscale, or add detail beyond the source evidence.\nThe reference keyframes may contain other characters or background elements; use them only for the named subject and source style evidence. Do not include extra characters or background in the sprite sheet.\nFaithful mode: use the video analysis as the primary visual reference and preserve the recognizable source character identity, entity type, body plan, costume/surface, weapon, color logic, proportions, and silhouette as much as the image model permits.\nDo not silently redesign the source entity into a different species, object category, body plan, or art medium. Do not make a non-human source humanoid unless the video clearly shows a humanoid.\nOne 橙味汽水男性 ranged fighter/entity, facing right in all 9 frames. The subject must be fully visible in every cell in a form compatible with the source video.\nVideo-derived character description: 成年男性拟人橙味汽水瓶3D角色，身体与头部呈橙色半透明液体质感，透明塑料瓶轮廓包裹头顶，顶部有橙色瓶盖，脸部表情焦虑又善良；穿橙色运动背心，胸前有类似Fanta的醒目饮料标志，搭配橙色短裤、白色长袜和拖鞋。战斗时像在雨夜街道奔跑，身体带汽水气泡和橙色高光，姿态灵活、闪躲、冲刺。；性格/战斗气质：逃避后又想弥补的敏捷型斗士，表面慌张，战斗中靠冲刺、汽水喷射和橙味泡泡进行扰乱。。\nSource form constraints: entity_type=3D拟人饮料瓶模型; body_plan=双足人形，瓶状头部与人形躯干结合，有双臂双腿，头顶保留瓶口和瓶盖; proportions=成年男性但更运动休闲，头部瓶盖较大，身体修长，四肢圆润，不是写实肌肉男; silhouette=橙色瓶盖和透明瓶口在头顶突出，橙色背心和白袜拖鞋形成休闲奔跑者轮廓，身体内有汽水气泡; surface_material=橙色半透明汽水液体和塑料瓶表面，服装为简化布料材质，整体光滑反光; detail_density=中等；保留饮料标识、汽水气泡、瓶盖、背心短裤袜子拖鞋，不应添加复杂纹身、武装护具或大量真实皮肤细节; rendering_style=与源视频一致的圆润3D动画短片渲染，暖色灯光、湿润街道反光、夸张面部表情; motion_style=奔跑、急停、抛掷、冲刺撞击，带慌张和弥补式的快速动作; must_keep=橙色半透明汽水身体, 橙色瓶盖, 橙色背心, Fanta风格胸前标识, 白色长袜, 拖鞋, 气泡质感; must_not_change=不要改成普通真人运动员, 不要去掉瓶盖和饮料瓶头部, 不要把橙色汽水材质改成火焰怪物, 不要改成二次元平面角色, 不要添加硬核枪械或写实暴力装备\nWeapon and attack prop: 橙汽泡泡瓶盖弹：使用自己的橙色瓶盖和汽水压力作战：近战时用瓶盖当盾牌或飞盘边缘劈砍，远程时拧开瓶口喷射橙色汽水泡沫，形成短距离水柱冲击。\nProjectile idea for separate asset: 橙色瓶盖飞盘和一串发光橙汽泡泡，泡泡像小型弹珠一样沿弧线飞出，命中后炸成橙色泡沫和糖浆光斑。\nShared art direction: 保持源视频的竖屏3D动画短片质感：圆润塑料/液体材质、半透明饮料身体、明显瓶盖和瓶口、柔和灯光、高饱和饮料颜色、夸张但不复杂的面部表情。动作帧可以更有战斗姿态，但不能脱离原本商业动画式柔和渲染和中等细节密度。\nWorld/style evidence: 拟人饮料瓶家庭伦理动画世界，医院、客厅、雨夜街道等现实生活场景中生活着牛奶、水、可乐、橙汽水等半透明饮料瓶人。; 牛奶瓶医生以乳白、浅蓝、深蓝听诊器为主；橙味汽水男性以橙色、透明塑料高光、白袜和湿润夜景暖黄路灯为主；水瓶女性为浅蓝透明材质；医院背景偏冷蓝，家庭客厅偏暖米色，雨夜街道有橙黄灯光与地面积水反射。\nConsistency requirements: 所有主要角色必须保持饮料瓶拟人实体类型、双足人形结构、头顶瓶盖、透明或半透明液体材质、简洁服装和圆润3D比例；牛奶瓶医生保留白色牛奶头、浅蓝医生服、听诊器和怒眉；橙汽水男性保留橙色汽水身体、橙色瓶盖、橙色背心、饮料标识、白袜拖鞋和慌张奔跑气质。\nUse an invisible 3-column by 3-row grid with equal cells and generous spacing. Do not draw visible panel borders.\nLeave a clean #00ff00 safety gutter around every cell. No body part, weapon, slash effect, cable, debris, shadow, or projectile may cross into a neighboring cell.\nKeep each pose centered inside its own cell, with a consistent feet baseline for grounded poses and enough green margin on all sides.\nEach cell contains exactly one complete pose of the same source-derived subject, with the source body plan visible, clean edges, and readable silhouette.\nKeep the same source-derived face/surface details, head or front shape, outfit or material, colors, body scale, weapon, and art style across all nine frames.\nKeep details at the source video's level: if the source is flat, low-shadow, sticker-like, low-detail, pixel-like, live-action, 3D, mechanical, or painterly, keep that same level and medium instead of upgrading it to another illustration style.\nFeet should stay aligned to a consistent baseline for grounded poses; jump and fall may lift off the baseline while staying centered in their cells.\nFrame order left-to-right, top-to-bottom: idle standing, idle breathing, run 1, run 2, run 3, run 4, jump, fall, attack.\nThe attack frame must clearly show aiming, throwing, shooting, or casting; the flying object is generated separately, not only inside attack_0.\nAvoid silhouettes, stick figures, flat color mannequins, geometric blobs, toy blocks, rough thumbnails, icons, UI sprites, unintended low-poly forms, or any visual style not supported by the source video evidence.\nNo text, no labels, no watermark, no shadows, no floor, no extra characters, no UI, no panel borders.\nThe background must be one uniform #00ff00 color with no gradient, texture, lighting variation, floor plane, reflection, or shadow.\nAvoid #00ff00 anywhere on the character or weapon.",
+        "reference_images": [
+          "../../video_understandings/understanding_p1_1778848844014_853b3ca4/analysis_frames/frame_04.jpg",
+          "../../video_understandings/understanding_p1_1778848844014_853b3ca4/analysis_frames/frame_05.jpg"
+        ],
+        "draw": {
+          "name": "draw_image",
+          "mode": "right_codes_draw",
+          "status": "ok",
+          "visual_mode": "faithful",
+          "base_url": "https://right.codes/draw",
+          "model": "gpt-image-2",
+          "response_kind": "url",
+          "attempts": 1,
+          "reference_image_count": 2,
+          "output": "p2_sprite_sheet_raw.png"
+        },
+        "postprocess": {
+          "status": "ok",
+          "sheet_size": [
+            1536,
+            1536
+          ],
+          "frame_size": {
+            "width": 512,
+            "height": 512
+          },
+          "layout": [
+            3,
+            3
+          ],
+          "alpha": {
+            "transparent_ratio": 0.8077,
+            "opaque_ratio": 0.1923
+          },
+          "frames": [
+            {
+              "name": "idle_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2/idle_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                175,
+                48,
+                336,
+                492
+              ],
+              "cleanup": {
+                "component_count": 6,
+                "kept_count": 1,
+                "rejected_count": 5,
+                "main_bbox": [
+                  160,
+                  40,
+                  321,
+                  484
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  175,
+                  48,
+                  336,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  0,
+                  512,
+                  512
+                ],
+                "expanded_box": [
+                  0,
+                  0,
+                  583,
+                  583
+                ]
+              }
+            },
+            {
+              "name": "idle_1",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2/idle_1.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                153,
+                46,
+                358,
+                492
+              ],
+              "cleanup": {
+                "component_count": 7,
+                "kept_count": 1,
+                "rejected_count": 6,
+                "main_bbox": [
+                  180,
+                  39,
+                  385,
+                  485
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  153,
+                  46,
+                  358,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  0,
+                  1024,
+                  512
+                ],
+                "expanded_box": [
+                  441,
+                  0,
+                  1095,
+                  583
+                ]
+              }
+            },
+            {
+              "name": "run_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2/run_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                91,
+                51,
+                421,
+                492
+              ],
+              "cleanup": {
+                "component_count": 3,
+                "kept_count": 1,
+                "rejected_count": 2,
+                "main_bbox": [
+                  137,
+                  50,
+                  467,
+                  491
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  91,
+                  51,
+                  421,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  0,
+                  1536,
+                  512
+                ],
+                "expanded_box": [
+                  953,
+                  0,
+                  1536,
+                  583
+                ]
+              }
+            },
+            {
+              "name": "run_1",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2/run_1.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                81,
+                74,
+                430,
+                492
+              ],
+              "cleanup": {
+                "component_count": 10,
+                "kept_count": 1,
+                "rejected_count": 9,
+                "main_bbox": [
+                  85,
+                  116,
+                  434,
+                  534
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  81,
+                  74,
+                  430,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  512,
+                  512,
+                  1024
+                ],
+                "expanded_box": [
+                  0,
+                  441,
+                  583,
+                  1095
+                ]
+              }
+            },
+            {
+              "name": "run_2",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2/run_2.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                67,
+                61,
+                444,
+                492
+              ],
+              "cleanup": {
+                "component_count": 12,
+                "kept_count": 1,
+                "rejected_count": 11,
+                "main_bbox": [
+                  112,
+                  107,
+                  489,
+                  538
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  67,
+                  61,
+                  444,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  512,
+                  1024,
+                  1024
+                ],
+                "expanded_box": [
+                  441,
+                  441,
+                  1095,
+                  1095
+                ]
+              }
+            },
+            {
+              "name": "run_3",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2/run_3.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                77,
+                66,
+                435,
+                492
+              ],
+              "cleanup": {
+                "component_count": 10,
+                "kept_count": 1,
+                "rejected_count": 9,
+                "main_bbox": [
+                  94,
+                  111,
+                  452,
+                  537
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  77,
+                  66,
+                  435,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  512,
+                  1536,
+                  1024
+                ],
+                "expanded_box": [
+                  953,
+                  441,
+                  1536,
+                  1095
+                ]
+              }
+            },
+            {
+              "name": "jump_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2/jump_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                130,
+                39,
+                381,
+                492
+              ],
+              "cleanup": {
+                "component_count": 6,
+                "kept_count": 1,
+                "rejected_count": 5,
+                "main_bbox": [
+                  132,
+                  76,
+                  383,
+                  529
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  130,
+                  39,
+                  381,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  1024,
+                  512,
+                  1536
+                ],
+                "expanded_box": [
+                  0,
+                  953,
+                  583,
+                  1536
+                ]
+              }
+            },
+            {
+              "name": "fall_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2/fall_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                59,
+                136,
+                453,
+                492
+              ],
+              "cleanup": {
+                "component_count": 10,
+                "kept_count": 1,
+                "rejected_count": 9,
+                "main_bbox": [
+                  100,
+                  165,
+                  494,
+                  521
+                ],
+                "main_cell_ratio": 1,
+                "alpha_bbox": [
+                  59,
+                  136,
+                  453,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  1024,
+                  1024,
+                  1536
+                ],
+                "expanded_box": [
+                  441,
+                  953,
+                  1095,
+                  1536
+                ]
+              }
+            },
+            {
+              "name": "attack_0",
+              "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2/attack_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                15,
+                85,
+                497,
+                495
+              ],
+              "cleanup": {
+                "component_count": 11,
+                "kept_count": 3,
+                "rejected_count": 8,
+                "main_bbox": [
+                  44,
+                  93,
+                  552,
+                  535
+                ],
+                "main_cell_ratio": 0.9852,
+                "alpha_bbox": [
+                  15,
+                  85,
+                  497,
+                  495
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  1024,
+                  1536,
+                  1536
+                ],
+                "expanded_box": [
+                  953,
+                  953,
+                  1536,
+                  1536
+                ]
+              }
+            }
+          ]
+        },
+        "animation_manifest": "p2_animation_manifest.json",
+        "projectile": {
+          "prompt": "Create a 1x4 sprite sheet for a small 2D game projectile on a perfectly flat solid #00ff00 chroma-key background.\nVisual target: game-ready projectile frames that match the source video's own visual medium, detail density, line weight, color palette, and rendering style; not abstract, not a placeholder.\nUse the attached source-video keyframes as visual references for style, color, outline, and detail level. Do not beautify, polish, upscale, or add detail beyond the source evidence.\nThe reference keyframes may contain characters or background elements; use them only for style and weapon/projectile evidence. Do not include characters or background in the projectile sheet.\nFaithful mode: use the video-derived weapon/projectile as the primary visual reference and keep it recognizable as much as the image model permits.\nProjectile type: 橙色瓶盖飞盘和一串发光橙汽泡泡，泡泡像小型弹珠一样沿弧线飞出，命中后炸成橙色泡沫和糖浆光斑。\nOwner character: 橙味汽水男性. Match the same style and color logic as: 成年男性拟人橙味汽水瓶3D角色，身体与头部呈橙色半透明液体质感，透明塑料瓶轮廓包裹头顶，顶部有橙色瓶盖，脸部表情焦虑又善良；穿橙色运动背心，胸前有类似Fanta的醒目饮料标志，搭配橙色短裤、白色长袜和拖鞋。战斗时像在雨夜街道奔跑，身体带汽水气泡和橙色高光，姿态灵活、闪躲、冲刺。；性格/战斗气质：逃避后又想弥补的敏捷型斗士，表面慌张，战斗中靠冲刺、汽水喷射和橙味泡泡进行扰乱。。\nOwner source form constraints: entity_type=3D拟人饮料瓶模型; body_plan=双足人形，瓶状头部与人形躯干结合，有双臂双腿，头顶保留瓶口和瓶盖; proportions=成年男性但更运动休闲，头部瓶盖较大，身体修长，四肢圆润，不是写实肌肉男; silhouette=橙色瓶盖和透明瓶口在头顶突出，橙色背心和白袜拖鞋形成休闲奔跑者轮廓，身体内有汽水气泡; surface_material=橙色半透明汽水液体和塑料瓶表面，服装为简化布料材质，整体光滑反光; detail_density=中等；保留饮料标识、汽水气泡、瓶盖、背心短裤袜子拖鞋，不应添加复杂纹身、武装护具或大量真实皮肤细节; rendering_style=与源视频一致的圆润3D动画短片渲染，暖色灯光、湿润街道反光、夸张面部表情; motion_style=奔跑、急停、抛掷、冲刺撞击，带慌张和弥补式的快速动作; must_keep=橙色半透明汽水身体, 橙色瓶盖, 橙色背心, Fanta风格胸前标识, 白色长袜, 拖鞋, 气泡质感; must_not_change=不要改成普通真人运动员, 不要去掉瓶盖和饮料瓶头部, 不要把橙色汽水材质改成火焰怪物, 不要改成二次元平面角色, 不要添加硬核枪械或写实暴力装备\nWeapon context: 橙汽泡泡瓶盖弹：使用自己的橙色瓶盖和汽水压力作战：近战时用瓶盖当盾牌或飞盘边缘劈砍，远程时拧开瓶口喷射橙色汽水泡沫，形成短距离水柱冲击。\nShared art direction: 保持源视频的竖屏3D动画短片质感：圆润塑料/液体材质、半透明饮料身体、明显瓶盖和瓶口、柔和灯光、高饱和饮料颜色、夸张但不复杂的面部表情。动作帧可以更有战斗姿态，但不能脱离原本商业动画式柔和渲染和中等细节密度。\nFour equal cells, one projectile per cell, facing right or moving right.\nLeave a clean #00ff00 safety gutter around every cell. No trail, sparks, shards, glow, or motion smear may cross into a neighboring cell.\nFrame order left-to-right: launch shape, flying rotation 1, flying rotation 2, looping flying shape.\nCentered composition in each cell, crisp edges, readable silhouette, consistent scale and colors.\nIf the projectile is magic or energy, make it a clearly designed object/effect from the video-derived idea, not a simple colored ball.\nDo not include character, hand, ground, explosion, impact feedback, text, label, watermark, shadow, or floor.\nThe background must be one uniform #00ff00 color with no gradient, texture, lighting variation, floor plane, reflection, or shadow.\nAvoid #00ff00 anywhere in the projectile.",
+          "reference_images": [
+            "../../video_understandings/understanding_p1_1778848844014_853b3ca4/analysis_frames/frame_04.jpg",
+            "../../video_understandings/understanding_p1_1778848844014_853b3ca4/analysis_frames/frame_05.jpg"
+          ],
+          "draw": {
+            "name": "draw_image",
+            "mode": "right_codes_draw",
+            "status": "ok",
+            "visual_mode": "faithful",
+            "base_url": "https://right.codes/draw",
+            "model": "gpt-image-2",
+            "response_kind": "url",
+            "attempts": 1,
+            "reference_image_count": 2,
+            "output": "p2_projectile_sheet_raw.png"
+          },
+          "postprocess": {
+            "status": "ok",
+            "sheet_size": [
+              1024,
+              256
+            ],
+            "frame_size": {
+              "width": 256,
+              "height": 256
+            },
+            "layout": [
+              4,
+              1
+            ],
+            "alpha": {
+              "transparent_ratio": 0.9006,
+              "opaque_ratio": 0.0994
+            },
+            "frames": [
+              {
+                "name": "projectile_0",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2_projectile/projectile_0.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  35,
+                  96,
+                  221,
+                  160
+                ],
+                "cleanup": {
+                  "component_count": 3,
+                  "kept_count": 3,
+                  "rejected_count": 0,
+                  "main_bbox": [
+                    60,
+                    96,
+                    203,
+                    160
+                  ],
+                  "main_cell_ratio": 1,
+                  "alpha_bbox": [
+                    35,
+                    96,
+                    221,
+                    160
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    0,
+                    0,
+                    256,
+                    256
+                  ],
+                  "expanded_box": [
+                    0,
+                    0,
+                    291,
+                    256
+                  ]
+                }
+              },
+              {
+                "name": "projectile_1",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2_projectile/projectile_1.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  39,
+                  94,
+                  217,
+                  162
+                ],
+                "cleanup": {
+                  "component_count": 5,
+                  "kept_count": 1,
+                  "rejected_count": 4,
+                  "main_bbox": [
+                    73,
+                    94,
+                    251,
+                    162
+                  ],
+                  "main_cell_ratio": 1,
+                  "alpha_bbox": [
+                    39,
+                    94,
+                    217,
+                    162
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    256,
+                    0,
+                    512,
+                    256
+                  ],
+                  "expanded_box": [
+                    221,
+                    0,
+                    547,
+                    256
+                  ]
+                }
+              },
+              {
+                "name": "projectile_2",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2_projectile/projectile_2.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  43,
+                  93,
+                  213,
+                  162
+                ],
+                "cleanup": {
+                  "component_count": 2,
+                  "kept_count": 1,
+                  "rejected_count": 1,
+                  "main_bbox": [
+                    36,
+                    93,
+                    206,
+                    162
+                  ],
+                  "main_cell_ratio": 1,
+                  "alpha_bbox": [
+                    43,
+                    93,
+                    213,
+                    162
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    512,
+                    0,
+                    768,
+                    256
+                  ],
+                  "expanded_box": [
+                    477,
+                    0,
+                    803,
+                    256
+                  ]
+                }
+              },
+              {
+                "name": "projectile_3",
+                "path": "../../../../../../�ֹ��ļ�/01_����_��Ƶ�������ز�����/������/����Ϸͬѧ_��Ƶת�����ʲ���/theme_packs/fullrun_xingqing_skilltaunt_real_20260607_023131/frames/p2_projectile/projectile_3.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  36,
+                  93,
+                  219,
+                  162
+                ],
+                "cleanup": {
+                  "component_count": 1,
+                  "kept_count": 1,
+                  "rejected_count": 0,
+                  "main_bbox": [
+                    45,
+                    93,
+                    228,
+                    162
+                  ],
+                  "main_cell_ratio": 1,
+                  "alpha_bbox": [
+                    36,
+                    93,
+                    219,
+                    162
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    768,
+                    0,
+                    1024,
+                    256
+                  ],
+                  "expanded_box": [
+                    733,
+                    0,
+                    1024,
+                    256
+                  ]
+                }
+              }
+            ]
+          },
+          "static": "assets/p2_projectile.png",
+          "sheet": "assets/p2_projectile_sheet.png",
+          "manifest": "p2_projectile_manifest.json",
+          "frames_dir": "frames/p2_projectile"
+        }
+      }
+    ]
+  },
+  "warnings": []
+}

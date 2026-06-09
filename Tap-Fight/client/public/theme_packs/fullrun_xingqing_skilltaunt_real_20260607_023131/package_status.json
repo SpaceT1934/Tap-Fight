@@ -1,0 +1,276 @@
+{
+  "contract_version": "0.1.0",
+  "theme_id": "fullrun_xingqing_skilltaunt_real_20260607_023131",
+  "generated_by": "video-pipeline",
+  "generated_at": "2026-06-06T18:35:33.106Z",
+  "validation": {
+    "status": "pass",
+    "can_load_in_game": true,
+    "errors": [],
+    "warnings": []
+  },
+  "files": {
+    "manifest": "manifest.json",
+    "analysis_report": "analysis_report.json",
+    "assets": [
+      {
+        "path": "assets/background.png",
+        "required": false,
+        "exists": true,
+        "fallback": "solid_color"
+      },
+      {
+        "path": "assets/p1_body.png",
+        "required": false,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "assets/p1_head.png",
+        "required": false,
+        "exists": true,
+        "fallback": "whitebox_head"
+      },
+      {
+        "path": "assets/p1_melee_prop.png",
+        "required": false,
+        "exists": true,
+        "fallback": "default_stick"
+      },
+      {
+        "path": "assets/p2_body.png",
+        "required": false,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "assets/p2_head.png",
+        "required": false,
+        "exists": true,
+        "fallback": "whitebox_head"
+      },
+      {
+        "path": "assets/p2_projectile.png",
+        "required": false,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "assets/taunt_bubble.png",
+        "required": false,
+        "exists": true,
+        "fallback": "default_taunt_bubble"
+      },
+      {
+        "path": "assets/p1_sprite_sheet.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "assets/p2_sprite_sheet.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "p1_animation_manifest.json",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "p2_animation_manifest.json",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p1/idle_0.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p1/idle_1.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p1/run_0.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p1/run_1.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p1/run_2.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p1/run_3.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p1/jump_0.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p1/fall_0.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p1/attack_0.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p2/idle_0.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p2/idle_1.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p2/run_0.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p2/run_1.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p2/run_2.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p2/run_3.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p2/jump_0.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p2/fall_0.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "frames/p2/attack_0.png",
+        "required": true,
+        "exists": true,
+        "fallback": "whitebox_body"
+      },
+      {
+        "path": "assets/p1_projectile.png",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "assets/p1_projectile_sheet.png",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "p1_projectile_manifest.json",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "frames/p1_projectile/projectile_0.png",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "frames/p1_projectile/projectile_1.png",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "frames/p1_projectile/projectile_2.png",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "frames/p1_projectile/projectile_3.png",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "assets/p2_projectile_sheet.png",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "p2_projectile_manifest.json",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "frames/p2_projectile/projectile_0.png",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "frames/p2_projectile/projectile_1.png",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "frames/p2_projectile/projectile_2.png",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      },
+      {
+        "path": "frames/p2_projectile/projectile_3.png",
+        "required": true,
+        "exists": true,
+        "fallback": "default_ball"
+      }
+    ]
+  }
+}

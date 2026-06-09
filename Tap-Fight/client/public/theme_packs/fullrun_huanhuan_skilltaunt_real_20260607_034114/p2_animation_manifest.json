@@ -1,0 +1,84 @@
+{
+  "character_id": "p2_fullrun_huanhuan_skilltaunt_real_20260607_034114",
+  "display_name": "嬛嬛/甄嬛",
+  "role": "ranged",
+  "source_sheet": "assets/p2_sprite_sheet.png",
+  "frame_size": {
+    "width": 512,
+    "height": 512
+  },
+  "render_origin": {
+    "mode": "bottom_center",
+    "normalized": {
+      "x": 0.5,
+      "y": 0.98
+    },
+    "note": "Use this pivot as the character feet anchor. Frames are fixed-size and pre-centered by the asset pipeline."
+  },
+  "layout": {
+    "columns": 3,
+    "rows": 3,
+    "order": [
+      "idle_0",
+      "idle_1",
+      "run_0",
+      "run_1",
+      "run_2",
+      "run_3",
+      "jump_0",
+      "fall_0",
+      "attack_0"
+    ]
+  },
+  "animations": {
+    "idle": {
+      "frames": [
+        "frames/p2/idle_0.png",
+        "frames/p2/idle_1.png"
+      ],
+      "fps": 3,
+      "loop": true
+    },
+    "run": {
+      "frames": [
+        "frames/p2/run_0.png",
+        "frames/p2/run_1.png",
+        "frames/p2/run_2.png",
+        "frames/p2/run_3.png"
+      ],
+      "fps": 10,
+      "loop": true
+    },
+    "jump": {
+      "frames": [
+        "frames/p2/jump_0.png"
+      ],
+      "fps": 1,
+      "loop": false
+    },
+    "fall": {
+      "frames": [
+        "frames/p2/fall_0.png"
+      ],
+      "fps": 1,
+      "loop": false
+    },
+    "attack": {
+      "frames": [
+        "frames/p2/attack_0.png"
+      ],
+      "fps": 1,
+      "loop": false
+    }
+  },
+  "projectile": {
+    "static": "assets/p2_projectile.png",
+    "manifest": "p2_projectile_manifest.json"
+  },
+  "generation_notes": {
+    "original_role_type": "hybrid",
+    "original_attack_type": "hybrid",
+    "weapon_source": "absurd_creative",
+    "creativity_level": "absurd"
+  }
+}

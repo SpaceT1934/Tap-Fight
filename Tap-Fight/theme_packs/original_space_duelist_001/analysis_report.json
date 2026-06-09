@@ -1,0 +1,47 @@
+{
+  "theme_id": "original_space_duelist_001",
+  "input": {
+    "type": "generated_mock",
+    "title": "原创星际剑士训练场"
+  },
+  "transcript_candidates": [
+    "感受原力"
+  ],
+  "entity_candidates": [
+    {
+      "name": "星际剑士",
+      "confidence": 0.9,
+      "evidence": [
+        "蓝色能量剑",
+        "浅色长袍",
+        "英雄式正面角色图"
+      ]
+    },
+    {
+      "name": "暗影训练者",
+      "confidence": 0.9,
+      "evidence": [
+        "红色发光元素",
+        "深色装甲",
+        "训练球投射物"
+      ]
+    }
+  ],
+  "prop_candidates": [
+    {
+      "name": "蓝色能量剑",
+      "type": "melee_prop",
+      "confidence": 0.9
+    },
+    {
+      "name": "红色训练球",
+      "type": "projectile",
+      "confidence": 0.9
+    }
+  ],
+  "llm_decision": {
+    "p1": "星际剑士",
+    "p2": "暗影训练者",
+    "reason": "一方持有清晰近战武器，另一方有可作为远程投射物的训练球，符合当前一近战一远程的白模规则。"
+  }
+}

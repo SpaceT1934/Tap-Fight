@@ -1,0 +1,163 @@
+{
+  "contract_version": "0.1.0",
+  "theme_id": "fullrun_huaqiang_skilltaunt_real_20260607_021613",
+  "display_name": "黑衣买瓜男 vs 水果摊主",
+  "source": {
+    "type": "video_ai_animation",
+    "source_id": "../视频源素材/有一个人前来买瓜(原视频) P1 有一个人前来买瓜(原视频).mp4",
+    "rights_mode": "mock_or_authorized"
+  },
+  "environment": {
+    "name": "2000年前后中国城市街边水果摊，现实生活剧环境，摊位、居民楼、面包车、自行车和行人构成市井街头舞台。",
+    "theme_color": "#965abd",
+    "accent_color": "#604d78",
+    "background": "background.png",
+    "fallback": "solid_color"
+  },
+  "players": {
+    "p1": {
+      "name": "黑衣买瓜男",
+      "role": "melee",
+      "body": "assets/p1_body.png",
+      "head": "assets/p1_head.png",
+      "melee_prop": "assets/p1_melee_prop.png",
+      "projectile": null,
+      "attack_prop_name": "保熟西瓜拍",
+      "placeholder_color": "#965abd",
+      "fallback": {
+        "body": "whitebox_body",
+        "head": "whitebox_head",
+        "melee_prop": "default_stick"
+      },
+      "confidence": 0.8,
+      "sprite_sheet": "assets/p1_sprite_sheet.png",
+      "animation_manifest": "animation_preview/p1_animation_manifest.json",
+      "projectile_animation": {
+        "static": "assets/p1_projectile.png",
+        "sheet": "assets/p1_projectile_sheet.png",
+        "manifest": "p1_projectile_manifest.json"
+      },
+      "original_role_type": "hybrid",
+      "original_attack_type": "hybrid",
+      "weapon_source": "derived_from_scene",
+      "creativity_level": "stylized",
+      "skill_taunt": {
+        "text": "这瓜保熟吗",
+        "source": "dialogue_or_subtitle",
+        "speaker": "黑衣买瓜男",
+        "evidence_frames": [
+          "analysis_frames/frame_03.jpg"
+        ],
+        "reason": "字幕明确出现“我问你这瓜保熟吗”，画面中黑衣买瓜男正展开手臂质问，符合其主动挑衅的标志性台词。",
+        "confidence": 0.95,
+        "fallback_text": "嘿！"
+      },
+      "accent_color": "#604d78",
+      "character_id": "p1_fullrun_huaqiang_skilltaunt_real_20260607_021613"
+    },
+    "p2": {
+      "name": "水果摊主",
+      "role": "ranged",
+      "body": "assets/p2_body.png",
+      "head": "assets/p2_head.png",
+      "melee_prop": null,
+      "projectile": "assets/p2_projectile.png",
+      "attack_prop_name": "瓜摊香蕉连枷",
+      "placeholder_color": "#604d78",
+      "fallback": {
+        "body": "whitebox_body",
+        "head": "whitebox_head",
+        "projectile": "default_ball"
+      },
+      "confidence": 0.8,
+      "sprite_sheet": "assets/p2_sprite_sheet.png",
+      "animation_manifest": "animation_preview/p2_animation_manifest.json",
+      "projectile_animation": {
+        "static": "assets/p2_projectile.png",
+        "sheet": "assets/p2_projectile_sheet.png",
+        "manifest": "p2_projectile_manifest.json"
+      },
+      "original_role_type": "hybrid",
+      "original_attack_type": "hybrid",
+      "weapon_source": "derived_from_scene",
+      "creativity_level": "stylized",
+      "skill_taunt": {
+        "text": "故意找茬儿是不是",
+        "source": "dialogue_or_subtitle",
+        "speaker": "水果摊主",
+        "evidence_frames": [
+          "analysis_frames/frame_05.jpg"
+        ],
+        "reason": "字幕“你故意找茬儿是不是 你要不要吧”出现在水果摊主站立质问黑衣买瓜男的对峙画面中，语气符合摊主反击。",
+        "confidence": 0.9,
+        "fallback_text": "哼！"
+      },
+      "accent_color": "#965abd",
+      "character_id": "p2_fullrun_huaqiang_skilltaunt_real_20260607_021613"
+    }
+  },
+  "taunt": {
+    "text": "你这瓜保熟吗？",
+    "stun_ms": 700,
+    "cooldown_ms": 12000,
+    "bubble": "assets/taunt_bubble.png",
+    "fallback_text": "看招",
+    "confidence": 0.96,
+    "player_taunts": {
+      "p1": {
+        "text": "这瓜保熟吗",
+        "source": "dialogue_or_subtitle",
+        "speaker": "黑衣买瓜男",
+        "evidence_frames": [
+          "analysis_frames/frame_03.jpg"
+        ],
+        "reason": "字幕明确出现“我问你这瓜保熟吗”，画面中黑衣买瓜男正展开手臂质问，符合其主动挑衅的标志性台词。",
+        "confidence": 0.95,
+        "fallback_text": "嘿！"
+      },
+      "p2": {
+        "text": "故意找茬儿是不是",
+        "source": "dialogue_or_subtitle",
+        "speaker": "水果摊主",
+        "evidence_frames": [
+          "analysis_frames/frame_05.jpg"
+        ],
+        "reason": "字幕“你故意找茬儿是不是 你要不要吧”出现在水果摊主站立质问黑衣买瓜男的对峙画面中，语气符合摊主反击。",
+        "confidence": 0.9,
+        "fallback_text": "哼！"
+      }
+    }
+  },
+  "animation_package": {
+    "version": "animation_theme.v0.1",
+    "frame_order": [
+      "idle_0",
+      "idle_1",
+      "run_0",
+      "run_1",
+      "run_2",
+      "run_3",
+      "jump_0",
+      "fall_0",
+      "attack_0"
+    ],
+    "projectile_frame_order": [
+      "projectile_0",
+      "projectile_1",
+      "projectile_2",
+      "projectile_3"
+    ],
+    "notes": "Extra animation fields are additive; core ThemeAssetPackage v0.1 fields remain compatible."
+  },
+  "analysis": {
+    "relationship": "买瓜顾客与水果摊主之间的街头买卖冲突。",
+    "combat_mapping_reason": "两人围绕西瓜质量和态度正面对峙，台词一问一怼，画面中位置关系清晰，角色外观对比明显：黑衣冷面买家对上壮实嘴硬摊主，天然适合改造成1v1对抗。",
+    "overall_confidence": 0.94
+  },
+  "projectile": "animation_preview/frames/p2_projectile/projectile_0.png",
+  "tap_fight_adapter": {
+    "version": "tap_fight_adapter.v0.1",
+    "animation_preview": "animation_preview",
+    "notes": "Additive compatibility fields for Tap-Fight's current Canvas loader."
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "generation_brief.v0.1",
+  "generated_by": "video-pipeline",
+  "generated_at": "2026-06-06T10:48:54.824Z",
+  "source_understanding": "video_understanding.json",
+  "source_video": "视频源素材/甄嬛.mp4",
+  "status": {
+    "video_understanding_ready": true,
+    "nine_frame_generation": "pending_user_frame_spec",
+    "image_generation_started": false
+  },
+  "image_generation_channel": {
+    "endpoint": "https://right.codes/draw",
+    "candidate_models": [
+      "gpt-image-2-vip",
+      "gpt-image-2",
+      "nano-banana",
+      "nano-banana-2",
+      "nano-banana-pro"
+    ],
+    "note": "本阶段只产出生成说明，不调用画图模型。"
+  },
+  "shared_style": {
+    "world": "魔改清朝后宫格斗宇宙",
+    "art_direction": "华丽的东方古典宫廷风与硬核格斗游戏结合，高饱和度的丝绸质感，夸张的动作张力。",
+    "character_consistency": "清朝旗装（高领、宽袖）、大拉翅旗头（花朵与流苏装饰）、花盆底鞋必须保留。",
+    "color_notes": "祺贵人以粉色为主，代表狂躁与轻浮；甄嬛以浅绿色为主，搭配红唇，代表冷酷与深沉。环境色为暗红与木质深棕色，辅以金色的道具点缀。",
+    "generation_prompt_base": "1v1 fighting game concept art, Qing dynasty court setting, two Chinese concubines fighting, one in pink traditional dress casting lightning magic, the other in green dress with sharp golden finger guards, highly detailed, dynamic combat poses, dramatic lighting, oriental palace background."
+  },
+  "conflict": {
+    "relationship": "后宫中势不两立的死敌",
+    "reason": "视频展示了经典的宫斗指控场景，一方情绪失控发下毒誓，另一方冷酷无情地进行心理防守与反击。这种极端的张力非常适合转化为物理层面的 1v1 格斗。",
+    "tone": "严肃的宫廷斗争与荒诞的格斗技能相结合的吐槽热血风"
+  },
+  "taunt": {
+    "text": "生死之事，谁又能知啊？",
+    "source": "dialogue_or_subtitle",
+    "confidence": 0.99
+  },
+  "characters": [
+    {
+      "id": "p1",
+      "name": "祺贵人",
+      "archetype_name": "The Hysterical Accuser",
+      "role_type": "ranged",
+      "visual_prompt": "穿着华丽的粉色清朝宫廷旗装，头戴装饰着繁复花朵和珍珠流苏的旗头。她的双眼圆睁，表情处于极度愤怒和狂躁的边缘，姿态具有强烈的向前压迫感。；性格/战斗气质：歇斯底里，不顾一切的疯狂攻击者。",
+      "weapon_prompt": "五雷轰顶符咒：手中捏着闪烁着紫色雷电光芒的道家符咒，或者直接召唤微型乌云。",
+      "projectile_prompt": "掷出后化作一道微型的闪电劈向对手，或者扔出带有雷电特效的毒誓卷轴。",
+      "weapon_source": "absurd_creative",
+      "creativity_level": "absurd",
+      "attack_type": "throw",
+      "evidence_frames": [
+        "analysis_frames/frame_03.jpg"
+      ],
+      "prompt_seed": "1v1 fighting game concept art, Qing dynasty court setting, two Chinese concubines fighting, one in pink traditional dress casting lightning magic, the other in green dress with sharp golden finger guards, highly detailed, dynamic combat poses, dramatic lighting, oriental palace background.; 穿着华丽的粉色清朝宫廷旗装，头戴装饰着繁复花朵和珍珠流苏的旗头。她的双眼圆睁，表情处于极度愤怒和狂躁的边缘，姿态具有强烈的向前压迫感。; 手中捏着闪烁着紫色雷电光芒的道家符咒，或者直接召唤微型乌云。; 掷出后化作一道微型的闪电劈向对手，或者扔出带有雷电特效的毒誓卷轴。"
+    },
+    {
+      "id": "p2",
+      "name": "甄嬛",
+      "archetype_name": "The Cold Empress",
+      "role_type": "melee",
+      "visual_prompt": "穿着浅绿色清朝宫廷旗装，头戴装饰有紫色大花朵的旗头。红唇紧闭，眼神轻蔑且冷酷，站姿端庄但散发着强大的威压感。双手佩戴着尖锐的纯金长指甲套。；性格/战斗气质：冷酷、沉稳、招招致命的防守反击者。",
+      "weapon_prompt": "纯金护甲（长指甲套）：佩戴在双手多根手指上的尖锐纯金长指甲套，犹如金刚狼的利爪，挥舞时带有金色的划痕特效。",
+      "projectile_prompt": "",
+      "weapon_source": "observed_from_video",
+      "creativity_level": "stylized",
+      "attack_type": "swing",
+      "evidence_frames": [
+        "analysis_frames/frame_01.jpg",
+        "analysis_frames/frame_04.jpg",
+        "analysis_frames/frame_05.jpg"
+      ],
+      "prompt_seed": "1v1 fighting game concept art, Qing dynasty court setting, two Chinese concubines fighting, one in pink traditional dress casting lightning magic, the other in green dress with sharp golden finger guards, highly detailed, dynamic combat poses, dramatic lighting, oriental palace background.; 穿着浅绿色清朝宫廷旗装，头戴装饰有紫色大花朵的旗头。红唇紧闭，眼神轻蔑且冷酷，站姿端庄但散发着强大的威压感。双手佩戴着尖锐的纯金长指甲套。; 佩戴在双手多根手指上的尖锐纯金长指甲套，犹如金刚狼的利爪，挥舞时带有金色的划痕特效。"
+    }
+  ],
+  "constraints": [
+    "后续九帧生成时保持同一角色服饰、体型、发型和武器一致。",
+    "角色素材优先透明背景，动作轮廓清楚，适配小游戏白模验证。",
+    "不要把武器 source=derived_from_scene 或 absurd_creative 误标为视频真实出现。"
+  ]
+}

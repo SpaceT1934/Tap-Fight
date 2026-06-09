@@ -1,0 +1,212 @@
+{
+  "schema_version": "video_understanding.v0.1",
+  "generated_by": "video-pipeline",
+  "generated_at": "2026-06-06T10:48:54.820Z",
+  "understanding_id": "understanding_video_5f1f2057",
+  "source_video": "视频源素材/甄嬛.mp4",
+  "video": {
+    "file_name": "甄嬛.mp4",
+    "size_bytes": 6399090,
+    "sha1": "5f1f205780b822b59ae74e93d0e61959b54461e8",
+    "metadata": {
+      "duration_s": 33.247,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "size_bytes": 6399090,
+      "bitrate": 1539769,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 29.959
+      },
+      "audio": {
+        "codec": "aac",
+        "sample_rate": 44100,
+        "channels": 2
+      }
+    }
+  },
+  "extracted_keyframes": [
+    "analysis_frames/frame_01.jpg",
+    "analysis_frames/frame_02.jpg",
+    "analysis_frames/frame_03.jpg",
+    "analysis_frames/frame_04.jpg",
+    "analysis_frames/frame_05.jpg",
+    "analysis_frames/frame_06.jpg"
+  ],
+  "sidecar_text_sources": [],
+  "pipeline_steps": [
+    {
+      "name": "extract_video_metadata",
+      "mode": "ffprobe",
+      "status": "ok"
+    },
+    {
+      "name": "extract_keyframes",
+      "mode": "ffmpeg",
+      "status": "ok",
+      "count": 6
+    },
+    {
+      "name": "video_understanding_decision",
+      "provider": "gemini",
+      "mode": "llm_vlm",
+      "status": "ok",
+      "base_url": "https://right.codes/gemini",
+      "model": "gemini-3.1-pro-preview"
+    }
+  ],
+  "warnings": [],
+  "video_summary": "清朝后宫中，祺贵人情绪激动地发毒誓指控，甄嬛则以冷酷淡定的态度予以回击，两人展开激烈的言语交锋。",
+  "observed_from_video": {
+    "scene": "清朝宫廷室内，布置有精美的木制家具、地毯、香炉，桌上放有盖碗茶杯，妃嫔们分坐两旁。",
+    "visual_style": "中国清代宫廷古装剧风格，服饰色彩鲜艳，头饰华丽，具有强烈的东方古典戏剧感。",
+    "visible_characters": [
+      {
+        "name": "祺贵人",
+        "visual_description": "身穿粉色清朝宫廷旗装，领口有白色围脖，头戴黑色大拉翅，装饰有鲜艳的绢花和珍珠流苏，表情愤怒、激动。",
+        "personality": "狂躁、歇斯底里、攻击性极强",
+        "evidence_frames": [
+          "analysis_frames/frame_03.jpg",
+          "analysis_frames/frame_06.jpg"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "name": "甄嬛",
+        "visual_description": "身穿浅绿色清朝宫廷旗装，头戴黑色大拉翅，装饰有紫色绢花和精致的珠翠，涂有鲜艳的红唇，表情冷酷、轻蔑、不屑。",
+        "personality": "沉稳、腹黑、冷酷无情",
+        "evidence_frames": [
+          "analysis_frames/frame_04.jpg",
+          "analysis_frames/frame_05.jpg"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "name": "皇后",
+        "visual_description": "身穿橙金色华丽旗装，头戴极其繁复的金色凤冠，端坐在中央主位，表情威严。",
+        "personality": "威严、掌控全局",
+        "evidence_frames": [
+          "analysis_frames/frame_02.jpg"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "visible_props": [
+      {
+        "name": "纯金长指甲套（护甲）",
+        "owner": "unknown",
+        "evidence_frames": [
+          "analysis_frames/frame_01.jpg"
+        ],
+        "confidence": 0.99
+      },
+      {
+        "name": "盖碗茶杯",
+        "owner": "unknown",
+        "evidence_frames": [
+          "analysis_frames/frame_01.jpg",
+          "analysis_frames/frame_06.jpg"
+        ],
+        "confidence": 0.99
+      },
+      {
+        "name": "拂尘",
+        "owner": "太监",
+        "evidence_frames": [
+          "analysis_frames/frame_02.jpg"
+        ],
+        "confidence": 0.95
+      }
+    ],
+    "dialogue_or_subtitle": [
+      "宫规森严 祺贵人不得信口雌黄",
+      "便叫五雷轰顶 永不超生",
+      "生死之事谁又能知啊"
+    ],
+    "uncertainties": [
+      "frame_01中戴着金色指甲套的手具体属于哪位角色无法从单帧确认（服装颜色与后续甄嬛、祺贵人不同），但该道具极具宫廷特色。"
+    ]
+  },
+  "creative_game_design": {
+    "fighters": [
+      {
+        "id": "p1",
+        "name": "祺贵人",
+        "archetype_name": "The Hysterical Accuser",
+        "role_type": "ranged",
+        "visual_description": "穿着华丽的粉色清朝宫廷旗装，头戴装饰着繁复花朵和珍珠流苏的旗头。她的双眼圆睁，表情处于极度愤怒和狂躁的边缘，姿态具有强烈的向前压迫感。",
+        "personality": "歇斯底里，不顾一切的疯狂攻击者",
+        "weapon": {
+          "name": "五雷轰顶符咒",
+          "attack_type": "throw",
+          "source": "absurd_creative",
+          "creativity_level": "absurd",
+          "description": "手中捏着闪烁着紫色雷电光芒的道家符咒，或者直接召唤微型乌云。",
+          "projectile_description": "掷出后化作一道微型的闪电劈向对手，或者扔出带有雷电特效的毒誓卷轴。",
+          "reason": "基于她台词中强烈的‘便叫五雷轰顶’的毒誓，将其具象化为魔法/远程攻击武器，增加格斗游戏的荒诞感和趣味性。",
+          "confidence": 0.9
+        },
+        "evidence": {
+          "frames": [
+            "analysis_frames/frame_03.jpg"
+          ],
+          "notes": [
+            "台词‘便叫五雷轰顶 永不超生’提供了完美的技能设计灵感。",
+            "激动的表情适合作为狂战士或法师类角色的施法前摇。"
+          ],
+          "confidence": 0.95
+        }
+      },
+      {
+        "id": "p2",
+        "name": "甄嬛",
+        "archetype_name": "The Cold Empress",
+        "role_type": "melee",
+        "visual_description": "穿着浅绿色清朝宫廷旗装，头戴装饰有紫色大花朵的旗头。红唇紧闭，眼神轻蔑且冷酷，站姿端庄但散发着强大的威压感。双手佩戴着尖锐的纯金长指甲套。",
+        "personality": "冷酷、沉稳、招招致命的防守反击者",
+        "weapon": {
+          "name": "纯金护甲（长指甲套）",
+          "attack_type": "swing",
+          "source": "observed_from_video",
+          "creativity_level": "stylized",
+          "description": "佩戴在双手多根手指上的尖锐纯金长指甲套，犹如金刚狼的利爪，挥舞时带有金色的划痕特效。",
+          "projectile_description": "",
+          "reason": "画面开头特写了这种极具清朝后宫特色的饰品，将其夸张化为近战利器，非常符合甄嬛冷酷、犀利的反击气质。",
+          "confidence": 0.95
+        },
+        "evidence": {
+          "frames": [
+            "analysis_frames/frame_01.jpg",
+            "analysis_frames/frame_04.jpg",
+            "analysis_frames/frame_05.jpg"
+          ],
+          "notes": [
+            "frame_01的指甲套特写提供了完美的近战武器原型。",
+            "甄嬛冷漠的表情与近战刺客/反击者的设定高度契合。"
+          ],
+          "confidence": 0.95
+        }
+      }
+    ],
+    "conflict": {
+      "relationship": "后宫中势不两立的死敌",
+      "reason": "视频展示了经典的宫斗指控场景，一方情绪失控发下毒誓，另一方冷酷无情地进行心理防守与反击。这种极端的张力非常适合转化为物理层面的 1v1 格斗。",
+      "tone": "严肃的宫廷斗争与荒诞的格斗技能相结合的吐槽热血风"
+    },
+    "taunt": {
+      "text": "生死之事，谁又能知啊？",
+      "source": "dialogue_or_subtitle",
+      "confidence": 0.99
+    },
+    "style_brief": {
+      "world": "魔改清朝后宫格斗宇宙",
+      "art_direction": "华丽的东方古典宫廷风与硬核格斗游戏结合，高饱和度的丝绸质感，夸张的动作张力。",
+      "character_consistency": "清朝旗装（高领、宽袖）、大拉翅旗头（花朵与流苏装饰）、花盆底鞋必须保留。",
+      "color_notes": "祺贵人以粉色为主，代表狂躁与轻浮；甄嬛以浅绿色为主，搭配红唇，代表冷酷与深沉。环境色为暗红与木质深棕色，辅以金色的道具点缀。",
+      "generation_prompt_base": "1v1 fighting game concept art, Qing dynasty court setting, two Chinese concubines fighting, one in pink traditional dress casting lightning magic, the other in green dress with sharp golden finger guards, highly detailed, dynamic combat poses, dramatic lighting, oriental palace background."
+    },
+    "confidence": 0.95,
+    "reason": "视频中的人物冲突极其明确，台词（五雷轰顶）和特写道具（指甲套）为格斗游戏的武器和技能设计提供了非常直接且富有创意的灵感来源。"
+  }
+}

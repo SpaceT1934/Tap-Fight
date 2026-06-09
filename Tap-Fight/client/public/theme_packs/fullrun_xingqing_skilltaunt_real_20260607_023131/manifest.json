@@ -1,0 +1,165 @@
+{
+  "contract_version": "0.1.0",
+  "theme_id": "fullrun_xingqing_skilltaunt_real_20260607_023131",
+  "display_name": "牛奶瓶医生 vs 橙味汽水男性",
+  "source": {
+    "type": "video_ai_animation",
+    "source_id": "../视频源素材/不要因一时的性情 决定一切 P1 1778848844014.mp4",
+    "rights_mode": "mock_or_authorized"
+  },
+  "environment": {
+    "name": "拟人饮料瓶家庭伦理动画世界，医院、客厅、雨夜街道等现实生活场景中生活着牛奶、水、可乐、橙汽水等半透明饮料瓶人。",
+    "theme_color": "#7e91bc",
+    "accent_color": "#7f8b4c",
+    "background": "background.png",
+    "fallback": "solid_color"
+  },
+  "players": {
+    "p1": {
+      "name": "牛奶瓶医生",
+      "role": "melee",
+      "body": "assets/p1_body.png",
+      "head": "assets/p1_head.png",
+      "melee_prop": "assets/p1_melee_prop.png",
+      "projectile": null,
+      "attack_prop_name": "甩动听诊器",
+      "placeholder_color": "#7e91bc",
+      "fallback": {
+        "body": "whitebox_body",
+        "head": "whitebox_head",
+        "melee_prop": "default_stick"
+      },
+      "confidence": 0.8,
+      "sprite_sheet": "assets/p1_sprite_sheet.png",
+      "animation_manifest": "animation_preview/p1_animation_manifest.json",
+      "projectile_animation": {
+        "static": "assets/p1_projectile.png",
+        "sheet": "assets/p1_projectile_sheet.png",
+        "manifest": "p1_projectile_manifest.json"
+      },
+      "original_role_type": "hybrid",
+      "original_attack_type": "hybrid",
+      "weapon_source": "observed_from_video",
+      "creativity_level": "stylized",
+      "skill_taunt": {
+        "text": "不能没爸爸！",
+        "source": "dialogue_or_subtitle",
+        "speaker": "牛奶瓶医生",
+        "evidence_frames": [
+          "analysis_frames/frame_01.jpg",
+          "analysis_frames/frame_03.jpg"
+        ],
+        "reason": "字幕“不能刚出生就没爸爸”出现在医院父亲身份冲突语境中，牛奶瓶医生正抱着婴儿并在后续愤怒握拳，适合作为他的长按攻击怒吼；说话者仍有一定不确定。",
+        "confidence": 0.72,
+        "fallback_text": "嘿！"
+      },
+      "accent_color": "#7f8b4c",
+      "character_id": "p1_fullrun_xingqing_skilltaunt_real_20260607_023131"
+    },
+    "p2": {
+      "name": "橙味汽水男性",
+      "role": "ranged",
+      "body": "assets/p2_body.png",
+      "head": "assets/p2_head.png",
+      "melee_prop": null,
+      "projectile": "assets/p2_projectile.png",
+      "attack_prop_name": "橙汽泡泡瓶盖弹",
+      "placeholder_color": "#7f8b4c",
+      "fallback": {
+        "body": "whitebox_body",
+        "head": "whitebox_head",
+        "projectile": "default_ball"
+      },
+      "confidence": 0.8,
+      "sprite_sheet": "assets/p2_sprite_sheet.png",
+      "animation_manifest": "animation_preview/p2_animation_manifest.json",
+      "projectile_animation": {
+        "static": "assets/p2_projectile.png",
+        "sheet": "assets/p2_projectile_sheet.png",
+        "manifest": "p2_projectile_manifest.json"
+      },
+      "original_role_type": "hybrid",
+      "original_attack_type": "hybrid",
+      "weapon_source": "derived_from_scene",
+      "creativity_level": "stylized",
+      "skill_taunt": {
+        "text": "我该做点什么！",
+        "source": "dialogue_or_subtitle",
+        "speaker": "橙味汽水男性",
+        "evidence_frames": [
+          "analysis_frames/frame_04.jpg"
+        ],
+        "reason": "字幕“我想我应该做点什么”直接出现在橙味汽水男性雨夜奔跑的画面上，适合作为其蓄力技能前的觉悟台词。",
+        "confidence": 0.95,
+        "fallback_text": "哼！"
+      },
+      "accent_color": "#7e91bc",
+      "character_id": "p2_fullrun_xingqing_skilltaunt_real_20260607_023131"
+    }
+  },
+  "taunt": {
+    "text": "不要因一时的性情决定一切",
+    "stun_ms": 700,
+    "cooldown_ms": 12000,
+    "bubble": "assets/taunt_bubble.png",
+    "fallback_text": "看招",
+    "confidence": 0.78,
+    "player_taunts": {
+      "p1": {
+        "text": "不能没爸爸！",
+        "source": "dialogue_or_subtitle",
+        "speaker": "牛奶瓶医生",
+        "evidence_frames": [
+          "analysis_frames/frame_01.jpg",
+          "analysis_frames/frame_03.jpg"
+        ],
+        "reason": "字幕“不能刚出生就没爸爸”出现在医院父亲身份冲突语境中，牛奶瓶医生正抱着婴儿并在后续愤怒握拳，适合作为他的长按攻击怒吼；说话者仍有一定不确定。",
+        "confidence": 0.72,
+        "fallback_text": "嘿！"
+      },
+      "p2": {
+        "text": "我该做点什么！",
+        "source": "dialogue_or_subtitle",
+        "speaker": "橙味汽水男性",
+        "evidence_frames": [
+          "analysis_frames/frame_04.jpg"
+        ],
+        "reason": "字幕“我想我应该做点什么”直接出现在橙味汽水男性雨夜奔跑的画面上，适合作为其蓄力技能前的觉悟台词。",
+        "confidence": 0.95,
+        "fallback_text": "哼！"
+      }
+    }
+  },
+  "animation_package": {
+    "version": "animation_theme.v0.1",
+    "frame_order": [
+      "idle_0",
+      "idle_1",
+      "run_0",
+      "run_1",
+      "run_2",
+      "run_3",
+      "jump_0",
+      "fall_0",
+      "attack_0"
+    ],
+    "projectile_frame_order": [
+      "projectile_0",
+      "projectile_1",
+      "projectile_2",
+      "projectile_3"
+    ],
+    "notes": "Extra animation fields are additive; core ThemeAssetPackage v0.1 fields remain compatible."
+  },
+  "analysis": {
+    "relationship": "牛奶瓶医生与橙味汽水男性像是围绕水瓶女性和可乐婴儿产生父亲身份争议的两个男性角色，一个代表医院/责任/质问，另一个代表逃避后回归的疑似父亲或伴侣。",
+    "combat_mapping_reason": "两人都拥有强烈饮料瓶拟人外观且颜色、职业、情绪形成鲜明对比：牛奶医生愤怒握拳，橙汽水男性雨夜奔跑并说要做点什么，天然适合做成家庭伦理短剧式1v1对抗。",
+    "overall_confidence": 0.88
+  },
+  "projectile": "animation_preview/frames/p2_projectile/projectile_0.png",
+  "tap_fight_adapter": {
+    "version": "tap_fight_adapter.v0.1",
+    "animation_preview": "animation_preview",
+    "notes": "Additive compatibility fields for Tap-Fight's current Canvas loader."
+  }
+}

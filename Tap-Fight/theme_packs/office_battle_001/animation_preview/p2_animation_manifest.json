@@ -1,0 +1,10 @@
+{
+  "character_id": "p2_office_archer",
+  "animations": {
+    "idle":   { "frames": ["frames/p2/idle_0.png", "frames/p2/idle_1.png"], "fps": 3,  "loop": true },
+    "run":    { "frames": ["frames/p2/run_0.png", "frames/p2/run_1.png", "frames/p2/run_2.png", "frames/p2/run_3.png"], "fps": 10, "loop": true },
+    "jump":   { "frames": ["frames/p2/jump_0.png"],  "fps": 1,  "loop": false },
+    "fall":   { "frames": ["frames/p2/fall_0.png"],  "fps": 1,  "loop": false },
+    "attack": { "frames": ["frames/p2/attack_0.png"], "fps": 1,  "loop": false }
+  }
+}

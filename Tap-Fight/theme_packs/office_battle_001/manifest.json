@@ -1,0 +1,28 @@
+{
+  "contract_version": "0.2.0",
+  "theme_id": "office_battle_001",
+  "display_name": "办公室大作战",
+  "environment": {
+    "name": "办公室",
+    "theme_color": "#3B5998",
+    "accent_color": "#E53935",
+    "background": "background.png"
+  },
+  "players": {
+    "p1": {
+      "name": "战士",
+      "role": "melee",
+      "attack_prop_name": "拳头",
+      "placeholder_color": "#4A90D9"
+    },
+    "p2": {
+      "name": "射手",
+      "role": "ranged",
+      "attack_prop_name": "文件夹",
+      "placeholder_color": "#E67E22"
+    }
+  },
+  "taunt": {
+    "text": "你被开除了！"
+  }
+}

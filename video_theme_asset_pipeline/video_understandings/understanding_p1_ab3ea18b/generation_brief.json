@@ -1,0 +1,81 @@
+{
+  "schema_version": "generation_brief.v0.1",
+  "generated_by": "video-pipeline",
+  "generated_at": "2026-06-06T10:49:13.617Z",
+  "source_understanding": "video_understanding.json",
+  "source_video": "视频源素材/（星球大战）尤达与西迪厄斯（帕尔帕廷）的光剑对决 P1 （星球大战）尤达与西迪厄斯（帕尔帕廷）的光剑对决.mp4",
+  "status": {
+    "video_understanding_ready": true,
+    "nine_frame_generation": "pending_user_frame_spec",
+    "image_generation_started": false
+  },
+  "image_generation_channel": {
+    "endpoint": "https://right.codes/draw",
+    "candidate_models": [
+      "gpt-image-2-vip",
+      "gpt-image-2",
+      "nano-banana",
+      "nano-banana-2",
+      "nano-banana-pro"
+    ],
+    "note": "本阶段只产出生成说明，不调用画图模型。"
+  },
+  "shared_style": {
+    "world": "星际科幻 / 银河帝国时代",
+    "art_direction": "电影级写实，强调光剑的动态模糊和环境的金属质感。",
+    "character_consistency": "尤达的皱纹皮肤纹理与西迪厄斯的深色兜帽阴影。",
+    "color_notes": "主色调为深灰与冷蓝，冲突色为荧光绿（尤达）与深红（西迪厄斯）。",
+    "generation_prompt_base": "Star Wars duel, Yoda with green lightsaber vs Darth Sidious with red lightsaber, Galactic Senate chamber background, cinematic lighting, epic scale, high detail, 8k."
+  },
+  "conflict": {
+    "relationship": "光明与黑暗的终极宿敌，银河系命运的对决者。",
+    "reason": "两人分别代表了绝地与西斯的最高战力，视觉上绿色与红色的对撞极具冲突感。",
+    "tone": "严肃且史诗感十足"
+  },
+  "taunt": {
+    "text": "你的傲慢蒙蔽了你的双眼，西迪厄斯。",
+    "source": "fallback_design",
+    "confidence": 0.8
+  },
+  "characters": [
+    {
+      "id": "p1",
+      "name": "尤达大师",
+      "archetype_name": "敏捷型原力宗师",
+      "role_type": "hybrid",
+      "visual_prompt": "矮小的绿色外星智者，身披破旧的亚麻色长袍，动作极度敏捷，周身环绕着淡绿色的原力气场。；性格/战斗气质：以静制动，爆发力极强。",
+      "weapon_prompt": "宗师短光剑：一把比普通光剑稍短的绿色等离子剑，挥舞时带有嗡鸣声和残影。",
+      "projectile_prompt": "原力推波：一道肉眼可见的空气扭曲波动，可击退敌人。",
+      "weapon_source": "observed_from_video",
+      "creativity_level": "faithful",
+      "attack_type": "swing",
+      "evidence_frames": [
+        "analysis_frames/frame_03.jpg",
+        "analysis_frames/frame_04.jpg"
+      ],
+      "prompt_seed": "Star Wars duel, Yoda with green lightsaber vs Darth Sidious with red lightsaber, Galactic Senate chamber background, cinematic lighting, epic scale, high detail, 8k.; 矮小的绿色外星智者，身披破旧的亚麻色长袍，动作极度敏捷，周身环绕着淡绿色的原力气场。; 一把比普通光剑稍短的绿色等离子剑，挥舞时带有嗡鸣声和残影。; 原力推波：一道肉眼可见的空气扭曲波动，可击退敌人。"
+    },
+    {
+      "id": "p2",
+      "name": "西斯大帝",
+      "archetype_name": "远程压制型黑魔头",
+      "role_type": "hybrid",
+      "visual_prompt": "隐藏在深色兜帽下的阴森老者，斗篷随风飘动，眼神中透着邪恶的红光。；性格/战斗气质：残忍压制，掌控全局。",
+      "weapon_prompt": "议会悬浮荚舱：巨大的金属圆盘状议事平台，被原力操控着高速旋转并砸向对手。",
+      "projectile_prompt": "紫色原力闪电：从指尖迸发的连锁闪电，带有麻痹效果。",
+      "weapon_source": "derived_from_scene",
+      "creativity_level": "stylized",
+      "attack_type": "throw",
+      "evidence_frames": [
+        "analysis_frames/frame_04.jpg",
+        "analysis_frames/frame_06.jpg"
+      ],
+      "prompt_seed": "Star Wars duel, Yoda with green lightsaber vs Darth Sidious with red lightsaber, Galactic Senate chamber background, cinematic lighting, epic scale, high detail, 8k.; 隐藏在深色兜帽下的阴森老者，斗篷随风飘动，眼神中透着邪恶的红光。; 巨大的金属圆盘状议事平台，被原力操控着高速旋转并砸向对手。; 紫色原力闪电：从指尖迸发的连锁闪电，带有麻痹效果。"
+    }
+  ],
+  "constraints": [
+    "后续九帧生成时保持同一角色服饰、体型、发型和武器一致。",
+    "角色素材优先透明背景，动作轮廓清楚，适配小游戏白模验证。",
+    "不要把武器 source=derived_from_scene 或 absurd_creative 误标为视频真实出现。"
+  ]
+}

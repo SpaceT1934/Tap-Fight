@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tap Fight 排行榜</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a0f1e; color: #e0e6f0; font-family: system-ui, sans-serif; padding: 20px; min-height: 100vh; }
+    h1 { text-align: center; font-size: 24px; margin-bottom: 6px; }
+    .sub { text-align: center; color: rgba(255,255,255,0.4); font-size: 13px; margin-bottom: 20px; }
+    .refresh { text-align: center; margin-bottom: 16px; }
+    .refresh button { padding: 8px 24px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: rgba(255,255,255,0.08); color: #fff; font-size: 14px; cursor: pointer; }
+    table { width: 100%; max-width: 800px; margin: 0 auto; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); font-weight: 500; }
+    td { padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .rank { width: 30px; color: rgba(255,255,255,0.4); }
+    .rank-1 { color: #f1c40f; font-weight: 900; }
+    .rank-2 { color: #bdc3c7; font-weight: 700; }
+    .rank-3 { color: #e67e22; font-weight: 700; }
+    .won { color: #2ecc71; }
+    .lost { color: #e74c3c; }
+    .score { font-weight: 700; color: #f1c40f; }
+    .empty { text-align: center; padding: 60px; color: rgba(255,255,255,0.2); }
+    @media (max-width: 600px) { table { font-size: 11px; } th, td { padding: 8px 4px; } }
+  </style>
+</head>
+<body>
+  <h1>⚔️ Tap Fight 排行榜</h1>
+  <p class="sub">每 10 秒自动刷新</p>
+  <div class="refresh"><button onclick="loadData()">刷新</button></div>
+  <table id="table">
+    <thead>
+      <tr>
+        <th>#</th><th>时间</th><th>房间</th><th>胜者</th><th>分数</th><th>败者</th><th>分数</th><th>时长</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function loadData() {
+      try {
+        const res = await fetch('/api/leaderboard')
+        const data = await res.json()
+        const tbody = document.querySelector('#table tbody')
+        if (!data.length) {
+          tbody.innerHTML = '<tr><td colspan="8" class="empty">暂无对局记录</td></tr>'
+          return
+        }
+        data.sort((a, b) => (b.winnerScore || 0) - (a.winnerScore || 0))
+        tbody.innerHTML = data.map((r, i) => `
+          <tr>
+            <td class="rank ${i < 3 ? `rank-${i+1}` : ''}">${i + 1}</td>
+            <td>${r.time || ''}</td>
+            <td>${r.roomId || ''}</td>
+            <td class="won">${r.winnerName} <span style="font-size:11px;opacity:0.6">(${r.winnerUniverse})</span></td>
+            <td class="score">${r.winnerScore}</td>
+            <td class="lost">${r.loserName} <span style="font-size:11px;opacity:0.6">(${r.loserUniverse})</span></td>
+            <td>${r.loserScore}</td>
+            <td>${r.duration}s</td>
+          </tr>
+        `).join('')
+      } catch (e) {
+        console.error(e)
+      }
+    }
+    loadData()
+    setInterval(loadData, 10000)
+  </script>
+</body>
+</html>

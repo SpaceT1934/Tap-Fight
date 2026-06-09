@@ -1,0 +1,10 @@
+{
+  "character_id": "p1_office_warrior",
+  "animations": {
+    "idle":   { "frames": ["frames/p1/idle_0.png", "frames/p1/idle_1.png"], "fps": 3,  "loop": true },
+    "run":    { "frames": ["frames/p1/run_0.png", "frames/p1/run_1.png", "frames/p1/run_2.png", "frames/p1/run_3.png"], "fps": 10, "loop": true },
+    "jump":   { "frames": ["frames/p1/jump_0.png"],  "fps": 1,  "loop": false },
+    "fall":   { "frames": ["frames/p1/fall_0.png"],  "fps": 1,  "loop": false },
+    "attack": { "frames": ["frames/p1/attack_0.png"], "fps": 1,  "loop": false }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "tap_fight_theme_registry.v0.1",
+  "themes": [
+    {
+      "themeId": "office_battle_001",
+      "src": "./videos/办公室.mp4",
+      "bgm": "./bgm/office.mp3",
+      "name": "🏢 办公室大作战",
+      "desc": "战士 vs 射手 · 文件夹投掷",
+      "source": "static"
+    },
+    {
+      "themeId": "original_space_duelist_001",
+      "src": "./videos/星球大战.mp4",
+      "bgm": "./bgm/space.mp3",
+      "name": "🌌 星际剑士训练场",
+      "desc": "剑士 vs 训练者 · 能量球",
+      "source": "static"
+    },
+    {
+      "themeId": "fullrun_huanhuan_skilltaunt_real_20260607_034114",
+      "src": "./videos/fullrun_huanhuan_skilltaunt_real_20260607_034114.mp4",
+      "bgm": null,
+      "name": "皇帝/朕 vs 嬛嬛/甄嬛",
+      "desc": "皇帝/朕 vs 嬛嬛/甄嬛",
+      "source": "video_pipeline"
+    },
+    {
+      "themeId": "fullrun_huaqiang_skilltaunt_real_20260607_021613",
+      "src": "./videos/fullrun_huaqiang_skilltaunt_real_20260607_021613.mp4",
+      "bgm": null,
+      "name": "黑衣买瓜男 vs 水果摊主",
+      "desc": "黑衣买瓜男 vs 水果摊主",
+      "source": "video_pipeline"
+    },
+    {
+      "themeId": "fullrun_xingqing_skilltaunt_real_20260607_023131",
+      "src": "./videos/fullrun_xingqing_skilltaunt_real_20260607_023131.mp4",
+      "bgm": null,
+      "name": "牛奶瓶医生 vs 橙味汽水男性",
+      "desc": "牛奶瓶医生 vs 橙味汽水男性",
+      "source": "video_pipeline"
+    }
+  ]
+}

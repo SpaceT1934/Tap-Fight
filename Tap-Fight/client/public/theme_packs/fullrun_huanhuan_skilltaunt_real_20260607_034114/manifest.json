@@ -1,0 +1,163 @@
+{
+  "contract_version": "0.1.0",
+  "theme_id": "fullrun_huanhuan_skilltaunt_real_20260607_034114",
+  "display_name": "皇帝/朕 vs 嬛嬛/甄嬛",
+  "source": {
+    "type": "video_ai_animation",
+    "source_id": "external_videos/嬛嬛，如果让他陪你过冬天，那朕…… P1 嬛嬛，如果让他陪你过冬天，那朕…….mp4",
+    "rights_mode": "mock_or_authorized"
+  },
+  "environment": {
+    "name": "清代宫廷情感混剪世界，场景在华丽寝殿、雪中宫门与夜晚河岸之间切换，核心氛围是冬天、宫廷、吃醋和压抑情绪。",
+    "theme_color": "#6d5e71",
+    "accent_color": "#516d4b",
+    "background": "background.png",
+    "fallback": "solid_color"
+  },
+  "players": {
+    "p1": {
+      "name": "皇帝/朕",
+      "role": "melee",
+      "body": "assets/p1_body.png",
+      "head": "assets/p1_head.png",
+      "melee_prop": "assets/p1_melee_prop.png",
+      "projectile": null,
+      "attack_prop_name": "御批折子与龙袍甩袖",
+      "placeholder_color": "#6d5e71",
+      "fallback": {
+        "body": "whitebox_body",
+        "head": "whitebox_head",
+        "melee_prop": "default_stick"
+      },
+      "confidence": 0.8,
+      "sprite_sheet": "assets/p1_sprite_sheet.png",
+      "animation_manifest": "animation_preview/p1_animation_manifest.json",
+      "projectile_animation": {
+        "static": "assets/p1_projectile.png",
+        "sheet": "assets/p1_projectile_sheet.png",
+        "manifest": "p1_projectile_manifest.json"
+      },
+      "original_role_type": "hybrid",
+      "original_attack_type": "hybrid",
+      "weapon_source": "derived_from_scene",
+      "creativity_level": "stylized",
+      "skill_taunt": {
+        "text": "朕晚点就回家",
+        "source": "dialogue_or_subtitle",
+        "speaker": "皇帝/朕",
+        "evidence_frames": [
+          "analysis_frames/frame_06.jpg"
+        ],
+        "reason": "字幕中直接出现“朕”，最适合分配给皇帝作为带有吐槽感和破防感的长按技能语句。",
+        "confidence": 0.86,
+        "fallback_text": "嘿！"
+      },
+      "accent_color": "#516d4b",
+      "character_id": "p1_fullrun_huanhuan_skilltaunt_real_20260607_034114"
+    },
+    "p2": {
+      "name": "嬛嬛/甄嬛",
+      "role": "ranged",
+      "body": "assets/p2_body.png",
+      "head": "assets/p2_head.png",
+      "melee_prop": null,
+      "projectile": "assets/p2_projectile.png",
+      "attack_prop_name": "锦被飞枕与眼泪冰滴",
+      "placeholder_color": "#516d4b",
+      "fallback": {
+        "body": "whitebox_body",
+        "head": "whitebox_head",
+        "projectile": "default_ball"
+      },
+      "confidence": 0.8,
+      "sprite_sheet": "assets/p2_sprite_sheet.png",
+      "animation_manifest": "animation_preview/p2_animation_manifest.json",
+      "projectile_animation": {
+        "static": "assets/p2_projectile.png",
+        "sheet": "assets/p2_projectile_sheet.png",
+        "manifest": "p2_projectile_manifest.json"
+      },
+      "original_role_type": "hybrid",
+      "original_attack_type": "hybrid",
+      "weapon_source": "absurd_creative",
+      "creativity_level": "absurd",
+      "skill_taunt": {
+        "text": "难过只说给老十七",
+        "source": "dialogue_or_subtitle",
+        "speaker": "嬛嬛/甄嬛",
+        "evidence_frames": [
+          "analysis_frames/frame_04.jpg"
+        ],
+        "reason": "该字幕出现在嬛嬛与河边男子相依的画面中，语义上像嬛嬛把难过倾诉给老十七，适合作为她触发技能时的情感反击台词。",
+        "confidence": 0.78,
+        "fallback_text": "哼！"
+      },
+      "accent_color": "#6d5e71",
+      "character_id": "p2_fullrun_huanhuan_skilltaunt_real_20260607_034114"
+    }
+  },
+  "taunt": {
+    "text": "能不能睡中间",
+    "stun_ms": 700,
+    "cooldown_ms": 12000,
+    "bubble": "assets/taunt_bubble.png",
+    "fallback_text": "看招",
+    "confidence": 0.84,
+    "player_taunts": {
+      "p1": {
+        "text": "朕晚点就回家",
+        "source": "dialogue_or_subtitle",
+        "speaker": "皇帝/朕",
+        "evidence_frames": [
+          "analysis_frames/frame_06.jpg"
+        ],
+        "reason": "字幕中直接出现“朕”，最适合分配给皇帝作为带有吐槽感和破防感的长按技能语句。",
+        "confidence": 0.86,
+        "fallback_text": "嘿！"
+      },
+      "p2": {
+        "text": "难过只说给老十七",
+        "source": "dialogue_or_subtitle",
+        "speaker": "嬛嬛/甄嬛",
+        "evidence_frames": [
+          "analysis_frames/frame_04.jpg"
+        ],
+        "reason": "该字幕出现在嬛嬛与河边男子相依的画面中，语义上像嬛嬛把难过倾诉给老十七，适合作为她触发技能时的情感反击台词。",
+        "confidence": 0.78,
+        "fallback_text": "哼！"
+      }
+    }
+  },
+  "animation_package": {
+    "version": "animation_theme.v0.1",
+    "frame_order": [
+      "idle_0",
+      "idle_1",
+      "run_0",
+      "run_1",
+      "run_2",
+      "run_3",
+      "jump_0",
+      "fall_0",
+      "attack_0"
+    ],
+    "projectile_frame_order": [
+      "projectile_0",
+      "projectile_1",
+      "projectile_2",
+      "projectile_3"
+    ],
+    "notes": "Extra animation fields are additive; core ThemeAssetPackage v0.1 fields remain compatible."
+  },
+  "analysis": {
+    "relationship": "皇帝与嬛嬛是清宫情感关系中的帝王与妃嫔/爱人关系，同时夹杂老十七带来的情感竞争与吃醋。",
+    "combat_mapping_reason": "皇帝具有强烈的视觉辨识度和‘朕’的台词符号，嬛嬛是标题与字幕情绪的核心；两人的对抗不是单纯武力冲突，而是宫廷权力、感情疏离、吃醋和吐槽梗叠加，非常适合做成 1v1 白模对战中的荒诞情绪对打。",
+    "overall_confidence": 0.84
+  },
+  "projectile": "animation_preview/frames/p2_projectile/projectile_0.png",
+  "tap_fight_adapter": {
+    "version": "tap_fight_adapter.v0.1",
+    "animation_preview": "animation_preview",
+    "notes": "Additive compatibility fields for Tap-Fight's current Canvas loader."
+  }
+}

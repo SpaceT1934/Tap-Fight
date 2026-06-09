@@ -1,0 +1,71 @@
+{
+  "character_id": "p1_original_space_duelist",
+  "type": "sprite_animation_preview",
+  "source_sheet": "p1_sprite_sheet_alpha.png",
+  "green_source_sheet": "p1_sprite_sheet_green.png",
+  "frame_size": {
+    "width": 418,
+    "height": 418
+  },
+  "layout": {
+    "columns": 3,
+    "rows": 3,
+    "order": [
+      "idle_0",
+      "idle_1",
+      "run_0",
+      "run_1",
+      "run_2",
+      "run_3",
+      "jump_0",
+      "fall_0",
+      "attack_0"
+    ]
+  },
+  "animations": {
+    "idle": {
+      "frames": [
+        "frames/idle_0.png",
+        "frames/idle_1.png"
+      ],
+      "fps": 3,
+      "loop": true
+    },
+    "run": {
+      "frames": [
+        "frames/run_0.png",
+        "frames/run_1.png",
+        "frames/run_2.png",
+        "frames/run_3.png"
+      ],
+      "fps": 10,
+      "loop": true
+    },
+    "jump": {
+      "frames": [
+        "frames/jump_0.png"
+      ],
+      "fps": 1,
+      "loop": false
+    },
+    "fall": {
+      "frames": [
+        "frames/fall_0.png"
+      ],
+      "fps": 1,
+      "loop": false
+    },
+    "attack": {
+      "frames": [
+        "frames/attack_0.png"
+      ],
+      "fps": 1,
+      "loop": false
+    }
+  },
+  "notes": [
+    "Generated as a visual comparison asset only; current Canvas whitebox implementation is preserved.",
+    "All frames face right; flip horizontally in runtime for left-facing movement.",
+    "Character art is original sci-fi energy-sword warrior styling, not a direct licensed character."
+  ]
+}

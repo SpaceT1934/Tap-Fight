@@ -1,0 +1,37 @@
+# Dependencies
+video-pipeline/node_modules/
+node_modules/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local secrets
+.env
+*.env
+!config/right-codes.env.example
+right-codes.env
+
+# Local input videos
+input_videos/*
+!input_videos/.gitkeep
+
+# Generated outputs from new local runs.
+# Keep the two checked-in example packages and understanding examples.
+theme_packs/*
+!theme_packs/anim_video_5f1f2057_real/
+!theme_packs/anim_video_5f1f2057_real/**
+!theme_packs/anim_p1_ab3ea18b_real/
+!theme_packs/anim_p1_ab3ea18b_real/**
+
+video_understandings/*
+!video_understandings/understanding_video_5f1f2057/
+!video_understandings/understanding_video_5f1f2057/**
+!video_understandings/understanding_p1_ab3ea18b/
+!video_understandings/understanding_p1_ab3ea18b/**
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.tmp
+*.log

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Tap Fight</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="540" height="960" tabindex="0" aria-label="tap-fight game"></canvas>
+
+    <!-- 抖音风格视频入口 -->
+    <div id="videoOverlay" class="video-overlay">
+      <video id="videoPlayer" class="video-player" playsinline webkit-playsinline muted loop autoplay></video>
+      <img id="videoCover" class="video-cover" src="" alt="" />
+
+      <!-- 右侧互动栏 -->
+      <div class="dy-sidebar">
+        <div class="dy-avatar"></div>
+        <button class="dy-action" id="btnLike">
+          <span class="dy-action-icon" id="likeIcon">🤍</span>
+          <span class="dy-action-count" id="likeCount">999</span>
+        </button>
+        <button class="dy-action" id="btnStar">
+          <span class="dy-action-icon" id="starIcon">⭐</span>
+          <span class="dy-action-count" id="starCount">收藏</span>
+        </button>
+        <button class="dy-action" id="btnSound" aria-label="开启视频原声">
+          <span class="dy-action-icon" id="soundIcon">🔇</span>
+          <span class="dy-action-count" id="soundLabel">静音</span>
+        </button>
+        <button id="btnEnterGame" class="dy-fight-btn">
+          <span class="dy-fight-icon">⚔️</span>
+        </button>
+      </div>
+
+      <!-- 底部信息区 -->
+      <div class="dy-bottom">
+        <h2 class="dy-username">@TapFight官方</h2>
+        <p id="videoThemeName" class="dy-desc"></p>
+        <div class="dy-music">
+          <span class="dy-music-icon">🎵</span>
+          <span id="videoThemeDesc" class="dy-music-text"></span>
+        </div>
+      </div>
+
+      <!-- 底部进度条 -->
+      <div class="dy-progress">
+        <div id="dyProgressBar" class="dy-progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- 结束界面 -->
+    <div id="endOverlay" class="end-overlay hidden">
+      <div class="end-card">
+        <h1 id="endTitle" class="end-title">🏆</h1>
+        <p id="endSub" class="end-sub"></p>
+        <div id="scoreDetails" class="score-details"></div>
+        <button id="btnBack" class="menu-btn menu-btn-primary">返回</button>
+        <a class="menu-btn menu-btn-secondary menu-link" href="./leaderboard.html" target="_blank" rel="noopener">查看排行榜</a>
+      </div>
+    </div>
+
+    <!-- 菜单界面 -->
+    <div id="menuOverlay" class="menu-overlay hidden">
+      <div class="menu-card">
+        <h1 class="menu-title">⚔️ Tap Fight</h1>
+        <p class="menu-sub">自动匹配在线玩家</p>
+        <p id="menuThemeHint" class="menu-theme-hint"></p>
+        <div class="match-panel" aria-live="polite">
+          <div class="match-count">
+            <span class="match-count-label">可对战人数</span>
+            <span id="matchCount" class="match-count-value">0</span>
+          </div>
+          <div id="matchHint" class="match-hint">点击后进入匹配池，凑齐 2 人自动开局</div>
+        </div>
+        <button id="btnQuickMatch" class="menu-btn menu-btn-primary">自动匹配</button>
+        <a class="menu-btn menu-btn-secondary menu-link" href="./leaderboard.html" target="_blank" rel="noopener">查看排行榜</a>
+        <p id="menuStatus" class="menu-status"></p>
+      </div>
+    </div>
+
+    <!-- 左侧方向键 -->
+    <div class="touch-left" aria-label="移动控制" style="display:flex;flex-direction:row;gap:12px;">
+      <button type="button" data-code="KeyA" data-key="a" class="btn-dir btn-left">◀</button>
+      <button type="button" data-code="KeyD" data-key="d" class="btn-dir btn-right">▶</button>
+    </div>
+
+    <!-- 右侧跳跃+攻击键 -->
+    <div class="touch-right" aria-label="跳跃攻击控制" style="display:flex;flex-direction:row;gap:10px;align-items:center;">
+      <button type="button" data-code="Space" data-key=" " class="btn-dir btn-jump">▲</button>
+      <button type="button" data-code="KeyJ" data-key="j" class="btn-atk">⚔</button>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

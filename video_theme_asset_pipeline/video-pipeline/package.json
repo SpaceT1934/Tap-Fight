@@ -1,0 +1,24 @@
+{
+  "name": "window-01-video-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Video understanding and AI animation ThemeAssetPackage generator for the 1v1 prototype.",
+  "scripts": {
+    "setup:python": "python -m pip install -r requirements.txt",
+    "setup:python:opencv": "python -m pip install -r requirements-opencv.txt",
+    "generate": "node src/index.mjs generate-full",
+    "package:video": "node src/index.mjs package-video",
+    "generate:frames": "node src/index.mjs generate-frames",
+    "generate:full": "node src/index.mjs generate-full",
+    "export:tap-fight": "node src/index.mjs export-tap-fight",
+    "generate:video": "node src/index.mjs legacy-disabled",
+    "understand:video": "node src/index.mjs understand-video",
+    "understand:compare": "node src/index.mjs compare-llm",
+    "validate": "node src/index.mjs validate"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "ffprobe-static": "^3.1.0"
+  }
+}

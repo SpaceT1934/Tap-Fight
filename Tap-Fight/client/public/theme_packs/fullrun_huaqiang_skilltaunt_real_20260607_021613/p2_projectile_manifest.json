@@ -1,0 +1,42 @@
+{
+  "projectile_id": "p2_projectile_fullrun_huaqiang_skilltaunt_real_20260607_021613",
+  "owner_character_id": "p2_fullrun_huaqiang_skilltaunt_real_20260607_021613",
+  "source_sheet": "assets/p2_projectile_sheet.png",
+  "static": "assets/p2_projectile.png",
+  "frame_size": {
+    "width": 256,
+    "height": 256
+  },
+  "render_origin": {
+    "mode": "center",
+    "normalized": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "note": "Use this pivot for projectile sprite rotation/movement; game code controls trajectory."
+  },
+  "layout": {
+    "columns": 4,
+    "rows": 1,
+    "order": [
+      "projectile_0",
+      "projectile_1",
+      "projectile_2",
+      "projectile_3"
+    ]
+  },
+  "animations": {
+    "fly": {
+      "frames": [
+        "frames/p2_projectile/projectile_0.png",
+        "frames/p2_projectile/projectile_1.png",
+        "frames/p2_projectile/projectile_2.png",
+        "frames/p2_projectile/projectile_3.png"
+      ],
+      "fps": 12,
+      "loop": true
+    }
+  },
+  "direction": "right",
+  "notes": "游戏侧负责移动轨迹、碰撞和命中反馈；本动画只表现飞行物本身。"
+}

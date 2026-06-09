@@ -1,0 +1,64 @@
+{
+  "contract_version": "0.1.0",
+  "theme_id": "original_space_duelist_001",
+  "display_name": "原创星际剑士训练场",
+  "source": {
+    "type": "generated_mock",
+    "source_id": "original_space_duelist_imagegen",
+    "rights_mode": "mock_or_authorized"
+  },
+  "environment": {
+    "name": "星际训练场",
+    "theme_color": "#1F6FEB",
+    "accent_color": "#F85149",
+    "background": "assets/background.png",
+    "fallback": "solid_color"
+  },
+  "players": {
+    "p1": {
+      "name": "星际剑士",
+      "role": "melee",
+      "body": null,
+      "head": null,
+      "melee_prop": null,
+      "projectile": null,
+      "attack_prop_name": "蓝色能量剑",
+      "placeholder_color": "#D6B58A",
+      "fallback": {
+        "body": "whitebox_body",
+        "head": "whitebox_head",
+        "melee_prop": "default_sword"
+      },
+      "confidence": 0.9
+    },
+    "p2": {
+      "name": "原创星际射手",
+      "role": "ranged",
+      "body": null,
+      "head": null,
+      "melee_prop": null,
+      "projectile": null,
+      "attack_prop_name": "红色训练球",
+      "placeholder_color": "#30343B",
+      "fallback": {
+        "body": "whitebox_body",
+        "head": "whitebox_head",
+        "projectile": "default_ball"
+      },
+      "confidence": 0.9
+    }
+  },
+  "taunt": {
+    "text": "感受原力",
+    "stun_ms": 700,
+    "cooldown_ms": 12000,
+    "bubble": null,
+    "fallback_text": "看招",
+    "confidence": 0.85
+  },
+  "analysis": {
+    "relationship": "训练场中的光明剑士与暗影训练者对抗",
+    "combat_mapping_reason": "星际剑士携带蓝色能量剑，适合作为近战角色；暗影训练者使用红色训练球，适合作为远程角色。",
+    "overall_confidence": 0.88
+  }
+}

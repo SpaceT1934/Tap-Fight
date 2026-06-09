@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Runtime data
+server/leaderboard.json
+.runlogs/
+
+# Secrets
+.env
+*.env
+!config/right-codes.env.example
+right-codes.env
+
+# Logs
+*.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# IDE
+.vscode/
+.idea/

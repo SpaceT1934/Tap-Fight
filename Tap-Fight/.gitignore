@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+办公室/
+*.mp4
+!client/public/videos/*.mp4
+*.png
+!client/public/**/*.png
+!theme_packs/**/*.png
+server/leaderboard.json
