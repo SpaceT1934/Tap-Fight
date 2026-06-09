@@ -10,6 +10,8 @@ param(
 
   [switch]$ForceUnderstanding,
 
+  [int]$Frames = -1,
+
   [int]$DrawRetries = -1,
 
   [int]$DrawConcurrency = -1,
@@ -19,6 +21,8 @@ param(
   [int]$DrawTimeoutMs = -1,
 
   [switch]$ExportTapFight,
+
+  [switch]$GenerateStageAssets,
 
   [string]$TapFightDir = "",
 
@@ -58,6 +62,10 @@ if ($ForceUnderstanding) {
   $argsList += "--force-understanding"
 }
 
+if ($Frames -ge 1) {
+  $argsList += @("--frames", [string]$Frames)
+}
+
 if ($DrawRetries -ge 0) {
   $argsList += @("--draw-retries", [string]$DrawRetries)
 }
@@ -78,6 +86,10 @@ if ($ExportTapFight) {
   $argsList += "--export-tap-fight"
 }
 
+if ($GenerateStageAssets) {
+  $argsList += "--generate-stage-assets"
+}
+
 if ($TapFightDir) {
   $tapPath = Resolve-Path -LiteralPath $TapFightDir
   $argsList += @("--tap-fight-dir", $tapPath.Path)
@@ -88,8 +100,14 @@ if ($StageTemplate) {
 }
 
 Push-Location $Pipeline
+$NpmExitCode = 0
 try {
   npm @argsList
+  $NpmExitCode = $LASTEXITCODE
 } finally {
   Pop-Location
+}
+
+if ($NpmExitCode -ne 0) {
+  exit $NpmExitCode
 }

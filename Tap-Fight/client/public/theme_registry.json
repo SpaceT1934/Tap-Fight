@@ -40,6 +40,15 @@
       "name": "牛奶瓶医生 vs 橙味汽水男性",
       "desc": "牛奶瓶医生 vs 橙味汽水男性",
       "source": "video_pipeline"
+    },
+    {
+      "themeId": "real_churenmei_stage_20260609_201010",
+      "src": "./videos/real_churenmei_stage_20260609_201010.mp4",
+      "bgm": null,
+      "name": "猴妖 vs 红衣少年",
+      "desc": "猴妖 vs 红衣少年 / 金箍长棍 vs 三昧火焰枪",
+      "source": "video_pipeline",
+      "manifest": "./theme_packs/real_churenmei_stage_20260609_201010/manifest.json"
     }
   ]
 }

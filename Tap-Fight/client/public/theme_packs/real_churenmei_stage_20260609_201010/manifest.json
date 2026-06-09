@@ -1,0 +1,187 @@
+{
+  "contract_version": "0.1.0",
+  "theme_id": "real_churenmei_stage_20260609_201010",
+  "display_name": "猴妖 vs 红衣少年",
+  "source": {
+    "type": "video_ai_animation",
+    "source_id": "external_videos/楚人美游记 P1 14-火云洞-上.mp4",
+    "rights_mode": "mock_or_authorized"
+  },
+  "environment": {
+    "name": "西游式山林古道与火云洞奇幻世界，妖怪、鬼魅、少年火系武者和古装队伍混杂出现。",
+    "theme_color": "#6f8b9b",
+    "accent_color": "#7b744e",
+    "background": "background.png",
+    "fallback": "solid_color"
+  },
+  "players": {
+    "p1": {
+      "name": "猴妖",
+      "role": "melee",
+      "body": "assets/p1_body.png",
+      "head": "assets/p1_head.png",
+      "melee_prop": "assets/p1_melee_prop.png",
+      "projectile": null,
+      "attack_prop_name": "金箍长棍",
+      "placeholder_color": "#6f8b9b",
+      "fallback": {
+        "body": "whitebox_body",
+        "head": "whitebox_head",
+        "melee_prop": "default_stick"
+      },
+      "confidence": 0.8,
+      "sprite_sheet": "assets/p1_sprite_sheet.png",
+      "animation_manifest": "animation_preview/p1_animation_manifest.json",
+      "projectile_animation": null,
+      "original_role_type": "melee",
+      "original_attack_type": "swing",
+      "weapon_source": "observed_from_video",
+      "creativity_level": "faithful",
+      "skill_taunt": {
+        "text": "你不要骗我",
+        "source": "dialogue_or_subtitle",
+        "speaker": "猴妖",
+        "evidence_frames": [
+          "analysis_frames/frame_01.jpg"
+        ],
+        "reason": "第1帧字幕显示“你不要骗我”，画面中心猴妖仰头说话表情明显，适合作为长按攻击时的怀疑式吐槽台词。",
+        "confidence": 0.8,
+        "fallback_text": "嘿！"
+      },
+      "accent_color": "#7b744e",
+      "character_id": "p1_real_churenmei_stage_20260609_201010"
+    },
+    "p2": {
+      "name": "红衣少年",
+      "role": "ranged",
+      "body": "assets/p2_body.png",
+      "head": "assets/p2_head.png",
+      "melee_prop": null,
+      "projectile": "assets/p2_projectile.png",
+      "attack_prop_name": "三昧火焰枪",
+      "placeholder_color": "#7b744e",
+      "fallback": {
+        "body": "whitebox_body",
+        "head": "whitebox_head",
+        "projectile": "default_ball"
+      },
+      "confidence": 0.8,
+      "sprite_sheet": "assets/p2_sprite_sheet.png",
+      "animation_manifest": "animation_preview/p2_animation_manifest.json",
+      "projectile_animation": {
+        "static": "assets/p2_projectile.png",
+        "sheet": "assets/p2_projectile_sheet.png",
+        "manifest": "p2_projectile_manifest.json"
+      },
+      "original_role_type": "hybrid",
+      "original_attack_type": "hybrid",
+      "weapon_source": "observed_from_video",
+      "creativity_level": "stylized",
+      "skill_taunt": {
+        "text": "管她呢赶紧下锅",
+        "source": "dialogue_or_subtitle",
+        "speaker": "红衣少年",
+        "evidence_frames": [
+          "analysis_frames/frame_04.jpg"
+        ],
+        "reason": "第4帧红衣少年抬手指向狼妖并开口，字幕为“管她呢赶紧下锅”，语气符合其嚣张、命令式火云洞小霸王气质。",
+        "confidence": 0.83,
+        "fallback_text": "哼！"
+      },
+      "accent_color": "#6f8b9b",
+      "character_id": "p2_real_churenmei_stage_20260609_201010"
+    }
+  },
+  "taunt": {
+    "text": "比六丁圣火还好",
+    "stun_ms": 700,
+    "cooldown_ms": 12000,
+    "bubble": "assets/taunt_bubble.png",
+    "fallback_text": "看招",
+    "confidence": 0.76,
+    "player_taunts": {
+      "p1": {
+        "text": "你不要骗我",
+        "source": "dialogue_or_subtitle",
+        "speaker": "猴妖",
+        "evidence_frames": [
+          "analysis_frames/frame_01.jpg"
+        ],
+        "reason": "第1帧字幕显示“你不要骗我”，画面中心猴妖仰头说话表情明显，适合作为长按攻击时的怀疑式吐槽台词。",
+        "confidence": 0.8,
+        "fallback_text": "嘿！"
+      },
+      "p2": {
+        "text": "管她呢赶紧下锅",
+        "source": "dialogue_or_subtitle",
+        "speaker": "红衣少年",
+        "evidence_frames": [
+          "analysis_frames/frame_04.jpg"
+        ],
+        "reason": "第4帧红衣少年抬手指向狼妖并开口，字幕为“管她呢赶紧下锅”，语气符合其嚣张、命令式火云洞小霸王气质。",
+        "confidence": 0.83,
+        "fallback_text": "哼！"
+      }
+    }
+  },
+  "animation_package": {
+    "version": "animation_theme.v0.1",
+    "frame_order": [
+      "idle_0",
+      "idle_1",
+      "run_0",
+      "run_1",
+      "run_2",
+      "run_3",
+      "jump_0",
+      "fall_0",
+      "attack_0"
+    ],
+    "projectile_frame_order": [
+      "projectile_0",
+      "projectile_1",
+      "projectile_2",
+      "projectile_3"
+    ],
+    "notes": "Extra animation fields are additive; core ThemeAssetPackage v0.1 fields remain compatible."
+  },
+  "analysis": {
+    "relationship": "猴妖与红衣少年是火云洞场景中的直接交战双方，像外来取经队伍成员与洞府火系小霸王之间的冲突。",
+    "combat_mapping_reason": "两者在第6帧已经出现清晰的兵器碰撞：猴妖用长棍，红衣少年用火焰长枪；外形一金一红、武器一棍一火枪、体型一妖猴一少年，辨识度和对抗性都很强。",
+    "overall_confidence": 0.91
+  },
+  "stage_assets": {
+    "version": "stage_assets.v0.1",
+    "mode": "generated",
+    "dimensions": {
+      "background": "1080x1920",
+      "platform_left": "58x54",
+      "platform_mid": "128x54",
+      "platform_right": "58x54",
+      "hazard_debris": "48x48"
+    },
+    "files": {
+      "background": "assets/stage/background.png",
+      "platform_left": "assets/stage/platform_left.png",
+      "platform_mid": "assets/stage/platform_mid.png",
+      "platform_right": "assets/stage/platform_right.png",
+      "hazard_debris": "assets/stage/hazard_debris.png"
+    },
+    "tap_fight_export_root_files": [
+      "background.png",
+      "platform_left.png",
+      "platform_mid.png",
+      "platform_right.png",
+      "hazard_debris.png"
+    ],
+    "fallback": "stage_template"
+  },
+  "projectile": "animation_preview/frames/p2_projectile/projectile_0.png",
+  "tap_fight_adapter": {
+    "version": "tap_fight_adapter.v0.1",
+    "animation_preview": "animation_preview",
+    "projectile_owner": "p2",
+    "legacy_projectile": "animation_preview/frames/p2_projectile/projectile_0.png",
+    "notes": "Additive compatibility fields for Tap-Fight's current Canvas loader."
+  }
+}

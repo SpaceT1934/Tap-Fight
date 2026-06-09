@@ -1,0 +1,1221 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>视频生成游戏资产</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050507;
+      --panel: rgba(13, 15, 20, 0.86);
+      --panel-strong: rgba(18, 21, 28, 0.96);
+      --line: rgba(255, 255, 255, 0.12);
+      --line-strong: rgba(255, 255, 255, 0.22);
+      --text: #f5f7fb;
+      --muted: rgba(245, 247, 251, 0.62);
+      --soft: rgba(245, 247, 251, 0.4);
+      --cyan: #33d6ff;
+      --pink: #ff4fd8;
+      --green: #8dff8d;
+      --amber: #ffc34d;
+      --violet: #9c7cff;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), transparent 22%),
+        radial-gradient(circle at 50% -20%, rgba(255,255,255,0.10), transparent 38%),
+        var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: -20vh -20vw;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        linear-gradient(115deg, transparent 0 24%, rgba(51, 214, 255, 0.13) 31%, transparent 38% 100%),
+        linear-gradient(64deg, transparent 0 44%, rgba(255, 79, 216, 0.13) 51%, transparent 59% 100%),
+        linear-gradient(150deg, transparent 0 62%, rgba(141, 255, 141, 0.1) 68%, transparent 76% 100%);
+      filter: blur(18px);
+      transform: translate3d(0, 0, 0);
+      animation: lightFlow 18s linear infinite;
+    }
+
+    body::after {
+      opacity: 0.66;
+      animation-duration: 28s;
+      animation-direction: reverse;
+    }
+
+    @keyframes lightFlow {
+      0% { transform: translate3d(-4vw, -2vh, 0) rotate(0deg); }
+      50% { transform: translate3d(4vw, 3vh, 0) rotate(5deg); }
+      100% { transform: translate3d(-4vw, -2vh, 0) rotate(0deg); }
+    }
+
+    .page {
+      width: min(1480px, calc(100vw - 40px));
+      margin: 0 auto;
+      padding: 28px 0 40px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 48px;
+      margin-bottom: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(51,214,255,0.18), rgba(255,79,216,0.16)),
+        rgba(255,255,255,0.05);
+      position: relative;
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 4px;
+      border: 2px solid rgba(255,255,255,0.76);
+      border-left-color: var(--green);
+      border-bottom-color: var(--pink);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(24px, 3.6vw, 54px);
+      line-height: 1.02;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    a, button {
+      color: inherit;
+      font: inherit;
+    }
+
+    .link-btn,
+    .primary-btn,
+    .ghost-btn {
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 14px;
+      text-decoration: none;
+      cursor: pointer;
+      background: rgba(255,255,255,0.06);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      white-space: nowrap;
+    }
+
+    .primary-btn {
+      border-color: rgba(51,214,255,0.52);
+      background:
+        linear-gradient(135deg, rgba(51,214,255,0.22), rgba(255,79,216,0.18)),
+        rgba(255,255,255,0.08);
+      font-weight: 720;
+    }
+
+    .link-btn:hover,
+    .primary-btn:hover,
+    .ghost-btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--line-strong);
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    .primary-btn:disabled,
+    .ghost-btn:disabled {
+      opacity: .48;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(320px, 520px) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: 0 28px 90px rgba(0,0,0,0.42);
+      backdrop-filter: blur(18px);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 740;
+    }
+
+    .status-pill {
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--soft);
+    }
+
+    .status-running .pulse {
+      background: var(--green);
+      box-shadow: 0 0 18px rgba(141,255,141,0.78);
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+
+    .status-failed .pulse { background: #ff5e66; }
+    .status-completed .pulse { background: var(--cyan); }
+
+    @keyframes pulse {
+      0%, 100% { opacity: .5; transform: scale(.8); }
+      50% { opacity: 1; transform: scale(1.18); }
+    }
+
+    .drop {
+      margin: 20px;
+      min-height: 252px;
+      border: 1px dashed rgba(255,255,255,0.28);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(51,214,255,0.06), transparent 42%),
+        linear-gradient(315deg, rgba(255,79,216,0.08), transparent 44%),
+        rgba(255,255,255,0.035);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .drop::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.13), transparent);
+      transform: translateX(-110%);
+      animation: scan 4.8s ease-in-out infinite;
+    }
+
+    @keyframes scan {
+      0%, 40% { transform: translateX(-110%); }
+      70%, 100% { transform: translateX(110%); }
+    }
+
+    .drop.dragover {
+      border-color: var(--cyan);
+      background:
+        linear-gradient(135deg, rgba(51,214,255,0.12), transparent 42%),
+        linear-gradient(315deg, rgba(255,79,216,0.12), transparent 44%),
+        rgba(255,255,255,0.05);
+    }
+
+    .drop-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 10px;
+      justify-items: center;
+      width: 100%;
+    }
+
+    .upload-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.06);
+      color: var(--cyan);
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .drop strong {
+      display: block;
+      font-size: 20px;
+      font-weight: 780;
+    }
+
+    .drop span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .file-meta {
+      display: none;
+      width: 100%;
+      margin-top: 6px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.28);
+      text-align: left;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .file-meta.active { display: block; }
+
+    .controls {
+      padding: 0 20px 20px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-width: 0;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.32);
+      color: var(--text);
+      padding: 0 11px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: rgba(51,214,255,0.72);
+      box-shadow: 0 0 0 3px rgba(51,214,255,0.12);
+    }
+
+    .switch-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .switch {
+      min-height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .switch input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--cyan);
+      flex: 0 0 auto;
+    }
+
+    .progress-panel {
+      padding: 18px 20px 20px;
+      border-top: 1px solid var(--line);
+      background: rgba(0,0,0,0.18);
+    }
+
+    .progress-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .progress-number {
+      color: var(--text);
+      font-weight: 780;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .progress-track {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--cyan), var(--pink), var(--green), var(--amber));
+      transition: width .45s ease;
+      box-shadow: 0 0 26px rgba(51,214,255,0.36);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .step {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 8px;
+      color: var(--soft);
+      font-size: 12px;
+      background: rgba(255,255,255,0.03);
+      text-align: center;
+    }
+
+    .step.active {
+      color: var(--text);
+      border-color: rgba(51,214,255,0.38);
+      background: rgba(51,214,255,0.08);
+    }
+
+    .result-window {
+      min-height: calc(100vh - 88px);
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+    }
+
+    .window-strip {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 13px 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.035);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--soft);
+    }
+
+    .dot:nth-child(1) { background: #ff5e66; }
+    .dot:nth-child(2) { background: #ffc34d; }
+    .dot:nth-child(3) { background: #8dff8d; }
+
+    .window-name {
+      margin-left: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .summary-grid {
+      padding: 18px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric {
+      min-height: 76px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: rgba(255,255,255,0.035);
+      overflow: hidden;
+    }
+
+    .metric span {
+      color: var(--soft);
+      display: block;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.22;
+      overflow-wrap: anywhere;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      padding: 14px 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      padding: 0 12px;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      color: var(--text);
+      border-color: rgba(255,79,216,0.42);
+      background: rgba(255,79,216,0.1);
+    }
+
+    .output {
+      padding: 16px 18px 18px;
+      min-height: 420px;
+    }
+
+    .empty-output {
+      height: 100%;
+      min-height: 360px;
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: var(--soft);
+      text-align: center;
+      padding: 28px;
+    }
+
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+      gap: 10px;
+    }
+
+    .asset-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      overflow: hidden;
+    }
+
+    .asset-card figure {
+      margin: 0;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(45deg, rgba(255,255,255,0.04) 25%, transparent 25% 75%, rgba(255,255,255,0.04) 75%),
+        rgba(0,0,0,0.26);
+      background-size: 18px 18px;
+    }
+
+    .asset-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      image-rendering: auto;
+    }
+
+    .asset-card figcaption {
+      padding: 8px 9px;
+      color: var(--muted);
+      font-size: 11px;
+      overflow-wrap: anywhere;
+      border-top: 1px solid var(--line);
+    }
+
+    pre {
+      margin: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(0,0,0,0.42);
+      color: #dce7ff;
+      min-height: 360px;
+      overflow: auto;
+      font-size: 12px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .log-line {
+      display: block;
+      color: rgba(220,231,255,0.78);
+    }
+
+    .toast {
+      margin: 0 20px 20px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--muted);
+      background: rgba(0,0,0,0.25);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .toast.error {
+      border-color: rgba(255,94,102,0.42);
+      color: #ffb6bb;
+    }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 1080px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .result-window {
+        min-height: 620px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100vw - 24px, 1480px);
+        padding-top: 18px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .top-actions {
+        justify-content: flex-start;
+      }
+
+      .field-grid,
+      .switch-row,
+      .summary-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .drop {
+        margin: 14px;
+        min-height: 220px;
+      }
+
+      .controls,
+      .progress-panel {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .summary-grid,
+      .output {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div>
+          <h1>视频生成游戏资产</h1>
+          <small>Video Understanding -> ThemeAssetPackage -> Tap-Fight</small>
+        </div>
+      </div>
+      <nav class="top-actions" aria-label="页面导航">
+        <a class="link-btn" href="./">返回游戏</a>
+        <a class="link-btn" href="./leaderboard.html" target="_blank" rel="noopener">排行榜</a>
+      </nav>
+    </header>
+
+    <section class="layout">
+      <section class="panel">
+        <div class="panel-head">
+          <h2 class="panel-title">输入视频</h2>
+          <div id="statusPill" class="status-pill">
+            <span class="pulse"></span>
+            <span id="statusText">待开始</span>
+          </div>
+        </div>
+
+        <label id="dropZone" class="drop" for="fileInput">
+          <input id="fileInput" class="hidden" type="file" accept="video/*" />
+          <span class="drop-inner">
+            <span class="upload-icon" aria-hidden="true">↑</span>
+            <strong id="dropTitle">拖入视频</strong>
+            <span id="dropSub">MP4 / MOV / WebM</span>
+            <span id="fileMeta" class="file-meta"></span>
+          </span>
+        </label>
+
+        <div id="toast" class="toast hidden"></div>
+
+        <div class="controls">
+          <div class="field-grid">
+            <label>
+              Theme ID
+              <input id="themeIdInput" type="text" value="" autocomplete="off" />
+            </label>
+            <label>
+              场景模板
+              <select id="stageTemplate">
+                <option value="office_battle_001">office_battle_001</option>
+                <option value="palace_battle_001">palace_battle_001</option>
+                <option value="cute_pet_001">cute_pet_001</option>
+                <option value="original_space_duelist_001">original_space_duelist_001</option>
+              </select>
+            </label>
+            <label>
+              理解帧数
+              <select id="frameCount">
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="switch-row">
+            <label class="switch">
+              导入 Tap-Fight
+              <input id="exportTapFight" type="checkbox" checked />
+            </label>
+            <label class="switch">
+              生成场景资产
+              <input id="generateStageAssets" type="checkbox" />
+            </label>
+            <label class="switch">
+              跳过 LLM/Draw
+              <input id="structureOnly" type="checkbox" />
+            </label>
+          </div>
+
+          <button id="startBtn" class="primary-btn" type="button" disabled>开始生成</button>
+        </div>
+
+        <div class="progress-panel">
+          <div class="progress-row">
+            <span id="progressMessage">等待视频</span>
+            <span id="progressNumber" class="progress-number">0%</span>
+          </div>
+          <div class="progress-track" aria-label="生成进度">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <div class="steps" aria-label="管线阶段">
+            <div class="step" data-threshold="2">上传</div>
+            <div class="step" data-threshold="18">理解</div>
+            <div class="step" data-threshold="36">角色</div>
+            <div class="step" data-threshold="56">九帧</div>
+            <div class="step" data-threshold="70">后处理</div>
+            <div class="step" data-threshold="92">打包</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel result-window">
+        <div class="window-strip">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span id="windowName" class="window-name">asset-output://theme-package</span>
+        </div>
+
+        <div id="summaryGrid" class="summary-grid">
+          <div class="metric"><span>Theme</span><strong>等待生成</strong></div>
+          <div class="metric"><span>P1</span><strong>-</strong></div>
+          <div class="metric"><span>P2</span><strong>-</strong></div>
+          <div class="metric"><span>can_load</span><strong>-</strong></div>
+        </div>
+
+        <div>
+          <div class="tabs" role="tablist" aria-label="输出内容">
+            <button class="tab active" type="button" data-tab="assets">资产</button>
+            <button class="tab" type="button" data-tab="json">结构化数据</button>
+            <button class="tab" type="button" data-tab="logs">日志</button>
+          </div>
+          <div id="output" class="output">
+            <div class="empty-output">生成完成后显示资产缩略图和 JSON</div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const fileInput = document.querySelector('#fileInput');
+    const dropZone = document.querySelector('#dropZone');
+    const dropTitle = document.querySelector('#dropTitle');
+    const dropSub = document.querySelector('#dropSub');
+    const fileMeta = document.querySelector('#fileMeta');
+    const themeIdInput = document.querySelector('#themeIdInput');
+    const stageTemplate = document.querySelector('#stageTemplate');
+    const frameCount = document.querySelector('#frameCount');
+    const exportTapFight = document.querySelector('#exportTapFight');
+    const generateStageAssets = document.querySelector('#generateStageAssets');
+    const structureOnly = document.querySelector('#structureOnly');
+    const startBtn = document.querySelector('#startBtn');
+    const statusPill = document.querySelector('#statusPill');
+    const statusText = document.querySelector('#statusText');
+    const progressMessage = document.querySelector('#progressMessage');
+    const progressNumber = document.querySelector('#progressNumber');
+    const progressFill = document.querySelector('#progressFill');
+    const toast = document.querySelector('#toast');
+    const output = document.querySelector('#output');
+    const summaryGrid = document.querySelector('#summaryGrid');
+    const windowName = document.querySelector('#windowName');
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const steps = Array.from(document.querySelectorAll('.step'));
+
+    const state = {
+      file: null,
+      job: null,
+      pollTimer: 0,
+      activeTab: 'assets',
+    };
+
+    function formatBytes(bytes) {
+      if (!Number.isFinite(bytes) || bytes <= 0) return '0 B';
+      const units = ['B', 'KB', 'MB', 'GB'];
+      let size = bytes;
+      let index = 0;
+      while (size >= 1024 && index < units.length - 1) {
+        size /= 1024;
+        index += 1;
+      }
+      return `${size.toFixed(index === 0 ? 0 : 1)} ${units[index]}`;
+    }
+
+    function makeThemeId(file) {
+      const base = (file?.name || 'video')
+        .replace(/\.[^.]+$/, '')
+        .replace(/[^a-zA-Z0-9_-]+/g, '_')
+        .replace(/^_+|_+$/g, '')
+        .slice(0, 36) || 'video';
+      const stamp = new Date().toISOString().replace(/[-:TZ.]/g, '').slice(0, 14);
+      return `web_${base}_${stamp}`;
+    }
+
+    function showToast(message, type = '') {
+      toast.textContent = message;
+      toast.className = `toast ${type}`.trim();
+      toast.classList.toggle('hidden', !message);
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function setStatus(status) {
+      statusPill.className = `status-pill status-${status || 'idle'}`;
+      const label = {
+        uploading: '上传中',
+        queued: '排队中',
+        running: '生成中',
+        completed: '已完成',
+        failed: '失败',
+      }[status] || '待开始';
+      statusText.textContent = label;
+    }
+
+    function setProgress(progress, message) {
+      const value = Math.max(0, Math.min(100, Math.round(progress || 0)));
+      progressNumber.textContent = `${value}%`;
+      progressFill.style.width = `${value}%`;
+      progressMessage.textContent = message || '等待视频';
+      steps.forEach((step) => {
+        step.classList.toggle('active', value >= Number(step.dataset.threshold || 0));
+      });
+    }
+
+    function selectFile(file) {
+      if (!file) return;
+      if (!file.type.startsWith('video/') && !/\.(mp4|mov|m4v|webm|avi|mkv)$/i.test(file.name)) {
+        showToast('请选择视频文件', 'error');
+        return;
+      }
+      state.file = file;
+      themeIdInput.value = makeThemeId(file);
+      dropTitle.textContent = file.name;
+      dropSub.textContent = `${file.type || 'video'} · ${formatBytes(file.size)}`;
+      fileMeta.textContent = `已选择：${file.name} / ${formatBytes(file.size)}`;
+      fileMeta.classList.add('active');
+      startBtn.disabled = false;
+      showToast('');
+    }
+
+    async function startJob() {
+      if (!state.file) {
+        showToast('先拖入一个视频', 'error');
+        return;
+      }
+
+      startBtn.disabled = true;
+      setStatus('uploading');
+      setProgress(2, '上传视频');
+      renderEmpty('正在建立任务');
+
+      const params = new URLSearchParams({
+        filename: state.file.name,
+        themeId: themeIdInput.value.trim() || makeThemeId(state.file),
+        stageTemplate: stageTemplate.value,
+        frames: frameCount.value,
+        exportTapFight: exportTapFight.checked ? '1' : '0',
+        generateStageAssets: generateStageAssets.checked ? '1' : '0',
+        structureOnly: structureOnly.checked ? '1' : '0',
+      });
+
+      try {
+        const response = await fetch(`/api/video-pipeline/jobs?${params.toString()}`, {
+          method: 'POST',
+          headers: { 'Content-Type': state.file.type || 'application/octet-stream' },
+          body: state.file,
+        });
+
+        const job = await response.json();
+        if (!response.ok) throw new Error(job.error || job.message || '启动失败');
+        state.job = job;
+        renderJob(job);
+        pollJob(job.id);
+      } catch (error) {
+        setStatus('failed');
+        setProgress(0, '启动失败');
+        startBtn.disabled = false;
+        showToast(error.message || String(error), 'error');
+      }
+    }
+
+    function pollJob(jobId) {
+      clearInterval(state.pollTimer);
+      state.pollTimer = window.setInterval(async () => {
+        try {
+          const response = await fetch(`/api/video-pipeline/jobs/${jobId}`, { cache: 'no-store' });
+          const job = await response.json();
+          if (!response.ok) throw new Error(job.error || '任务不存在');
+          state.job = job;
+          renderJob(job);
+          if (job.status === 'completed' || job.status === 'failed') {
+            clearInterval(state.pollTimer);
+            startBtn.disabled = false;
+          }
+        } catch (error) {
+          clearInterval(state.pollTimer);
+          setStatus('failed');
+          showToast(error.message || String(error), 'error');
+          startBtn.disabled = false;
+        }
+      }, 1600);
+    }
+
+    function renderJob(job) {
+      setStatus(job.status);
+      setProgress(job.progress, job.message);
+      windowName.textContent = `asset-output://${job.themeId}`;
+      if (job.status === 'failed') showToast(job.error || job.message || '生成失败', 'error');
+      if (job.status === 'completed') showToast('ThemeAssetPackage 已生成');
+      renderSummary(job);
+      renderActiveTab();
+    }
+
+    function renderSummary(job) {
+      const overview = job.result?.overview || {};
+      const p1 = overview.p1 || {};
+      const p2 = overview.p2 || {};
+      const canLoad = overview.can_load_in_game === true ? 'true' : overview.can_load_in_game === false ? 'false' : '-';
+      summaryGrid.innerHTML = `
+        <div class="metric"><span>Theme</span><strong>${escapeHtml(overview.theme_id || job.themeId || '等待生成')}</strong></div>
+        <div class="metric"><span>P1</span><strong>${escapeHtml(p1.name || '-')} · ${escapeHtml(p1.weapon || p1.role || '-')}</strong></div>
+        <div class="metric"><span>P2</span><strong>${escapeHtml(p2.name || '-')} · ${escapeHtml(p2.weapon || p2.role || '-')}</strong></div>
+        <div class="metric"><span>can_load</span><strong>${escapeHtml(canLoad)}</strong></div>
+      `;
+    }
+
+    function overviewFromManifest(themeId, manifest, packageStatus) {
+      return {
+        theme_id: manifest?.theme_id || themeId,
+        display_name: manifest?.display_name || '',
+        can_load_in_game: Boolean(packageStatus?.validation?.can_load_in_game),
+        validation_status: packageStatus?.validation?.status || '',
+        p1: {
+          name: manifest?.players?.p1?.name || '',
+          role: manifest?.players?.p1?.role || '',
+          weapon: manifest?.players?.p1?.attack_prop_name || '',
+          skill_taunt: manifest?.players?.p1?.skill_taunt?.text || '',
+        },
+        p2: {
+          name: manifest?.players?.p2?.name || '',
+          role: manifest?.players?.p2?.role || '',
+          weapon: manifest?.players?.p2?.attack_prop_name || '',
+          skill_taunt: manifest?.players?.p2?.skill_taunt?.text || '',
+        },
+        taunt: manifest?.taunt?.text || '',
+        package_files: {
+          manifest: Boolean(manifest),
+          package_status: Boolean(packageStatus),
+        },
+      };
+    }
+
+    function staticAssetList(themeId, manifest) {
+      const root = `./theme_packs/${encodeURIComponent(themeId)}/`;
+      const frameNames = ['idle_0', 'idle_1', 'run_0', 'run_1', 'run_2', 'run_3', 'jump_0', 'fall_0', 'attack_0'];
+      const projectileNames = ['projectile_0', 'projectile_1', 'projectile_2', 'projectile_3'];
+      const paths = new Set([
+        'background.png',
+        'platform_left.png',
+        'platform_mid.png',
+        'platform_right.png',
+        'hazard_debris.png',
+        manifest?.environment?.background,
+        manifest?.players?.p1?.body,
+        manifest?.players?.p1?.head,
+        manifest?.players?.p1?.melee_prop,
+        manifest?.players?.p1?.projectile,
+        manifest?.players?.p1?.sprite_sheet,
+        manifest?.players?.p1?.projectile_animation?.sheet,
+        manifest?.players?.p2?.body,
+        manifest?.players?.p2?.head,
+        manifest?.players?.p2?.melee_prop,
+        manifest?.players?.p2?.projectile,
+        manifest?.players?.p2?.sprite_sheet,
+        manifest?.players?.p2?.projectile_animation?.sheet,
+        manifest?.taunt?.bubble,
+        ...(manifest?.stage_assets?.files ? Object.values(manifest.stage_assets.files) : []),
+      ].filter(Boolean));
+
+      frameNames.forEach((name) => {
+        paths.add(`animation_preview/frames/p1/${name}.png`);
+        paths.add(`animation_preview/frames/p2/${name}.png`);
+      });
+      projectileNames.forEach((name) => {
+        paths.add(`animation_preview/frames/p1_projectile/${name}.png`);
+        paths.add(`animation_preview/frames/p2_projectile/${name}.png`);
+      });
+
+      return Array.from(paths).slice(0, 48).map((assetPath) => ({
+        path: assetPath,
+        url: `${root}${assetPath}`,
+        kind: assetPath.includes('/frames/') ? 'frame' : 'asset',
+      }));
+    }
+
+    async function fetchJsonOrNull(url) {
+      const response = await fetch(url, { cache: 'no-store' });
+      if (!response.ok) return null;
+      return response.json();
+    }
+
+    async function loadThemePackage(themeId) {
+      if (!themeId) return;
+      setStatus('running');
+      setProgress(45, '读取已生成主题');
+      renderEmpty('正在读取主题包');
+      try {
+        const root = `./theme_packs/${encodeURIComponent(themeId)}`;
+        const [manifest, packageStatus, analysisReport, pipelineResult] = await Promise.all([
+          fetchJsonOrNull(`${root}/manifest.json`),
+          fetchJsonOrNull(`${root}/package_status.json`),
+          fetchJsonOrNull(`${root}/analysis_report.json`),
+          fetchJsonOrNull(`${root}/pipeline_result.json`),
+        ]);
+        if (!manifest) throw new Error(`找不到主题包：${themeId}`);
+        state.job = {
+          id: `static_${themeId}`,
+          themeId,
+          status: 'completed',
+          progress: 100,
+          message: '已读取 ThemeAssetPackage',
+          logs: [`Loaded theme package ${themeId} from Tap-Fight public assets.`],
+          result: {
+            overview: overviewFromManifest(themeId, manifest, packageStatus),
+            assets: staticAssetList(themeId, manifest),
+            manifest,
+            package_status: packageStatus,
+            analysis_report: analysisReport,
+            pipeline_result: pipelineResult,
+          },
+        };
+        renderJob(state.job);
+      } catch (error) {
+        setStatus('failed');
+        setProgress(0, '读取失败');
+        renderEmpty(error.message || String(error));
+        showToast(error.message || String(error), 'error');
+      }
+    }
+
+    function renderActiveTab() {
+      tabs.forEach((tab) => tab.classList.toggle('active', tab.dataset.tab === state.activeTab));
+      if (!state.job) {
+        renderEmpty('生成完成后显示资产缩略图和 JSON');
+        return;
+      }
+
+      if (state.activeTab === 'assets') renderAssets();
+      if (state.activeTab === 'json') renderJson();
+      if (state.activeTab === 'logs') renderLogs();
+    }
+
+    function renderEmpty(message) {
+      output.innerHTML = `<div class="empty-output">${escapeHtml(message)}</div>`;
+    }
+
+    function renderAssets() {
+      const job = state.job;
+      const assets = job?.result?.assets || [];
+      if (!assets.length) {
+        renderEmpty(job?.status === 'completed' ? '没有找到可预览图片资产' : '资产生成中');
+        return;
+      }
+
+      output.innerHTML = `<div class="asset-grid">${assets.map((asset) => `
+        <article class="asset-card">
+          <figure><img src="${escapeHtml(asset.url)}" alt="${escapeHtml(asset.path)}" loading="lazy" /></figure>
+          <figcaption>${escapeHtml(asset.path)}</figcaption>
+        </article>
+      `).join('')}</div>`;
+    }
+
+    function renderJson() {
+      const job = state.job;
+      const payload = job?.result || {
+        id: job?.id,
+        themeId: job?.themeId,
+        status: job?.status,
+        progress: job?.progress,
+        message: job?.message,
+      };
+      output.innerHTML = `<pre>${escapeHtml(JSON.stringify(payload, null, 2))}</pre>`;
+    }
+
+    function renderLogs() {
+      const logs = state.job?.logs || [];
+      if (!logs.length) {
+        renderEmpty('暂无日志');
+        return;
+      }
+      output.innerHTML = `<pre>${logs.map((line) => `<span class="log-line">${escapeHtml(line)}</span>`).join('\n')}</pre>`;
+    }
+
+    dropZone.addEventListener('dragover', (event) => {
+      event.preventDefault();
+      dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+      dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (event) => {
+      event.preventDefault();
+      dropZone.classList.remove('dragover');
+      selectFile(event.dataTransfer.files[0]);
+    });
+
+    fileInput.addEventListener('change', () => selectFile(fileInput.files[0]));
+    startBtn.addEventListener('click', startJob);
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        state.activeTab = tab.dataset.tab;
+        renderActiveTab();
+      });
+    });
+
+    setStatus('');
+    setProgress(0, '等待视频');
+
+    const initialThemeId = new URLSearchParams(location.search).get('themeId');
+    if (initialThemeId) loadThemePackage(initialThemeId);
+  </script>
+</body>
+</html>

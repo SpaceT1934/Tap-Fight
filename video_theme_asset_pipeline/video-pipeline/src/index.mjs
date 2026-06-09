@@ -26,6 +26,7 @@ const DEFAULT_TAP_FIGHT_DIR = path.join(WORKSPACE_DIR, "Tap-Fight");
 const DEFAULT_TAP_FIGHT_STAGE_TEMPLATE = "office_battle_001";
 const SEGMENT_CROP_SCRIPT = path.join(ROOT_DIR, "tools", "segment_crop.py");
 const SPRITE_POSTPROCESS_SCRIPT = path.join(ROOT_DIR, "tools", "sprite_postprocess.py");
+const STAGE_POSTPROCESS_SCRIPT = path.join(ROOT_DIR, "tools", "stage_asset_postprocess.py");
 const DEFAULT_VIDEO_SOURCE_DIR = path.join(WINDOW_DIR, "视频源素材");
 const DEFAULT_GEMINI_BASE_URL = "https://right.codes/gemini";
 const DEFAULT_GEMINI_MODEL = "gemini-3.1-pro-preview";
@@ -43,9 +44,74 @@ const DEFAULT_DRAW_RETRY_DELAY_MS = 3000;
 const DEFAULT_DRAW_CONCURRENCY = 2;
 const CHARACTER_SHEET_SIZE = "1536x1536";
 const PROJECTILE_SHEET_SIZE = "1024x256";
+const STAGE_BACKGROUND_SIZE = "1080x1920";
+const STAGE_PLATFORM_LEFT_SIZE = "58x54";
+const STAGE_PLATFORM_MID_SIZE = "128x54";
+const STAGE_PLATFORM_RIGHT_SIZE = "58x54";
+const STAGE_PLATFORM_STRIP_SIZE = "244x54";
+const STAGE_HAZARD_SIZE = "48x48";
 const CHROMA_KEY = "00ff00";
 const ANIMATION_FRAME_NAMES = ["idle_0", "idle_1", "run_0", "run_1", "run_2", "run_3", "jump_0", "fall_0", "attack_0"];
 const PROJECTILE_FRAME_NAMES = ["projectile_0", "projectile_1", "projectile_2", "projectile_3"];
+const STAGE_ASSET_SPECS = [
+  {
+    key: "background",
+    file: "background.png",
+    path: "assets/stage/background.png",
+    raw: "assets/raw/stage_background_raw.png",
+    targetSize: STAGE_BACKGROUND_SIZE,
+    transparent: false,
+    manifestField: "background"
+  },
+  {
+    key: "platform_left",
+    file: "platform_left.png",
+    path: "assets/stage/platform_left.png",
+    raw: "assets/raw/stage_platform_left_raw.png",
+    targetSize: STAGE_PLATFORM_LEFT_SIZE,
+    transparent: true,
+    manifestField: "platform_left"
+  },
+  {
+    key: "platform_mid",
+    file: "platform_mid.png",
+    path: "assets/stage/platform_mid.png",
+    raw: "assets/raw/stage_platform_mid_raw.png",
+    targetSize: STAGE_PLATFORM_MID_SIZE,
+    transparent: true,
+    manifestField: "platform_mid"
+  },
+  {
+    key: "platform_right",
+    file: "platform_right.png",
+    path: "assets/stage/platform_right.png",
+    raw: "assets/raw/stage_platform_right_raw.png",
+    targetSize: STAGE_PLATFORM_RIGHT_SIZE,
+    transparent: true,
+    manifestField: "platform_right"
+  },
+  {
+    key: "hazard_debris",
+    file: "hazard_debris.png",
+    path: "assets/stage/hazard_debris.png",
+    raw: "assets/raw/stage_hazard_debris_raw.png",
+    targetSize: STAGE_HAZARD_SIZE,
+    transparent: true,
+    manifestField: "hazard_debris"
+  }
+];
+const STAGE_PLATFORM_TILE_KEYS = new Set(["platform_left", "platform_mid", "platform_right"]);
+const STAGE_PLATFORM_TILE_SPECS = STAGE_ASSET_SPECS.filter((spec) => STAGE_PLATFORM_TILE_KEYS.has(spec.key));
+const STAGE_PLATFORM_STRIP_SPEC = {
+  key: "platform_strip",
+  file: "platform_strip.png",
+  path: "assets/stage/platform_strip.png",
+  raw: "assets/raw/stage_platform_strip_raw.png",
+  targetSize: STAGE_PLATFORM_STRIP_SIZE,
+  transparent: true,
+  resizeMode: "stretch_transparent",
+  manifestField: "platform_strip"
+};
 const VIDEO_EXTENSIONS = new Set([".mp4", ".mov", ".mkv", ".avi", ".webm", ".m4v"]);
 const ASSET_PATHS = [
   "assets/p1_body.png",
@@ -72,10 +138,10 @@ const assetFallbackKeys = {
 };
 
 const usage = `Usage:
-  node src/index.mjs understand-video [--video <path>] [--input-dir <path>] [--understanding-id <id>] [--frames <n>] [--no-llm] [--strict-llm]
+  node src/index.mjs understand-video [--video <path>] [--input-dir <path>] [--understanding-id <id>] [--frames <n>] [--generate-stage-assets] [--no-llm] [--strict-llm]
   node src/index.mjs compare-llm [--video <path>] [--input-dir <path>] [--frames <n>]
-  node src/index.mjs generate-frames [--understanding <id|dir|generation_brief.json>] [--theme-id <id>] [--no-draw] [--strict-draw]
-  node src/index.mjs package-video --video <path> [--theme-id <id>] [--export-tap-fight] [--tap-fight-dir <path>] [--safe-remix] [--allow-fallback] [--force-understanding] [--draw-retries <n>] [--draw-concurrency <n>]
+  node src/index.mjs generate-frames [--understanding <id|dir|generation_brief.json>] [--theme-id <id>] [--generate-stage-assets] [--no-draw] [--strict-draw]
+  node src/index.mjs package-video --video <path> [--theme-id <id>] [--export-tap-fight] [--tap-fight-dir <path>] [--generate-stage-assets] [--safe-remix] [--allow-fallback] [--force-understanding] [--draw-retries <n>] [--draw-concurrency <n>]
   node src/index.mjs export-tap-fight --theme <theme_id|theme_dir> [--tap-fight-dir <path>] [--video <path>] [--stage-template <theme_id>]
   node src/index.mjs generate-full [--video <path>] [--input-dir <path>] [--frames <n>] [--no-llm] [--no-draw]
   node src/index.mjs validate
@@ -271,6 +337,11 @@ async function packageVideoToTheme(options) {
       understanding: pipelineOptions.model || process.env.CODEX_PRO_MODEL || DEFAULT_MODEL,
       draw: pipelineOptions.drawModel || process.env.RIGHT_CODES_DRAW_MODEL || DEFAULT_DRAW_MODEL
     },
+    stage_assets: {
+      requested: Boolean(pipelineOptions.generateStageAssets),
+      generated: Boolean(analysisReport?.image_generation?.stage_generation?.enabled),
+      mode: analysisReport?.image_generation?.stage_generation?.mode || "template_fallback"
+    },
     visual_mode: analysisReport?.image_generation?.visual_mode || (pipelineOptions.safeRemix ? "safe_remix" : "faithful")
   };
 
@@ -440,6 +511,15 @@ async function copyTapFightStageAssets(tapFightDir, targetDir, templateId, sourc
     path.join(tapFightDir, "theme_packs", templateId)
   ];
   for (const asset of stageAssets) {
+    const generatedSource = sourceDir ? findGeneratedStageAsset(sourceDir, asset) : "";
+    if (generatedSource) {
+      await copyFileWithParents(generatedSource, path.join(targetDir, asset));
+      await copyFileWithParents(generatedSource, path.join(targetDir, "assets", "stage", asset));
+      if (asset === "background.png") {
+        await copyFileWithParents(generatedSource, path.join(targetDir, "assets", "background.png"));
+      }
+      continue;
+    }
     for (const templateDir of templateDirs) {
       const source = path.join(templateDir, asset);
       if (!existsSync(source)) continue;
@@ -453,6 +533,16 @@ async function copyTapFightStageAssets(tapFightDir, targetDir, templateId, sourc
       break;
     }
   }
+}
+
+function findGeneratedStageAsset(sourceDir, asset) {
+  const candidates = [
+    path.join(sourceDir, "assets", "stage", asset)
+  ];
+  for (const candidate of candidates) {
+    if (existsSync(candidate)) return candidate;
+  }
+  return "";
 }
 
 async function copyTapFightAnimations(sourceDir, targetDir, manifest) {
@@ -622,7 +712,8 @@ async function understandSingleVideo(videoPath, options) {
   const outputDir = path.join(UNDERSTANDING_OUTPUT_DIR, understandingId);
   if (!options.forceUnderstanding) {
     const cached = await tryReuseVideoUnderstanding(outputDir, fileHash, {
-      allowHeuristic: Boolean(options.noLlm)
+      allowHeuristic: Boolean(options.noLlm),
+      requireSceneAssets: Boolean(options.generateStageAssets)
     });
     if (cached) return { understanding_id: understandingId, reused: true };
   }
@@ -652,7 +743,8 @@ async function understandSingleVideo(videoPath, options) {
       sidecarText,
       framePaths,
       strict: options.strictLlm,
-      model: options.model
+      model: options.model,
+      generateStageAssets: Boolean(options.generateStageAssets)
     });
     modelDecision = result.decision;
     modelStatus = result.status;
@@ -664,7 +756,8 @@ async function understandSingleVideo(videoPath, options) {
     baseName,
     sourceId,
     framePaths,
-    sidecarText
+    sidecarText,
+    generateStageAssets: Boolean(options.generateStageAssets)
   });
   const relativeFrames = framePaths.map((framePath) => normalizePath(path.relative(outputDir, framePath)));
   const videoUnderstanding = buildVideoUnderstanding({
@@ -678,7 +771,8 @@ async function understandSingleVideo(videoPath, options) {
     relativeFrames,
     pipelineSteps,
     warnings,
-    normalizedUnderstanding
+    normalizedUnderstanding,
+    generateStageAssets: Boolean(options.generateStageAssets)
   });
   const generationBrief = buildGenerationBrief(videoUnderstanding);
 
@@ -698,11 +792,17 @@ async function tryReuseVideoUnderstanding(outputDir, fileHash, options = {}) {
     if (understanding.schema_version !== "video_understanding.v0.1") return false;
     if (brief.schema_version !== "generation_brief.v0.1") return false;
     if (understanding.video?.sha1 !== fileHash) return false;
+    if (options.requireSceneAssets && !understanding.pipeline_features?.stage_asset_planning && !hasSceneAssetPlan(understanding) && !hasSceneAssetPlan(brief)) return false;
     if (!options.allowHeuristic && !hasSuccessfulMultimodalUnderstanding(understanding)) return false;
     return true;
   } catch {
     return false;
   }
+}
+
+function hasSceneAssetPlan(document) {
+  const sceneAssets = document?.scene_assets || document?.creative_game_design?.scene_assets;
+  return sceneAssets && typeof sceneAssets === "object" && Object.keys(sceneAssets).length > 0;
 }
 
 function hasSuccessfulMultimodalUnderstanding(understanding) {
@@ -1011,6 +1111,7 @@ async function resolveSingleUnderstandingInput(value) {
 
 async function generateFramePackageFromUnderstanding(input, options = {}) {
   if (!existsSync(input.briefPath)) throw new Error(`generation_brief.json not found: ${toDisplayPath(input.briefPath)}`);
+  options = withDrawScheduler(options);
 
   let brief = await readJson(input.briefPath);
   const understanding = existsSync(input.understandingPath) ? await readJson(input.understandingPath) : null;
@@ -1043,7 +1144,7 @@ async function generateFramePackageFromUnderstanding(input, options = {}) {
   await writePlaceholderAsset(packDir, manifest, manifest.environment.background);
   await writePlaceholderAsset(packDir, manifest, manifest.taunt.bubble);
 
-  const playerResults = await runWithConcurrency(["p1", "p2"], normalizeDrawConcurrency(options.drawConcurrency), async (playerId) => {
+  const playerResultsPromise = runWithConcurrency(["p1", "p2"], 2, async (playerId) => {
     const localWarnings = [];
     const mapped = roleMapping.byId[playerId];
     const character = mapped.character;
@@ -1056,6 +1157,10 @@ async function generateFramePackageFromUnderstanding(input, options = {}) {
     const rawPath = path.join(packDir, "assets", "raw", `${playerId}_sprite_sheet_raw.png`);
     const sheetPath = path.join(packDir, "assets", `${playerId}_sprite_sheet.png`);
     const framesDir = path.join(packDir, "frames", playerId);
+    const projectilePromise = shouldGenerateProjectile(character, role)
+      ? generateProjectileAsset({ packDir, brief, character, mapped, manifest, options, warnings: localWarnings, referenceImagePaths })
+        .then((value) => ({ ok: true, value }), (error) => ({ ok: false, error }))
+      : Promise.resolve({ ok: true, value: null });
 
     const drawResult = await drawOrPlaceholder({
       prompt,
@@ -1125,9 +1230,9 @@ async function generateFramePackageFromUnderstanding(input, options = {}) {
       }
     }
 
-    const projectile = shouldGenerateProjectile(character, role)
-      ? await generateProjectileAsset({ packDir, brief, character, mapped, manifest, options, warnings: localWarnings, referenceImagePaths })
-      : null;
+    const projectileOutcome = await projectilePromise;
+    if (!projectileOutcome.ok) throw projectileOutcome.error;
+    const projectile = projectileOutcome.value;
     const animationManifest = buildCharacterAnimationManifest({
       themeId,
       playerId,
@@ -1158,11 +1263,28 @@ async function generateFramePackageFromUnderstanding(input, options = {}) {
       }
     };
   });
+  const stageGenerationPromise = options.generateStageAssets
+    ? generateStageAssets({ packDir, brief, manifest, options, sourceInput: input, warnings })
+      .then((value) => ({ ok: true, value }), (error) => ({ ok: false, error }))
+    : Promise.resolve({
+        ok: true,
+        value: {
+          enabled: false,
+          mode: "template_fallback",
+          reason: "--generate-stage-assets was not set"
+        }
+      });
+
+  const playerResults = await playerResultsPromise;
   const generationRecords = [];
   for (const result of playerResults) {
     warnings.push(...result.warnings);
     generationRecords.push(result.record);
   }
+
+  const stageGenerationOutcome = await stageGenerationPromise;
+  if (!stageGenerationOutcome.ok) throw stageGenerationOutcome.error;
+  const stageGeneration = stageGenerationOutcome.value;
 
   const analysisReport = buildAnimationAnalysisReport({
     themeId,
@@ -1172,6 +1294,7 @@ async function generateFramePackageFromUnderstanding(input, options = {}) {
     roleMapping,
     pipelineSteps,
     generationRecords,
+    stageGeneration,
     warnings
   });
   await writeJson(path.join(packDir, "manifest.json"), manifest);
@@ -1191,7 +1314,7 @@ async function generateFramePackageFromUnderstanding(input, options = {}) {
 function normalizeDrawConcurrency(value) {
   const number = Number(value);
   if (!Number.isFinite(number)) return DEFAULT_DRAW_CONCURRENCY;
-  return Math.max(1, Math.min(4, Math.floor(number)));
+  return Math.max(1, Math.min(8, Math.floor(number)));
 }
 
 async function runWithConcurrency(items, concurrency, worker) {
@@ -1207,6 +1330,76 @@ async function runWithConcurrency(items, concurrency, worker) {
   }
   await Promise.all(Array.from({ length: limit }, () => runNext()));
   return results;
+}
+
+function withDrawScheduler(options) {
+  if (options.drawScheduler) return options;
+  return {
+    ...options,
+    drawScheduler: createDrawScheduler(normalizeDrawConcurrency(options.drawConcurrency))
+  };
+}
+
+function createDrawScheduler(concurrency) {
+  const limit = normalizeDrawConcurrency(concurrency);
+  const queue = [];
+  let active = 0;
+  const run = (label, task) => {
+    const queuedAtMs = Date.now();
+    return new Promise((resolve, reject) => {
+      queue.push({ label: label || "asset", task, queuedAtMs, resolve, reject });
+      pump();
+    });
+  };
+  const pump = () => {
+    while (active < limit && queue.length > 0) {
+      const item = queue.shift();
+      active += 1;
+      const startedAtMs = Date.now();
+      Promise.resolve()
+        .then(item.task)
+        .then((value) => {
+          const finishedAtMs = Date.now();
+          resolveScheduledDraw(item, value, {
+            label: item.label,
+            concurrency_limit: limit,
+            queued_at: new Date(item.queuedAtMs).toISOString(),
+            started_at: new Date(startedAtMs).toISOString(),
+            finished_at: new Date(finishedAtMs).toISOString(),
+            wait_ms: startedAtMs - item.queuedAtMs,
+            duration_ms: finishedAtMs - startedAtMs
+          });
+        })
+        .catch((error) => {
+          const finishedAtMs = Date.now();
+          error.draw_queue = {
+            label: item.label,
+            concurrency_limit: limit,
+            queued_at: new Date(item.queuedAtMs).toISOString(),
+            started_at: new Date(startedAtMs).toISOString(),
+            finished_at: new Date(finishedAtMs).toISOString(),
+            wait_ms: startedAtMs - item.queuedAtMs,
+            duration_ms: finishedAtMs - startedAtMs
+          };
+          item.reject(error);
+        })
+        .finally(() => {
+          active -= 1;
+          pump();
+        });
+    }
+  };
+  return { run, concurrency: limit };
+}
+
+function resolveScheduledDraw(item, value, drawQueue) {
+  item.resolve({ value, drawQueue });
+}
+
+async function runScheduledDraw(options, label, task) {
+  const scheduler = options.drawScheduler || createDrawScheduler(normalizeDrawConcurrency(options.drawConcurrency));
+  if (!options.drawScheduler) options.drawScheduler = scheduler;
+  return scheduler.run(label, task);
 }
 
 function mapBriefCharactersToContractRoles(characters) {
@@ -1707,7 +1900,7 @@ async function drawOrPlaceholder(input) {
   const baseUrl = input.options.drawBaseUrl || process.env.RIGHT_CODES_DRAW_BASE_URL || DRAW_FALLBACK_BASE_URL;
   const model = input.options.drawModel || process.env.RIGHT_CODES_DRAW_MODEL || DEFAULT_DRAW_MODEL;
   try {
-    const result = await generateImageWithDrawWithRetries({
+    const scheduled = await runScheduledDraw(input.options, input.playerId || "asset", () => generateImageWithDrawWithRetries({
       baseUrl,
       apiKey,
       model,
@@ -1718,7 +1911,8 @@ async function drawOrPlaceholder(input) {
       timeoutMs: input.options.drawTimeoutMs,
       retries: input.options.drawRetries,
       retryDelayMs: input.options.drawRetryDelayMs
-    }, input.playerId, warnings);
+    }, input.playerId, warnings));
+    const result = scheduled.value;
     return {
       warnings,
       status: {
@@ -1731,13 +1925,14 @@ async function drawOrPlaceholder(input) {
         response_kind: result.kind,
         attempts: result.attempts,
         reference_image_count: result.referenceImageCount || 0,
+        draw_queue: scheduled.drawQueue,
         output: normalizePath(path.relative(path.dirname(input.outputPath), input.outputPath))
       }
     };
   } catch (error) {
     if (input.retryPrompt && isIpGuardrailError(error)) {
       try {
-        const retryResult = await generateImageWithDrawWithRetries({
+        const retryScheduled = await runScheduledDraw(input.options, `${input.playerId || "asset"}_ip_retry`, () => generateImageWithDrawWithRetries({
           baseUrl,
           apiKey,
           model,
@@ -1748,7 +1943,8 @@ async function drawOrPlaceholder(input) {
           timeoutMs: input.options.drawTimeoutMs,
           retries: input.options.drawRetries,
           retryDelayMs: input.options.drawRetryDelayMs
-        }, input.playerId, warnings);
+        }, input.playerId, warnings));
+        const retryResult = retryScheduled.value;
         warnings.push(`${input.playerId || "asset"} draw retried without exact IP character names after similarity guardrail; visual features were preserved where possible.`);
         return {
           warnings,
@@ -1762,6 +1958,7 @@ async function drawOrPlaceholder(input) {
             response_kind: retryResult.kind,
             attempts: retryResult.attempts,
             reference_image_count: retryResult.referenceImageCount || 0,
+            draw_queue: retryScheduled.drawQueue,
             output: normalizePath(path.relative(path.dirname(input.outputPath), input.outputPath)),
             retry: {
               triggered: true,
@@ -1824,7 +2021,7 @@ async function generateImageWithDrawWithRetries(input, label, warnings) {
 function isTransientDrawError(error) {
   if (isIpGuardrailError(error)) return false;
   const text = shortError(error).toLowerCase();
-  return /http\s*(429|5\d\d)|cloudflare|524|520|522|523|terminated|timeout|timed out|econnreset|etimedout|fetch failed|network|socket|aborted/.test(text);
+  return /http\s*(429|5\d\d)|cloudflare|524|520|522|523|terminated|timeout|timed out|econnreset|etimedout|fetch failed|network|socket|aborted|invalid image data|empty or too small|unsupported image header/.test(text);
 }
 
 function sleep(ms) {
@@ -1834,12 +2031,26 @@ function sleep(ms) {
 async function generateImageWithDraw(input) {
   try {
     const chatResult = await generateImageWithDrawChat(input);
+    assertGeneratedImageBytes(chatResult.bytes);
     await writeFile(input.outputPath, chatResult.bytes);
     return { kind: chatResult.kind, referenceImageCount: chatResult.referenceImageCount };
   } catch (chatError) {
     const imageResult = await generateImageWithImagesApiFallback(input, `chat/completions failed: ${shortError(chatError)}`);
+    assertGeneratedImageBytes(imageResult.bytes);
     await writeFile(input.outputPath, imageResult.bytes);
     return { kind: imageResult.kind, referenceImageCount: imageResult.referenceImageCount };
+  }
+}
+
+function assertGeneratedImageBytes(bytes) {
+  if (!Buffer.isBuffer(bytes) || bytes.length < 32) {
+    throw new Error(`Draw returned invalid image data: empty or too small (${bytes?.length || 0} bytes).`);
+  }
+  const isPng = bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4E && bytes[3] === 0x47;
+  const isJpeg = bytes[0] === 0xFF && bytes[1] === 0xD8 && bytes[2] === 0xFF;
+  const isWebp = bytes.slice(0, 4).toString("ascii") === "RIFF" && bytes.slice(8, 12).toString("ascii") === "WEBP";
+  if (!isPng && !isJpeg && !isWebp) {
+    throw new Error(`Draw returned invalid image data: unsupported image header ${bytes.slice(0, 12).toString("hex")}.`);
   }
 }
 
@@ -2186,6 +2397,431 @@ async function generateProjectileAsset(input) {
   };
 }
 
+async function generateStageAssets(input) {
+  const { packDir, brief, manifest, options, sourceInput, warnings } = input;
+  const records = [];
+  if (!brief.scene_assets) {
+    brief.scene_assets = normalizeSceneAssets(null, {}, { style_brief: brief.shared_style }, { baseName: brief.source_video || manifest.theme_id });
+    warnings.push("scene_assets was missing from generation_brief; generated stage asset prompts used shared_style fallback planning.");
+  }
+  await mkdir(path.join(packDir, "assets", "stage"), { recursive: true });
+  await mkdir(path.join(packDir, "assets", "raw"), { recursive: true });
+
+  let platformTilesQueued = false;
+  const tasks = [];
+  for (const spec of STAGE_ASSET_SPECS) {
+    if (STAGE_PLATFORM_TILE_KEYS.has(spec.key)) {
+      if (!platformTilesQueued) {
+        tasks.push(async () => generateStagePlatformTiles({
+          packDir,
+          brief,
+          manifest,
+          options,
+          sourceInput,
+          warnings
+        }));
+        platformTilesQueued = true;
+      }
+      continue;
+    }
+
+    tasks.push(async () => {
+      const record = await generateSingleStageAsset({
+        packDir,
+        brief,
+        manifest,
+        options,
+        sourceInput,
+        warnings,
+        spec
+      });
+      if (spec.key === "background") {
+        await copyFileWithParents(path.join(packDir, record.path), path.join(packDir, "assets", "background.png"));
+        manifest.environment.background = spec.path;
+      }
+      return [record];
+    });
+  }
+
+  const recordGroups = await Promise.all(tasks.map((task) => task()));
+  for (const group of recordGroups) {
+    records.push(...group);
+  }
+
+  manifest.stage_assets = buildStageAssetManifest(records);
+  return {
+    enabled: true,
+    mode: "generated_stage_assets",
+    records,
+    manifest_stage_assets: manifest.stage_assets
+  };
+}
+
+async function generateSingleStageAsset(input) {
+  const { packDir, brief, manifest, options, sourceInput, warnings, spec } = input;
+  const plan = getSceneAssetPlan(brief.scene_assets, spec.key);
+  const referenceImagePaths = resolveEvidenceFramePaths(sourceInput.dir, plan.evidence_frames).slice(0, 2);
+  const prompt = buildStageAssetPrompt(brief, plan, spec, options);
+  const retryPrompt = options.safeRemix
+    ? ""
+    : buildStageAssetPrompt(brief, plan, spec, { ...options, deidentifyIpNames: true });
+  const rawPath = path.join(packDir, spec.raw);
+  const outputPath = path.join(packDir, spec.path);
+  const drawResult = await drawStageAssetOrFallback({
+    prompt,
+    retryPrompt,
+    rawPath,
+    spec,
+    referenceImagePaths,
+    options,
+    color: manifest.environment.theme_color,
+    accent: manifest.environment.accent_color
+  });
+  warnings.push(...drawResult.warnings);
+  const postprocess = await resizeStageAsset({
+    inputPath: rawPath,
+    outputPath,
+    spec
+  });
+  return {
+    key: spec.key,
+    file: spec.file,
+    path: spec.path,
+    raw: spec.raw,
+    prompt,
+    reference_images: referenceImagePaths.map((framePath) => normalizePath(path.relative(packDir, framePath))),
+    draw: drawResult.status,
+    postprocess
+  };
+}
+
+async function generateStagePlatformTiles(input) {
+  const { packDir, brief, manifest, options, sourceInput, warnings } = input;
+  const spec = STAGE_PLATFORM_STRIP_SPEC;
+  const stripRecord = await generateSingleStageAsset({
+    packDir,
+    brief,
+    manifest,
+    options,
+    sourceInput,
+    warnings,
+    spec
+  });
+  return splitStagePlatformStrip({
+    packDir,
+    stripRecord,
+    stripPath: path.join(packDir, spec.path)
+  });
+}
+
+async function splitStagePlatformStrip(input) {
+  const { packDir, stripRecord, stripPath } = input;
+  const [stripWidth, stripHeight] = parseSize(STAGE_PLATFORM_STRIP_SIZE);
+  let sourceX = 0;
+  const records = [];
+  for (const spec of STAGE_PLATFORM_TILE_SPECS) {
+    const [width, height] = parseSize(spec.targetSize);
+    const outputPath = path.join(packDir, spec.path);
+    await mkdir(path.dirname(outputPath), { recursive: true });
+    await execFileAsync(getFfmpegPath(), [
+      "-y",
+      "-i", stripPath,
+      "-vf", `crop=${width}:${height}:${sourceX}:0,format=rgba`,
+      outputPath
+    ], { maxBuffer: 16 * 1024 * 1024 });
+    const image = await probeImage(outputPath);
+    records.push({
+      key: spec.key,
+      file: spec.file,
+      path: spec.path,
+      raw: stripRecord.raw,
+      source: {
+        key: STAGE_PLATFORM_STRIP_SPEC.key,
+        path: stripRecord.path,
+        offset: [sourceX, 0],
+        size: [width, height],
+        full_size: [stripWidth, stripHeight]
+      },
+      prompt: stripRecord.prompt,
+      reference_images: stripRecord.reference_images,
+      draw: {
+        ...stripRecord.draw,
+        source_asset: STAGE_PLATFORM_STRIP_SPEC.key,
+        derived_output: true
+      },
+      postprocess: {
+        status: image.width === width && image.height === height ? "ok" : "warn",
+        output_size: [image.width, image.height],
+        expected_size: [width, height],
+        transparent_expected: true,
+        resize_mode: "split_from_platform_strip",
+        source_size: [stripWidth, stripHeight],
+        source_offset: [sourceX, 0]
+      }
+    });
+    sourceX += width;
+  }
+  return records;
+}
+
+function buildStageAssetManifest(records) {
+  const files = {};
+  for (const record of records) files[record.key] = record.path;
+  const dimensions = {};
+  for (const record of records) {
+    dimensions[record.key] = record.postprocess?.expected_size
+      ? `${record.postprocess.expected_size[0]}x${record.postprocess.expected_size[1]}`
+      : "";
+  }
+  return {
+    version: "stage_assets.v0.1",
+    mode: "generated",
+    dimensions,
+    files,
+    tap_fight_export_root_files: STAGE_ASSET_SPECS.map((spec) => spec.file),
+    fallback: "stage_template"
+  };
+}
+
+function getSceneAssetPlan(sceneAssets, key) {
+  const scene = sceneAssets && typeof sceneAssets === "object" ? sceneAssets : {};
+  if (key === "background") return scene.background || {};
+  if (key === "hazard_debris") return scene.hazards || {};
+  return scene.platforms || {};
+}
+
+function buildStageAssetPrompt(brief, plan, spec, options = {}) {
+  const scene = brief.scene_assets || {};
+  const world = imagePromptText(scene.world || brief.shared_style?.world || "video-inspired battle arena", options);
+  const artDirection = imagePromptText(brief.shared_style?.art_direction || "match the source video's visual medium and material style", options);
+  const description = imagePromptText(plan.description || "", options);
+  const styleNotes = imagePromptText(plan.style_notes || "", options);
+  const material = imagePromptText(plan.material || "", options);
+  const shape = imagePromptText(plan.shape_language || "", options);
+  const keep = normalizeStringArray(plan.must_keep).map((item) => imagePromptText(item, options)).join("; ");
+  const avoid = normalizeStringArray(plan.must_avoid).map((item) => imagePromptText(item, options)).join("; ");
+  const [targetWidth, targetHeight] = parseSize(spec.targetSize);
+  const dimensionRule = spec.key === "background"
+    ? `Final asset will be normalized to ${spec.targetSize}. Compose as a vertical 9:16 playable background for a ${targetWidth}x${targetHeight} portrait canvas, full bleed, no transparent padding.`
+    : `Final asset will be normalized to ${spec.targetSize} transparent PNG to match the existing Tap-Fight stage template asset size. Keep the platform/hazard centered, fill the useful sprite area, no opaque background.`;
+  const assetRule = getStageAssetSpecificPrompt(spec);
+  return [
+    `Create Tap-Fight stage asset: ${spec.key}.`,
+    `World: ${world}.`,
+    `Source-video art direction: ${artDirection}.`,
+    description ? `Asset description: ${description}.` : "",
+    styleNotes ? `Style notes: ${styleNotes}.` : "",
+    material ? `Material: ${material}.` : "",
+    shape ? `Shape language: ${shape}.` : "",
+    keep ? `Must keep from source evidence: ${keep}.` : "",
+    avoid ? `Must avoid: ${avoid}.` : "",
+    dimensionRule,
+    assetRule,
+    "No labels, no UI, no watermark, no large readable text, no full-body fighter portraits."
+  ].filter(Boolean).join("\n");
+}
+
+function getStageAssetSpecificPrompt(spec) {
+  if (spec.key === "background") {
+    return "Draw a gameplay-readable arena background with open middle space for two fighters, subtle depth, and clear floor/platform contrast.";
+  }
+  if (spec.key === "platform_strip") {
+    return "Draw one continuous horizontal platform strip on transparent background: a left end cap, a tileable center span, and a right end cap in one perfectly aligned row. The strip will be split into 58x54, 128x54, and 58x54 game files, so keep the top edge, bottom edge, lighting, material, and thickness continuous across the whole strip.";
+  }
+  if (spec.key === "platform_left") {
+    return "Draw only the left end cap of a horizontal platform, transparent background, visually connects to the middle platform tile on its right edge.";
+  }
+  if (spec.key === "platform_mid") {
+    return "Draw only a horizontally tileable middle platform segment, transparent background, left and right edges should repeat cleanly.";
+  }
+  if (spec.key === "platform_right") {
+    return "Draw only the right end cap of a horizontal platform, transparent background, visually connects to the middle platform tile on its left edge.";
+  }
+  return "Draw one small hazardous debris object or obstacle, transparent background, readable at small game size.";
+}
+
+async function drawStageAssetOrFallback(input) {
+  const warnings = [];
+  const label = `stage_${input.spec.key}`;
+  if (input.options.noDraw || process.env.VIDEO_PIPELINE_DISABLE_DRAW === "1") {
+    await writeStagePlaceholderAsset(input.rawPath, input.spec, input.color, input.accent);
+    return {
+      warnings: [`${label} used local placeholder because draw is disabled.`],
+      status: {
+        name: "draw_stage_asset",
+        mode: "placeholder_fallback",
+        status: "skipped",
+        reason: "draw disabled"
+      }
+    };
+  }
+
+  const apiKey = firstEnv(["RIGHT_CODES_DRAW_API_KEY", "RIGHT_CODES_API_KEY", "OPENAI_API_KEY"]);
+  if (!apiKey) {
+    if (input.options.strictDraw) throw new Error("RIGHT_CODES_DRAW_API_KEY or RIGHT_CODES_API_KEY is required for strict stage asset draw mode.");
+    await writeStagePlaceholderAsset(input.rawPath, input.spec, input.color, input.accent);
+    return {
+      warnings: [`${label} draw API key not found; local placeholder was used.`],
+      status: {
+        name: "draw_stage_asset",
+        mode: "placeholder_fallback",
+        status: "warn",
+        reason: "missing API key"
+      }
+    };
+  }
+
+  const baseUrl = input.options.drawBaseUrl || process.env.RIGHT_CODES_DRAW_BASE_URL || DRAW_FALLBACK_BASE_URL;
+  const model = input.options.drawModel || process.env.RIGHT_CODES_DRAW_MODEL || DEFAULT_DRAW_MODEL;
+  try {
+    const scheduled = await runScheduledDraw(input.options, label, () => generateImageWithDrawWithRetries({
+      baseUrl,
+      apiKey,
+      model,
+      prompt: input.prompt,
+      outputPath: input.rawPath,
+      referenceImagePaths: input.referenceImagePaths,
+      size: input.options.drawSize || DEFAULT_DRAW_API_SIZE,
+      timeoutMs: input.options.drawTimeoutMs,
+      retries: input.options.drawRetries,
+      retryDelayMs: input.options.drawRetryDelayMs
+    }, label, warnings));
+    const result = scheduled.value;
+    return {
+      warnings,
+      status: {
+        name: "draw_stage_asset",
+        mode: "right_codes_draw",
+        status: "ok",
+        visual_mode: input.options.safeRemix ? "safe_remix" : "faithful",
+        base_url: baseUrl,
+        model,
+        response_kind: result.kind,
+        attempts: result.attempts,
+        draw_queue: scheduled.drawQueue,
+        reference_image_count: result.referenceImageCount || 0
+      }
+    };
+  } catch (error) {
+    if (input.retryPrompt && isIpGuardrailError(error)) {
+      try {
+        const retryScheduled = await runScheduledDraw(input.options, `${label}_ip_retry`, () => generateImageWithDrawWithRetries({
+          baseUrl,
+          apiKey,
+          model,
+          prompt: input.retryPrompt,
+          outputPath: input.rawPath,
+          referenceImagePaths: input.referenceImagePaths,
+          size: input.options.drawSize || DEFAULT_DRAW_API_SIZE,
+          timeoutMs: input.options.drawTimeoutMs,
+          retries: input.options.drawRetries,
+          retryDelayMs: input.options.drawRetryDelayMs
+        }, label, warnings));
+        const retryResult = retryScheduled.value;
+        warnings.push(`${label} draw retried without exact IP names after similarity guardrail; scene visual features were preserved where possible.`);
+        return {
+          warnings,
+          status: {
+            name: "draw_stage_asset",
+            mode: "right_codes_draw",
+            status: "ok",
+            visual_mode: "faithful_deidentified_names",
+            base_url: baseUrl,
+            model,
+            response_kind: retryResult.kind,
+            attempts: retryResult.attempts,
+            reference_image_count: retryResult.referenceImageCount || 0,
+            draw_queue: retryScheduled.drawQueue,
+            retry: { triggered: true, reason: "ip_guardrail" }
+          }
+        };
+      } catch (retryError) {
+        if (input.options.strictDraw) throw retryError;
+        warnings.push(`${label} draw retry failed; local placeholder was used: ${shortError(retryError)}`);
+      }
+    } else {
+      if (input.options.strictDraw) throw error;
+      warnings.push(`${label} draw failed; local placeholder was used: ${shortError(error)}`);
+    }
+    await writeStagePlaceholderAsset(input.rawPath, input.spec, input.color, input.accent);
+    return {
+      warnings,
+      status: {
+        name: "draw_stage_asset",
+        mode: "placeholder_fallback",
+        status: "warn",
+        reason: shortError(error)
+      }
+    };
+  }
+}
+
+async function resizeStageAsset(input) {
+  const [width, height] = parseSize(input.spec.targetSize);
+  await mkdir(path.dirname(input.outputPath), { recursive: true });
+  const resizeMode = input.spec.resizeMode || (input.spec.transparent ? "fit_pad_transparent" : "cover_crop_portrait");
+  const vf = resizeMode === "stretch_transparent"
+    ? `scale=${width}:${height},format=rgba`
+    : input.spec.transparent
+    ? `scale=${width}:${height}:force_original_aspect_ratio=decrease,pad=${width}:${height}:(ow-iw)/2:(oh-ih)/2:color=black@0.0,format=rgba`
+    : `scale=${width}:${height}:force_original_aspect_ratio=increase,crop=${width}:${height},format=rgba`;
+  await execFileAsync(getFfmpegPath(), [
+    "-y",
+    "-i", input.inputPath,
+    "-vf", vf,
+    input.outputPath
+  ], { maxBuffer: 16 * 1024 * 1024 });
+  const matteRemove = input.spec.transparent
+    ? await removeStageBorderMatte(input.outputPath)
+    : null;
+  const image = await probeImage(input.outputPath);
+  return {
+    status: image.width === width && image.height === height ? "ok" : "warn",
+    output_size: [image.width, image.height],
+    expected_size: [width, height],
+    transparent_expected: input.spec.transparent,
+    resize_mode: resizeMode,
+    matte_remove: matteRemove
+  };
+}
+
+async function removeStageBorderMatte(outputPath) {
+  const { stdout } = await execFileAsync("python", [
+    STAGE_POSTPROCESS_SCRIPT,
+    "--input", outputPath,
+    "--output", outputPath
+  ], { maxBuffer: 8 * 1024 * 1024 });
+  return parseJsonLine(stdout) || { status: "unknown" };
+}
+
+async function writeStagePlaceholderAsset(outputPath, spec, fillHex, accentHex) {
+  const [width, height] = parseSize(spec.targetSize);
+  const png = createPlaceholderPng(spec.key, fillHex, accentHex, width, height);
+  await mkdir(path.dirname(outputPath), { recursive: true });
+  await writeFile(outputPath, png);
+}
+
+async function probeImage(filePath) {
+  try {
+    const { stdout } = await execFileAsync(getFfprobePath(), [
+      "-v", "error",
+      "-select_streams", "v:0",
+      "-show_entries", "stream=width,height,pix_fmt",
+      "-of", "json",
+      filePath
+    ], { maxBuffer: 1024 * 1024 });
+    const data = JSON.parse(stdout);
+    const stream = data.streams?.[0] || {};
+    return {
+      width: Number(stream.width) || 0,
+      height: Number(stream.height) || 0,
+      pixel_format: stream.pix_fmt || ""
+    };
+  } catch {
+    return { width: 0, height: 0, pixel_format: "" };
+  }
+}
+
 function buildCharacterAnimationManifest(input) {
   const { themeId, playerId, character, role, frameSize, projectile } = input;
   return {
@@ -2304,7 +2940,7 @@ async function copyPngWithFfmpeg(inputPath, outputPath, size) {
 }
 
 function buildAnimationAnalysisReport(input) {
-  const { themeId, brief, understanding, input: sourceInput, roleMapping, pipelineSteps, generationRecords, warnings } = input;
+  const { themeId, brief, understanding, input: sourceInput, roleMapping, pipelineSteps, generationRecords, stageGeneration, warnings } = input;
   return {
     theme_id: themeId,
     input: {
@@ -2344,7 +2980,8 @@ function buildAnimationAnalysisReport(input) {
       endpoint: process.env.RIGHT_CODES_DRAW_BASE_URL || DRAW_FALLBACK_BASE_URL,
       model: process.env.RIGHT_CODES_DRAW_MODEL || DEFAULT_DRAW_MODEL,
       visual_mode: summarizeVisualMode(generationRecords),
-      records: generationRecords
+      records: generationRecords,
+      stage_generation: stageGeneration
     },
     warnings
   };
@@ -2731,7 +3368,7 @@ async function understandWithProvider(input) {
     };
   }
 
-  const prompt = buildVideoUnderstandingPrompt(input);
+  const prompt = appendStageAssetUnderstandingPrompt(buildVideoUnderstandingPrompt(input), input);
   try {
     const content = await postVisionDecision(baseUrl, apiKey, model, prompt, input.promptMode === "text_only" ? [] : input.framePaths);
     return {
@@ -2930,6 +3567,54 @@ function buildVideoUnderstandingPrompt(input) {
 - skill_taunt.text 可以保留原视频中的粗口或口头禅，但要短、清楚、适合游戏中显示；两名角色的技能语句尽量不同。
 - 如果视频没有语言、字幕或可识别台词，skill_taunt.source 写 onomatopoeia，text 写符合角色动作和表情的短拟声/情绪语句，例如“嘿！”“哼！”“呀！”之类，不要硬编长台词。
 - evidence_frames 只能引用上面列出的关键帧相对路径。`;
+}
+
+function appendStageAssetUnderstandingPrompt(prompt, input = {}) {
+  if (!input.generateStageAssets) return prompt;
+  return `${prompt}
+
+Additional optional stage-asset planning is enabled for this run.
+Do not generate images in this step. Only add structured planning data for the later image generation step.
+Add creative_game_design.scene_assets to the JSON output with this shape:
+{
+  "scene_assets": {
+    "mode": "generated_stage_assets",
+    "world": "short description of the battle arena implied by the video",
+    "background": {
+      "description": "vertical 9:16 playable background, no main characters, no large text, leaves room for fighters and HUD",
+      "style_notes": "lighting, color palette, camera distance, era, material and media style from the source video",
+      "must_keep": ["visual evidence to preserve"],
+      "must_avoid": ["large readable text", "main character portraits", "busy foreground blocking gameplay"],
+      "evidence_frames": ["analysis_frames/frame_01.jpg"],
+      "confidence": 0.0
+    },
+    "platforms": {
+      "description": "left, middle and right platform tile visual design for the game stage",
+      "material": "dominant material and texture",
+      "shape_language": "silhouette, edge style, support details",
+      "must_keep": ["source-style details"],
+      "must_avoid": ["characters", "logos", "text", "opaque background"],
+      "evidence_frames": ["analysis_frames/frame_01.jpg"],
+      "confidence": 0.0
+    },
+    "hazards": {
+      "description": "small debris/hazard object matching the scene style",
+      "material": "material and color",
+      "must_keep": ["source-style details"],
+      "must_avoid": ["characters", "text", "large opaque square background"],
+      "evidence_frames": ["analysis_frames/frame_01.jpg"],
+      "confidence": 0.0
+    },
+    "effects": {
+      "voice_skill": {
+        "description": "visual direction for the voice skill stun effect; this run only records the plan unless effect generation is implemented",
+        "color": "#RRGGBB",
+        "confidence": 0.0
+      }
+    }
+  }
+}
+Keep scene_assets based on actual video evidence or clearly label it as derived_from_scene/fallback_design in the description when uncertain.`;
 }
 
 function buildVideoDecisionPrompt(input) {
@@ -3707,6 +4392,7 @@ function normalizeVideoUnderstanding(raw, context) {
   const globalTaunt = normalizeGlobalTaunt(creative, context);
   const fighterContext = { ...context, observedDialogue, globalTaunt };
   const rawFighters = Array.isArray(creative.fighters) ? creative.fighters.slice(0, 2) : [];
+  const rawSceneAssets = creative.scene_assets || creative.stage_assets;
   while (rawFighters.length < 2) {
     rawFighters.push(defaultFighter(rawFighters.length, fighterContext));
   }
@@ -3732,6 +4418,9 @@ function normalizeVideoUnderstanding(raw, context) {
       },
       taunt: globalTaunt,
       style_brief: normalizeStyleBrief(creative.style_brief, context),
+      scene_assets: (context.generateStageAssets || rawSceneAssets)
+        ? normalizeSceneAssets(rawSceneAssets, observed, creative, context)
+        : undefined,
       confidence: clampConfidence(creative.confidence ?? data.confidence ?? averageConfidence(fighters)),
       reason: stringOr(creative.reason || data.reason, "根据视频关键帧、文件信息和候选文本做结构化理解。")
     }
@@ -3968,6 +4657,69 @@ function normalizeStyleBrief(rawStyle, context) {
   };
 }
 
+function normalizeSceneAssets(rawSceneAssets, observed = {}, creative = {}, context = {}) {
+  const scene = rawSceneAssets && typeof rawSceneAssets === "object" ? rawSceneAssets : {};
+  const style = creative.style_brief && typeof creative.style_brief === "object" ? creative.style_brief : {};
+  const fallbackFrames = [frameRef(1, context)].filter(Boolean);
+  const world = stringOr(scene.world || style.world || observed.scene, context.baseName || "video-inspired battle arena");
+  const color = normalizeHexColor(scene.effects?.voice_skill?.color || creative.accent_color || "#78d7ff", "#78d7ff");
+  return {
+    mode: stringOr(scene.mode, "generated_stage_assets"),
+    world,
+    background: normalizeSceneAssetBlock(scene.background, {
+      description: `${world}; vertical 9:16 playable battle background with no central fighter portraits and no large readable text`,
+      style_notes: stringOr(style.art_direction || observed.visual_style, "match the source video's visual medium, lighting, materials and color evidence"),
+      must_keep: normalizeStringArray([style.color_notes || observed.visual_style]),
+      must_avoid: ["main character portraits", "large readable text", "busy foreground blocking gameplay"],
+      evidence_frames: fallbackFrames,
+      confidence: 0.35
+    }, context),
+    platforms: normalizeSceneAssetBlock(scene.platforms || scene.platform, {
+      description: "left, middle and right platform tiles matching the same arena style",
+      material: "material inferred from the source scene",
+      shape_language: "readable game platform silhouette with left cap, tileable middle and right cap",
+      must_keep: normalizeStringArray([style.color_notes || observed.scene]),
+      must_avoid: ["characters", "logos", "text", "opaque square background"],
+      evidence_frames: fallbackFrames,
+      confidence: 0.3
+    }, context),
+    hazards: normalizeSceneAssetBlock(scene.hazards || scene.hazard_debris || scene.hazard, {
+      description: "small debris or hazard object matching the arena material and color",
+      material: "material inferred from the source scene",
+      must_keep: normalizeStringArray([observed.scene || style.color_notes]),
+      must_avoid: ["characters", "text", "large opaque square background"],
+      evidence_frames: fallbackFrames,
+      confidence: 0.3
+    }, context),
+    effects: {
+      voice_skill: {
+        description: stringOr(scene.effects?.voice_skill?.description, "radial stun burst matching the theme accent color"),
+        color,
+        confidence: clampConfidence(scene.effects?.voice_skill?.confidence ?? 0.3)
+      }
+    }
+  };
+}
+
+function normalizeSceneAssetBlock(rawBlock, fallback, context) {
+  const block = rawBlock && typeof rawBlock === "object" ? rawBlock : {};
+  return {
+    description: stringOr(block.description, fallback.description),
+    style_notes: stringOr(block.style_notes || block.styleNotes, fallback.style_notes || ""),
+    material: stringOr(block.material, fallback.material || ""),
+    shape_language: stringOr(block.shape_language || block.shapeLanguage, fallback.shape_language || ""),
+    must_keep: normalizeStringArray(block.must_keep || block.mustKeep || fallback.must_keep),
+    must_avoid: normalizeStringArray(block.must_avoid || block.mustAvoid || fallback.must_avoid),
+    evidence_frames: normalizeFrameArray(block.evidence_frames || block.frames || fallback.evidence_frames, context),
+    confidence: clampConfidence(block.confidence ?? fallback.confidence ?? 0.3)
+  };
+}
+
+function normalizeHexColor(value, fallback) {
+  const text = String(value || "").trim();
+  return isHexColor(text) ? text : fallback;
+}
+
 function buildVideoUnderstanding(input) {
   return {
     schema_version: "video_understanding.v0.1",
@@ -3989,6 +4741,9 @@ function buildVideoUnderstanding(input) {
     })),
     pipeline_steps: input.pipelineSteps,
     warnings: input.warnings,
+    pipeline_features: {
+      stage_asset_planning: Boolean(input.generateStageAssets)
+    },
     ...input.normalizedUnderstanding
   };
 }
@@ -4012,6 +4767,7 @@ function buildGenerationBrief(videoUnderstanding) {
       note: "本阶段只产出生成说明，不调用画图模型。"
     },
     shared_style: design.style_brief,
+    scene_assets: design.scene_assets,
     conflict: design.conflict,
     taunt: design.taunt,
     player_taunts: {
@@ -4100,6 +4856,12 @@ function summarizeUnderstanding(understanding) {
     conflict: design.conflict,
     taunt: design.taunt,
     style_world: design.style_brief?.world,
+    scene_assets: design.scene_assets ? {
+      world: design.scene_assets.world,
+      background: design.scene_assets.background?.description,
+      platforms: design.scene_assets.platforms?.description,
+      hazards: design.scene_assets.hazards?.description
+    } : undefined,
     confidence: design.confidence
   };
 }
@@ -4792,9 +5554,9 @@ async function writeAssets(packDir, manifest) {
   }
 }
 
-function createPlaceholderPng(kind, fillHex, accentHex) {
-  const width = kind === "background" ? 320 : 128;
-  const height = kind === "background" ? 180 : 128;
+function createPlaceholderPng(kind, fillHex, accentHex, requestedWidth = 0, requestedHeight = 0) {
+  const width = requestedWidth || (kind === "background" ? 320 : 128);
+  const height = requestedHeight || (kind === "background" ? 180 : 128);
   const fill = hexToRgb(fillHex);
   const accent = hexToRgb(accentHex);
   const white = [255, 255, 255, 255];
@@ -4807,6 +5569,30 @@ function createPlaceholderPng(kind, fillHex, accentHex) {
     }
     rect(pixels, 0, Math.floor(height * 0.68), width, Math.floor(height * 0.32), darken(fillHex, 0.55));
     rect(pixels, 0, Math.floor(height * 0.68), width, 4, accent);
+  } else if (kind === "platform_strip") {
+    const y = Math.floor(height * 0.28);
+    const h = Math.max(24, Math.floor(height * 0.48));
+    const margin = Math.max(4, Math.floor(width * 0.03));
+    roundedRect(pixels, margin, y, width - margin * 2, h, Math.floor(h * 0.42), fill);
+    rect(pixels, margin, y, width - margin * 2, Math.max(4, Math.floor(h * 0.18)), accent);
+    roundedRect(pixels, margin, y + Math.floor(h * 0.08), Math.max(24, Math.floor(width * 0.18)), h, Math.floor(h * 0.45), accent);
+    roundedRect(pixels, width - margin - Math.max(24, Math.floor(width * 0.18)), y + Math.floor(h * 0.08), Math.max(24, Math.floor(width * 0.18)), h, Math.floor(h * 0.45), accent);
+  } else if (kind === "platform_left" || kind === "platform_mid" || kind === "platform_right") {
+    const y = Math.floor(height * 0.52);
+    const h = Math.max(18, Math.floor(height * 0.18));
+    const cap = Math.floor(width * 0.18);
+    const x0 = kind === "platform_left" ? Math.floor(width * 0.22) : Math.floor(width * 0.08);
+    const x1 = kind === "platform_right" ? Math.floor(width * 0.78) : Math.floor(width * 0.92);
+    roundedRect(pixels, x0, y, x1 - x0, h, Math.floor(h * 0.4), fill);
+    rect(pixels, x0, y, x1 - x0, Math.max(4, Math.floor(h * 0.18)), accent);
+    if (kind === "platform_left") roundedRect(pixels, x0 - cap, y + Math.floor(h * 0.1), cap + 8, h, Math.floor(h * 0.45), accent);
+    if (kind === "platform_right") roundedRect(pixels, x1 - 8, y + Math.floor(h * 0.1), cap + 8, h, Math.floor(h * 0.45), accent);
+  } else if (kind === "hazard_debris") {
+    const cx = Math.floor(width * 0.5);
+    const cy = Math.floor(height * 0.55);
+    const r = Math.floor(Math.min(width, height) * 0.18);
+    polygon(pixels, [[cx - r, cy + r], [cx - Math.floor(r * 0.7), cy - r], [cx + Math.floor(r * 0.9), cy - Math.floor(r * 0.75)], [cx + r, cy + Math.floor(r * 0.8)]], fill);
+    polygon(pixels, [[cx - Math.floor(r * 0.45), cy + Math.floor(r * 0.55)], [cx, cy - Math.floor(r * 0.6)], [cx + Math.floor(r * 0.55), cy + Math.floor(r * 0.2)]], accent);
   } else if (kind === "body") {
     ellipse(pixels, 64, 68, 34, 46, fill);
     rect(pixels, 35, 100, 58, 12, accent);
@@ -4969,6 +5755,7 @@ function toHex(rgb) {
 }
 
 function getAssetFallback(manifest, assetPath) {
+  if (String(assetPath || "").startsWith("assets/stage/")) return manifest.stage_assets?.fallback || "stage_template";
   const key = assetFallbackKeys[assetPath];
   if (!key) return null;
   if (key[0] === "environment") return manifest.environment.fallback;
@@ -4987,7 +5774,8 @@ function collectManifestPaths(manifest) {
     manifest.players?.p2?.head,
     manifest.players?.p2?.melee_prop,
     manifest.players?.p2?.projectile,
-    manifest.taunt?.bubble
+    manifest.taunt?.bubble,
+    ...(manifest.stage_assets?.files ? Object.values(manifest.stage_assets.files) : [])
   ];
   return paths.filter((value) => typeof value === "string");
 }
@@ -5065,6 +5853,7 @@ function validateUnderstandingDocument(doc) {
     }
   }
   if (!doc.creative_game_design?.style_brief?.generation_prompt_base) issues.push("style_brief.generation_prompt_base missing");
+  issues.push(...validateSceneAssetEvidencePaths(doc.creative_game_design?.scene_assets, "creative_game_design.scene_assets"));
   return issues;
 }
 
@@ -5080,6 +5869,20 @@ function validateGenerationBriefDocument(doc) {
       for (const frame of character.skill_taunt.evidence_frames || []) {
         if (path.isAbsolute(frame)) issues.push(`generation_brief skill_taunt evidence frame must be relative: ${frame}`);
       }
+    }
+  }
+  issues.push(...validateSceneAssetEvidencePaths(doc.scene_assets, "generation_brief.scene_assets"));
+  return issues;
+}
+
+function validateSceneAssetEvidencePaths(sceneAssets, label) {
+  const issues = [];
+  if (!sceneAssets || typeof sceneAssets !== "object") return issues;
+  for (const key of ["background", "platforms", "hazards"]) {
+    const block = sceneAssets[key];
+    if (!block || typeof block !== "object") continue;
+    for (const frame of block.evidence_frames || []) {
+      if (path.isAbsolute(frame)) issues.push(`${label}.${key}.evidence_frames must be relative: ${frame}`);
     }
   }
   return issues;
@@ -5116,6 +5919,7 @@ function parseOptions(args) {
     else if (arg === "--stage-template") options.stageTemplate = args[++i];
     else if (arg === "--no-registry") options.noRegistry = true;
     else if (arg === "--export-tap-fight") options.exportTapFight = true;
+    else if (arg === "--generate-stage-assets") options.generateStageAssets = true;
     else if (arg === "--no-llm") options.noLlm = true;
     else if (arg === "--no-draw") options.noDraw = true;
     else if (arg === "--allow-fallback") options.allowFallback = true;

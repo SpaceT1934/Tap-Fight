@@ -1,0 +1,2183 @@
+{
+  "theme_id": "real_churenmei_stage_20260609_201010",
+  "input": {
+    "type": "video_ai_animation",
+    "source_video": "external_videos/楚人美游记 P1 14-火云洞-上.mp4",
+    "source_understanding": "video_understandings/understanding_p1_14_63f72941/video_understanding.json",
+    "source_generation_brief": "video_understandings/understanding_p1_14_63f72941/generation_brief.json"
+  },
+  "source_video_understanding_summary": {
+    "video_summary": "视频以西游奇幻山林与火云洞为背景，猴妖、红衣少年、猪妖、蓝衣女鬼等角色一路吐槽互动，并在洞内形成猴妖与红衣少年的火焰兵器对打。",
+    "fighters": [
+      {
+        "id": "p1",
+        "name": "猴妖",
+        "role_type": "melee",
+        "weapon": "金箍长棍",
+        "attack_type": "swing",
+        "weapon_source": "observed_from_video",
+        "creativity_level": "faithful",
+        "skill_taunt": "你不要骗我",
+        "confidence": 0.94
+      },
+      {
+        "id": "p2",
+        "name": "红衣少年",
+        "role_type": "hybrid",
+        "weapon": "三昧火焰枪",
+        "attack_type": "hybrid",
+        "weapon_source": "observed_from_video",
+        "creativity_level": "stylized",
+        "skill_taunt": "管她呢赶紧下锅",
+        "confidence": 0.92
+      }
+    ],
+    "conflict": {
+      "relationship": "猴妖与红衣少年是火云洞场景中的直接交战双方，像外来取经队伍成员与洞府火系小霸王之间的冲突。",
+      "reason": "两者在第6帧已经出现清晰的兵器碰撞：猴妖用长棍，红衣少年用火焰长枪；外形一金一红、武器一棍一火枪、体型一妖猴一少年，辨识度和对抗性都很强。",
+      "tone": "荒诞吐槽与热血打斗混合，带西游恶搞奇幻气质。"
+    },
+    "taunt": {
+      "text": "比六丁圣火还好",
+      "source": "dialogue_or_subtitle",
+      "confidence": 0.76
+    },
+    "style_world": "西游式山林古道与火云洞奇幻世界，妖怪、鬼魅、少年火系武者和古装队伍混杂出现。",
+    "scene_assets": {
+      "world": "火云洞与山林古道结合的西游奇幻1v1斗技场，洞内火把、岩石平台和红色布幔形成主战场。",
+      "background": "vertical 9:16 playable background, no main characters, no large text, leaves room for fighters and HUD；画面可设为火云洞深处的岩石洞窟，远处有火把、红色布幔、暗褐岩壁和少量温泉水汽，底部留出空旷战斗区域，上方保留HUD空间。",
+      "platforms": "left, middle and right platform tile visual design for the game stage；三块可站立岩石平台，左平台较低呈断裂石阶，中平台为宽阔主战台，右平台略高带火烧焦边缘，平台下方可有半透明火光反射但背景需透明或可分层。",
+      "hazards": "small debris/hazard object matching the scene style；小型火云洞碎石陷阱，可为燃烧的落石、带火星的焦黑石块或地面喷出的小火舌，用于战斗场景障碍。"
+    },
+    "confidence": 0.91
+  },
+  "generation_brief": {
+    "schema_version": "generation_brief.v0.1",
+    "generated_by": "video-pipeline",
+    "generated_at": "2026-06-09T12:11:58.024Z",
+    "source_understanding": "video_understanding.json",
+    "source_video": "external_videos/楚人美游记 P1 14-火云洞-上.mp4",
+    "status": {
+      "video_understanding_ready": true,
+      "nine_frame_generation": "pending_user_frame_spec",
+      "image_generation_started": false
+    },
+    "image_generation_channel": {
+      "endpoint": "https://right.codes/draw",
+      "candidate_models": [
+        "gpt-image-2-vip",
+        "gpt-image-2",
+        "nano-banana",
+        "nano-banana-2",
+        "nano-banana-pro"
+      ],
+      "note": "本阶段只产出生成说明，不调用画图模型。"
+    },
+    "shared_style": {
+      "world": "西游式山林古道与火云洞奇幻世界，妖怪、鬼魅、少年火系武者和古装队伍混杂出现。",
+      "art_direction": "后续九帧应沿用源视频的AI生成电影化3D奇幻古装质感：写实光照、真实毛发和布料、洞窟火光、山林岩壁背景；只为1v1动作做构图适配，不应默认卡通化、像素化、二次元化或Q版化。",
+      "character_consistency": "猴妖必须保持金黄猴毛、蓬松鬃毛、浅黄短袍、虎皮纹腰饰和长棍；红衣少年必须保持少年比例、黑发发髻、红色无袖古装、金饰和火焰长枪。两者都应保持源视频的3D半写实电影材质和古装奇幻动作风格。",
+      "color_notes": "猴妖主色为金黄毛发、浅黄衣袍、虎皮纹和红褐裤子；红衣少年主色为鲜红服装、金色饰件、黑发和橙红火焰；环境户外为灰绿山林与岩石，洞内为暗褐岩壁、红布幔和橙色火光。",
+      "generation_prompt_base": "cinematic 3D fantasy ancient Chinese Journey-to-the-West inspired duel, semi-realistic AI film render, detailed fur and cloth, warm firelight from Huoyun cave, rocky cave arena, golden monkey demon in yellow robe with staff versus red-robed topknot boy with flaming spear, dynamic 1v1 combat pose, realistic materials, no large text, no logos"
+    },
+    "scene_assets": {
+      "mode": "generated_stage_assets",
+      "world": "火云洞与山林古道结合的西游奇幻1v1斗技场，洞内火把、岩石平台和红色布幔形成主战场。",
+      "background": {
+        "description": "vertical 9:16 playable background, no main characters, no large text, leaves room for fighters and HUD；画面可设为火云洞深处的岩石洞窟，远处有火把、红色布幔、暗褐岩壁和少量温泉水汽，底部留出空旷战斗区域，上方保留HUD空间。",
+        "style_notes": "derived_from_scene：采用第4至第6帧洞窟火光证据，暖橙火焰照明、暗褐岩石、红色布幔、古装奇幻时代感，电影化3D半写实材质；镜头距离适中，不出现主角大脸。",
+        "material": "",
+        "shape_language": "",
+        "must_keep": [
+          "火云洞式暗褐岩壁",
+          "橙红火把与火光",
+          "红色布幔或洞府装饰",
+          "轻微烟雾和水汽",
+          "电影化3D奇幻写实光照"
+        ],
+        "must_avoid": [
+          "large readable text",
+          "main character portraits",
+          "busy foreground blocking gameplay",
+          "bilibili水印或竖排说明文字",
+          "现代城市元素"
+        ],
+        "evidence_frames": [
+          "analysis_frames/frame_04.jpg",
+          "analysis_frames/frame_05.jpg",
+          "analysis_frames/frame_06.jpg"
+        ],
+        "confidence": 0.84
+      },
+      "platforms": {
+        "description": "left, middle and right platform tile visual design for the game stage；三块可站立岩石平台，左平台较低呈断裂石阶，中平台为宽阔主战台，右平台略高带火烧焦边缘，平台下方可有半透明火光反射但背景需透明或可分层。",
+        "style_notes": "",
+        "material": "暗褐色洞窟岩石、粗糙石面、少量橙色熔火裂纹和灰尘颗粒。",
+        "shape_language": "不规则天然岩石轮廓，边缘破碎、厚重，支撑细节来自洞内石台和山路碎石；避免规则现代金属平台。",
+        "must_keep": [
+          "岩石粗糙纹理",
+          "火光染色的橙色边缘",
+          "古洞窟舞台感",
+          "不规则破碎轮廓"
+        ],
+        "must_avoid": [
+          "characters",
+          "logos",
+          "text",
+          "opaque background",
+          "过度科幻金属平台"
+        ],
+        "evidence_frames": [
+          "analysis_frames/frame_03.jpg",
+          "analysis_frames/frame_06.jpg"
+        ],
+        "confidence": 0.78
+      },
+      "hazards": {
+        "description": "small debris/hazard object matching the scene style；小型火云洞碎石陷阱，可为燃烧的落石、带火星的焦黑石块或地面喷出的小火舌，用于战斗场景障碍。",
+        "style_notes": "",
+        "material": "焦黑岩石、暗褐碎石、橙红火焰、金色火星和少量灰烟。",
+        "shape_language": "",
+        "must_keep": [
+          "洞窟岩石材质",
+          "橙红火焰",
+          "碎石与灰尘",
+          "与火云洞光照一致"
+        ],
+        "must_avoid": [
+          "characters",
+          "text",
+          "large opaque square background",
+          "现代爆炸桶或科幻地雷"
+        ],
+        "evidence_frames": [
+          "analysis_frames/frame_06.jpg"
+        ],
+        "confidence": 0.74
+      },
+      "effects": {
+        "voice_skill": {
+          "description": "visual direction for the voice skill stun effect; this run only records the plan unless effect generation is implemented；长按台词触发时可出现短促白色字幕气浪与橙红声波圈，像吐槽台词化成冲击波，边缘带火星但不生成大段可读文字。",
+          "color": "#FF7A1A",
+          "confidence": 0.7
+        }
+      }
+    },
+    "conflict": {
+      "relationship": "猴妖与红衣少年是火云洞场景中的直接交战双方，像外来取经队伍成员与洞府火系小霸王之间的冲突。",
+      "reason": "两者在第6帧已经出现清晰的兵器碰撞：猴妖用长棍，红衣少年用火焰长枪；外形一金一红、武器一棍一火枪、体型一妖猴一少年，辨识度和对抗性都很强。",
+      "tone": "荒诞吐槽与热血打斗混合，带西游恶搞奇幻气质。"
+    },
+    "taunt": {
+      "text": "比六丁圣火还好",
+      "source": "dialogue_or_subtitle",
+      "confidence": 0.76
+    },
+    "player_taunts": {
+      "p1": {
+        "text": "你不要骗我",
+        "source": "dialogue_or_subtitle",
+        "speaker": "猴妖",
+        "evidence_frames": [
+          "analysis_frames/frame_01.jpg"
+        ],
+        "reason": "第1帧字幕显示“你不要骗我”，画面中心猴妖仰头说话表情明显，适合作为长按攻击时的怀疑式吐槽台词。",
+        "confidence": 0.8,
+        "fallback_text": "嘿！"
+      },
+      "p2": {
+        "text": "管她呢赶紧下锅",
+        "source": "dialogue_or_subtitle",
+        "speaker": "红衣少年",
+        "evidence_frames": [
+          "analysis_frames/frame_04.jpg"
+        ],
+        "reason": "第4帧红衣少年抬手指向狼妖并开口，字幕为“管她呢赶紧下锅”，语气符合其嚣张、命令式火云洞小霸王气质。",
+        "confidence": 0.83,
+        "fallback_text": "哼！"
+      }
+    },
+    "characters": [
+      {
+        "id": "p1",
+        "name": "猴妖",
+        "archetype_name": "金毛棍术猴妖",
+        "role_type": "melee",
+        "visual_prompt": "一个电影化3D写实奇幻风的双足猴脸妖怪，金黄色毛发覆盖脸部和手臂，头顶有蓬乱向上的鬃毛；穿浅黄色古装交领短袍，腰间带虎皮纹布片，红褐色裤子和金色护腿。身体结实但灵活，手持一根深色长棍，战斗姿态为压低重心、双手横握棍棒准备格挡或突刺。；性格/战斗气质：嘴硬警惕、反应快、近战压迫感强，适合以棍法连击和吐槽反击作为战斗气质。。",
+        "form_constraints": {
+          "entity_type": "3D模型拟人动物妖怪",
+          "body_plan": "双足人形骨架，猴脸、猴毛、双臂持棍，整体仍保留妖猴而非普通人类",
+          "proportions": "接近成人男性高度比例，四肢略强壮，头部因猴脸和鬃毛显得更有辨识度，不是Q版大头比例",
+          "silhouette": "蓬松金色猴头轮廓、短袍外形、腰间虎皮纹、横向长棍形成明显轮廓",
+          "surface_material": "金黄色动物毛发、棉麻感古装布料、虎皮纹布片、金属或皮革护腿、木质或金属质感长棍",
+          "detail_density": "高，保留毛发、布料褶皱、护腿与棍身细节；不要额外添加科幻装甲或现代装备",
+          "rendering_style": "源视频为AI生成的电影化3D奇幻写实渲染，角色有真实光照、毛发和布料材质",
+          "motion_style": "敏捷跳跃、双手挥棍、快速前冲和格挡，动作带武侠妖怪感",
+          "must_keep": [
+            "金黄色猴毛和蓬松鬃毛",
+            "猴脸妖怪身份",
+            "浅黄色古装短袍",
+            "虎皮纹腰部装饰",
+            "双手长棍战斗姿态",
+            "电影化3D奇幻写实材质"
+          ],
+          "must_not_change": [
+            "不要改成普通人类武僧",
+            "不要改成四足猴子",
+            "不要改成二次元卡通或Q版贴纸",
+            "不要添加现代枪械、机甲或科幻盔甲",
+            "不要移除毛发材质和猴脸轮廓"
+          ]
+        },
+        "weapon_prompt": "金箍长棍：一根深色长棍，棍身可带古铜金纹和磨损痕迹，长度超过角色身高，适合横扫、上挑、突刺和格挡；攻击时可在棍头带少量火云洞橙色火星。",
+        "projectile_prompt": "",
+        "weapon_source": "observed_from_video",
+        "creativity_level": "faithful",
+        "attack_type": "swing",
+        "evidence_frames": [
+          "analysis_frames/frame_01.jpg",
+          "analysis_frames/frame_02.jpg",
+          "analysis_frames/frame_06.jpg"
+        ],
+        "skill_taunt": {
+          "text": "你不要骗我",
+          "source": "dialogue_or_subtitle",
+          "speaker": "猴妖",
+          "evidence_frames": [
+            "analysis_frames/frame_01.jpg"
+          ],
+          "reason": "第1帧字幕显示“你不要骗我”，画面中心猴妖仰头说话表情明显，适合作为长按攻击时的怀疑式吐槽台词。",
+          "confidence": 0.8,
+          "fallback_text": "嘿！"
+        },
+        "prompt_seed": "cinematic 3D fantasy ancient Chinese Journey-to-the-West inspired duel, semi-realistic AI film render, detailed fur and cloth, warm firelight from Huoyun cave, rocky cave arena, golden monkey demon in yellow robe with staff versus red-robed topknot boy with flaming spear, dynamic 1v1 combat pose, realistic materials, no large text, no logos; 一个电影化3D写实奇幻风的双足猴脸妖怪，金黄色毛发覆盖脸部和手臂，头顶有蓬乱向上的鬃毛；穿浅黄色古装交领短袍，腰间带虎皮纹布片，红褐色裤子和金色护腿。身体结实但灵活，手持一根深色长棍，战斗姿态为压低重心、双手横握棍棒准备格挡或突刺。; entity_type=3D模型拟人动物妖怪; body_plan=双足人形骨架，猴脸、猴毛、双臂持棍，整体仍保留妖猴而非普通人类; proportions=接近成人男性高度比例，四肢略强壮，头部因猴脸和鬃毛显得更有辨识度，不是Q版大头比例; silhouette=蓬松金色猴头轮廓、短袍外形、腰间虎皮纹、横向长棍形成明显轮廓; surface_material=金黄色动物毛发、棉麻感古装布料、虎皮纹布片、金属或皮革护腿、木质或金属质感长棍; detail_density=高，保留毛发、布料褶皱、护腿与棍身细节；不要额外添加科幻装甲或现代装备; rendering_style=源视频为AI生成的电影化3D奇幻写实渲染，角色有真实光照、毛发和布料材质; motion_style=敏捷跳跃、双手挥棍、快速前冲和格挡，动作带武侠妖怪感; must_keep=金黄色猴毛和蓬松鬃毛, 猴脸妖怪身份, 浅黄色古装短袍, 虎皮纹腰部装饰, 双手长棍战斗姿态, 电影化3D奇幻写实材质; must_not_change=不要改成普通人类武僧, 不要改成四足猴子, 不要改成二次元卡通或Q版贴纸, 不要添加现代枪械、机甲或科幻盔甲, 不要移除毛发材质和猴脸轮廓; 一根深色长棍，棍身可带古铜金纹和磨损痕迹，长度超过角色身高，适合横扫、上挑、突刺和格挡；攻击时可在棍头带少量火云洞橙色火星。; skill taunt: 你不要骗我"
+      },
+      {
+        "id": "p2",
+        "name": "红衣少年",
+        "archetype_name": "火云洞红衣火枪少年",
+        "role_type": "hybrid",
+        "visual_prompt": "一个电影化3D奇幻古装少年，黑发扎成高发髻，面部年轻清秀但神情嚣张；穿红色无袖古装上衣，带金色胸饰、金色腰带与护腕，深色裤子。手持红色长枪，枪尖和枪身缠绕橙红火焰，站在火云洞的暖色火光中，动作是下蹲突刺、横扫和释放火焰。；性格/战斗气质：嚣张强势、火气旺、命令式挑衅，适合用火焰突刺和远程火球压制对手。。",
+        "form_constraints": {
+          "entity_type": "3D模型真人少年角色",
+          "body_plan": "双足人形，少年身形，双臂持长枪或火焰武器",
+          "proportions": "儿童或少年比例，身高明显小于成人妖怪，头身比例自然写实，不夸张变形",
+          "silhouette": "头顶发髻、无袖红衣、短小少年体型、细长火焰长枪构成主要轮廓",
+          "surface_material": "真人皮肤、黑色头发、红色织物、金属饰件、火焰特效和木/金属枪杆",
+          "detail_density": "中高，保留古装纹样、金饰、火焰特效和洞窟光照；不要添加过多现代纹身或科幻发光装置",
+          "rendering_style": "源视频为AI生成电影化3D奇幻写实渲染，人物面部和服装为半写实古装剧质感",
+          "motion_style": "少年武者式快速突刺、低身位横扫、火焰爆发，兼具近战枪法和火系远程",
+          "must_keep": [
+            "红色无袖古装上衣",
+            "少年身形",
+            "黑发高发髻",
+            "金色腰带和腕饰",
+            "火焰长枪",
+            "火云洞暖橙光照"
+          ],
+          "must_not_change": [
+            "不要改成成人男性",
+            "不要改成动物妖怪或机械体",
+            "不要变成Q版或二次元魔法少女风",
+            "不要移除红衣与火焰元素",
+            "不要使用现代枪械替代长枪"
+          ]
+        },
+        "weapon_prompt": "三昧火焰枪：一柄红色长枪，枪杆细长，枪头和两端缠绕橙红火焰，挥动时拖出火舌轨迹；近战可突刺、挑飞，蓄力可从枪尖喷出火云。",
+        "projectile_prompt": "小型橙红火球或火云弹，从枪尖旋转飞出，尾部带黑烟和金色火星，命中后产生短暂爆燃。",
+        "weapon_source": "observed_from_video",
+        "creativity_level": "stylized",
+        "attack_type": "hybrid",
+        "evidence_frames": [
+          "analysis_frames/frame_02.jpg",
+          "analysis_frames/frame_04.jpg",
+          "analysis_frames/frame_06.jpg"
+        ],
+        "skill_taunt": {
+          "text": "管她呢赶紧下锅",
+          "source": "dialogue_or_subtitle",
+          "speaker": "红衣少年",
+          "evidence_frames": [
+            "analysis_frames/frame_04.jpg"
+          ],
+          "reason": "第4帧红衣少年抬手指向狼妖并开口，字幕为“管她呢赶紧下锅”，语气符合其嚣张、命令式火云洞小霸王气质。",
+          "confidence": 0.83,
+          "fallback_text": "哼！"
+        },
+        "prompt_seed": "cinematic 3D fantasy ancient Chinese Journey-to-the-West inspired duel, semi-realistic AI film render, detailed fur and cloth, warm firelight from Huoyun cave, rocky cave arena, golden monkey demon in yellow robe with staff versus red-robed topknot boy with flaming spear, dynamic 1v1 combat pose, realistic materials, no large text, no logos; 一个电影化3D奇幻古装少年，黑发扎成高发髻，面部年轻清秀但神情嚣张；穿红色无袖古装上衣，带金色胸饰、金色腰带与护腕，深色裤子。手持红色长枪，枪尖和枪身缠绕橙红火焰，站在火云洞的暖色火光中，动作是下蹲突刺、横扫和释放火焰。; entity_type=3D模型真人少年角色; body_plan=双足人形，少年身形，双臂持长枪或火焰武器; proportions=儿童或少年比例，身高明显小于成人妖怪，头身比例自然写实，不夸张变形; silhouette=头顶发髻、无袖红衣、短小少年体型、细长火焰长枪构成主要轮廓; surface_material=真人皮肤、黑色头发、红色织物、金属饰件、火焰特效和木/金属枪杆; detail_density=中高，保留古装纹样、金饰、火焰特效和洞窟光照；不要添加过多现代纹身或科幻发光装置; rendering_style=源视频为AI生成电影化3D奇幻写实渲染，人物面部和服装为半写实古装剧质感; motion_style=少年武者式快速突刺、低身位横扫、火焰爆发，兼具近战枪法和火系远程; must_keep=红色无袖古装上衣, 少年身形, 黑发高发髻, 金色腰带和腕饰, 火焰长枪, 火云洞暖橙光照; must_not_change=不要改成成人男性, 不要改成动物妖怪或机械体, 不要变成Q版或二次元魔法少女风, 不要移除红衣与火焰元素, 不要使用现代枪械替代长枪; 一柄红色长枪，枪杆细长，枪头和两端缠绕橙红火焰，挥动时拖出火舌轨迹；近战可突刺、挑飞，蓄力可从枪尖喷出火云。; 小型橙红火球或火云弹，从枪尖旋转飞出，尾部带黑烟和金色火星，命中后产生短暂爆燃。; skill taunt: 管她呢赶紧下锅"
+      }
+    ],
+    "constraints": [
+      "后续九帧生成时保持同一角色服饰、体型、发型和武器一致。",
+      "角色素材优先透明背景，动作轮廓清楚，适配小游戏白模验证。",
+      "不要把武器 source=derived_from_scene 或 absurd_creative 误标为视频真实出现。"
+    ]
+  },
+  "contract_role_mapping": {
+    "p1": {
+      "original_role_type": "melee",
+      "original_attack_type": "swing",
+      "mapped_role": "melee"
+    },
+    "p2": {
+      "original_role_type": "hybrid",
+      "original_attack_type": "hybrid",
+      "mapped_role": "ranged"
+    },
+    "warnings": []
+  },
+  "pipeline_steps": [
+    {
+      "name": "load_generation_brief",
+      "mode": "json",
+      "status": "ok",
+      "source": "video_understandings/understanding_p1_14_63f72941/generation_brief.json"
+    },
+    {
+      "name": "map_roles_to_contract",
+      "mode": "deterministic",
+      "status": "ok",
+      "notes": []
+    },
+    {
+      "name": "generate_sprite_asset",
+      "player_id": "p1",
+      "mode": "right_codes_draw",
+      "status": "ok",
+      "model": "gpt-image-2",
+      "response_kind": "url"
+    },
+    {
+      "name": "generate_sprite_asset",
+      "player_id": "p2",
+      "mode": "right_codes_draw",
+      "status": "ok",
+      "model": "gpt-image-2",
+      "response_kind": "url"
+    },
+    {
+      "name": "postprocess_sheets",
+      "mode": "python_pillow",
+      "status": "ok"
+    }
+  ],
+  "image_generation": {
+    "endpoint": "https://right.codes/draw",
+    "model": "gpt-image-2",
+    "visual_mode": "faithful_quality_retry",
+    "records": [
+      {
+        "player_id": "p1",
+        "character_name": "猴妖",
+        "role": "melee",
+        "original_role_type": "melee",
+        "original_attack_type": "swing",
+        "visual_mode": "faithful_quality_retry",
+        "prompt": "Create a 3x3 sprite sheet for a 2D mobile fighting game on a perfectly flat solid #00ff00 chroma-key background.\nVisual target: game-ready animation frames that preserve the source video's own visual medium, shape language, detail density, line weight, flatness, color palette, and rendering style; not abstract, not a placeholder.\nUse the attached source-video keyframes as visual references. Match their simplicity, facial feature style, outline thickness, shading amount, accessory count, and material treatment. Do not beautify, polish, upscale, or add detail beyond the source evidence.\nThe reference keyframes may contain other characters or background elements; use them only for the named subject and source style evidence. Do not include extra characters or background in the sprite sheet.\nFaithful mode: use the video analysis as the primary visual reference and preserve the recognizable source character identity, entity type, body plan, costume/surface, weapon, color logic, proportions, and silhouette as much as the image model permits.\nDo not silently redesign the source entity into a different species, object category, body plan, or art medium. Do not make a non-human source humanoid unless the video clearly shows a humanoid.\nOne 猴妖 melee fighter/entity, facing right in all 9 frames. The subject must be fully visible in every cell in a form compatible with the source video.\nVideo-derived character description: 一个电影化3D写实奇幻风的双足猴脸妖怪，金黄色毛发覆盖脸部和手臂，头顶有蓬乱向上的鬃毛；穿浅黄色古装交领短袍，腰间带虎皮纹布片，红褐色裤子和金色护腿。身体结实但灵活，手持一根深色长棍，战斗姿态为压低重心、双手横握棍棒准备格挡或突刺。；性格/战斗气质：嘴硬警惕、反应快、近战压迫感强，适合以棍法连击和吐槽反击作为战斗气质。。\nSource form constraints: entity_type=3D模型拟人动物妖怪; body_plan=双足人形骨架，猴脸、猴毛、双臂持棍，整体仍保留妖猴而非普通人类; proportions=接近成人男性高度比例，四肢略强壮，头部因猴脸和鬃毛显得更有辨识度，不是Q版大头比例; silhouette=蓬松金色猴头轮廓、短袍外形、腰间虎皮纹、横向长棍形成明显轮廓; surface_material=金黄色动物毛发、棉麻感古装布料、虎皮纹布片、金属或皮革护腿、木质或金属质感长棍; detail_density=高，保留毛发、布料褶皱、护腿与棍身细节；不要额外添加科幻装甲或现代装备; rendering_style=源视频为AI生成的电影化3D奇幻写实渲染，角色有真实光照、毛发和布料材质; motion_style=敏捷跳跃、双手挥棍、快速前冲和格挡，动作带武侠妖怪感; must_keep=金黄色猴毛和蓬松鬃毛, 猴脸妖怪身份, 浅黄色古装短袍, 虎皮纹腰部装饰, 双手长棍战斗姿态, 电影化3D奇幻写实材质; must_not_change=不要改成普通人类武僧, 不要改成四足猴子, 不要改成二次元卡通或Q版贴纸, 不要添加现代枪械、机甲或科幻盔甲, 不要移除毛发材质和猴脸轮廓\nWeapon and attack prop: 金箍长棍：一根深色长棍，棍身可带古铜金纹和磨损痕迹，长度超过角色身高，适合横扫、上挑、突刺和格挡；攻击时可在棍头带少量火云洞橙色火星。\nShared art direction: 后续九帧应沿用源视频的AI生成电影化3D奇幻古装质感：写实光照、真实毛发和布料、洞窟火光、山林岩壁背景；只为1v1动作做构图适配，不应默认卡通化、像素化、二次元化或Q版化。\nWorld/style evidence: 西游式山林古道与火云洞奇幻世界，妖怪、鬼魅、少年火系武者和古装队伍混杂出现。; 猴妖主色为金黄毛发、浅黄衣袍、虎皮纹和红褐裤子；红衣少年主色为鲜红服装、金色饰件、黑发和橙红火焰；环境户外为灰绿山林与岩石，洞内为暗褐岩壁、红布幔和橙色火光。\nConsistency requirements: 猴妖必须保持金黄猴毛、蓬松鬃毛、浅黄短袍、虎皮纹腰饰和长棍；红衣少年必须保持少年比例、黑发发髻、红色无袖古装、金饰和火焰长枪。两者都应保持源视频的3D半写实电影材质和古装奇幻动作风格。\nUse an invisible 3-column by 3-row grid with equal cells and generous spacing. Do not draw visible panel borders.\nThe sheet must contain exactly 9 poses: exactly 3 columns and exactly 3 rows, with no fourth column, no extra bonus poses, and no cropped partial poses outside the grid.\nScale the subject down when needed so the full body, hair, cape, weapon, slash effect, and extended limbs fit inside each cell. Prefer a smaller readable fighter over a large cropped fighter.\nKeep at least 12% clean #00ff00 margin between every visible part and each cell edge; no head, foot, cape, hair, weapon tip, projectile, or motion effect may touch or cross a cell boundary.\nLeave a clean #00ff00 safety gutter around every cell. No body part, weapon, slash effect, cable, debris, shadow, or projectile may cross into a neighboring cell.\nKeep each pose centered inside its own cell, with a consistent feet baseline for grounded poses and enough green margin on all sides.\nEach cell contains exactly one complete pose of the same source-derived subject, with the source body plan visible, clean edges, and readable silhouette.\nKeep the same source-derived face/surface details, head or front shape, outfit or material, colors, body scale, weapon, and art style across all nine frames.\nKeep details at the source video's level: if the source is flat, low-shadow, sticker-like, low-detail, pixel-like, live-action, 3D, mechanical, or painterly, keep that same level and medium instead of upgrading it to another illustration style.\nFeet should stay aligned to a consistent baseline for grounded poses; jump and fall may lift off the baseline while staying centered in their cells.\nFrame order left-to-right, top-to-bottom: idle standing, idle breathing, run 1, run 2, run 3, run 4, jump, fall, attack.\nThe attack frame must clearly show a melee swing, slash, or strike with the weapon extended.\nAvoid silhouettes, stick figures, flat color mannequins, geometric blobs, toy blocks, rough thumbnails, icons, UI sprites, unintended low-poly forms, or any visual style not supported by the source video evidence.\nNo text, no labels, no watermark, no shadows, no floor, no extra characters, no UI, no panel borders.\nThe background must be one uniform #00ff00 color with no gradient, texture, lighting variation, floor plane, reflection, or shadow.\nAvoid #00ff00 anywhere on the character or weapon.",
+        "reference_images": [
+          "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_01.jpg",
+          "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_02.jpg"
+        ],
+        "draw": {
+          "name": "draw_image",
+          "mode": "right_codes_draw",
+          "status": "ok",
+          "visual_mode": "faithful_quality_retry",
+          "base_url": "https://right.codes/draw",
+          "model": "gpt-image-2",
+          "response_kind": "url",
+          "attempts": 1,
+          "reference_image_count": 2,
+          "draw_queue": {
+            "label": "p1",
+            "concurrency_limit": 2,
+            "queued_at": "2026-06-09T12:42:46.737Z",
+            "started_at": "2026-06-09T12:45:26.190Z",
+            "finished_at": "2026-06-09T12:48:41.698Z",
+            "wait_ms": 159453,
+            "duration_ms": 195508
+          },
+          "output": "p1_sprite_sheet_raw.png",
+          "quality_retry": {
+            "triggered": true,
+            "initial_issues": [
+              "run_0:source_subject_overflowed_cell",
+              "run_3:source_subject_overflowed_cell",
+              "attack_0:source_subject_overflowed_cell"
+            ],
+            "final_quality": "warn"
+          }
+        },
+        "postprocess": {
+          "status": "ok",
+          "sheet_size": [
+            1536,
+            1536
+          ],
+          "frame_size": {
+            "width": 512,
+            "height": 512
+          },
+          "layout": [
+            3,
+            3
+          ],
+          "alpha": {
+            "transparent_ratio": 0.8614,
+            "opaque_ratio": 0.1386
+          },
+          "quality": {
+            "status": "warn",
+            "risky_frames": [
+              {
+                "name": "run_0",
+                "issues": [
+                  "source_subject_overflowed_cell"
+                ]
+              },
+              {
+                "name": "attack_0",
+                "issues": [
+                  "source_subject_overflowed_cell"
+                ]
+              }
+            ]
+          },
+          "frames": [
+            {
+              "name": "idle_0",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p1/idle_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                80,
+                110,
+                431,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  88,
+                  117,
+                  439,
+                  499
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  80,
+                  110,
+                  431,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  0,
+                  512,
+                  512
+                ],
+                "expanded_box": [
+                  0,
+                  0,
+                  583,
+                  583
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 80,
+                  "top": 110,
+                  "right": 81,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "idle_1",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p1/idle_1.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                78,
+                112,
+                433,
+                492
+              ],
+              "cleanup": {
+                "component_count": 3,
+                "kept_count": 1,
+                "rejected_count": 2,
+                "main_bbox": [
+                  111,
+                  120,
+                  466,
+                  500
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  78,
+                  112,
+                  433,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  0,
+                  1024,
+                  512
+                ],
+                "expanded_box": [
+                  441,
+                  0,
+                  1095,
+                  583
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 78,
+                  "top": 112,
+                  "right": 79,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "run_0",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p1/run_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                31,
+                191,
+                481,
+                492
+              ],
+              "cleanup": {
+                "component_count": 1,
+                "kept_count": 1,
+                "rejected_count": 0,
+                "main_bbox": [
+                  59,
+                  190,
+                  509,
+                  491
+                ],
+                "main_cell_ratio": 0.9957,
+                "main_overflows_cell": true,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  31,
+                  191,
+                  481,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  0,
+                  1536,
+                  512
+                ],
+                "expanded_box": [
+                  953,
+                  0,
+                  1536,
+                  583
+                ]
+              },
+              "quality": {
+                "status": "warn",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 31,
+                  "top": 191,
+                  "right": 31,
+                  "bottom": 20
+                },
+                "issues": [
+                  "source_subject_overflowed_cell"
+                ]
+              }
+            },
+            {
+              "name": "run_1",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p1/run_1.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                38,
+                209,
+                474,
+                492
+              ],
+              "cleanup": {
+                "component_count": 6,
+                "kept_count": 1,
+                "rejected_count": 5,
+                "main_bbox": [
+                  76,
+                  215,
+                  512,
+                  498
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  38,
+                  209,
+                  474,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  512,
+                  512,
+                  1024
+                ],
+                "expanded_box": [
+                  0,
+                  441,
+                  583,
+                  1095
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 38,
+                  "top": 209,
+                  "right": 38,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "run_2",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p1/run_2.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                67,
+                164,
+                444,
+                492
+              ],
+              "cleanup": {
+                "component_count": 7,
+                "kept_count": 1,
+                "rejected_count": 6,
+                "main_bbox": [
+                  135,
+                  157,
+                  512,
+                  485
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  67,
+                  164,
+                  444,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  512,
+                  1024,
+                  1024
+                ],
+                "expanded_box": [
+                  441,
+                  441,
+                  1095,
+                  1095
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 67,
+                  "top": 164,
+                  "right": 68,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "run_3",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p1/run_3.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                52,
+                161,
+                459,
+                492
+              ],
+              "cleanup": {
+                "component_count": 3,
+                "kept_count": 1,
+                "rejected_count": 2,
+                "main_bbox": [
+                  93,
+                  166,
+                  500,
+                  497
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  52,
+                  161,
+                  459,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  512,
+                  1536,
+                  1024
+                ],
+                "expanded_box": [
+                  953,
+                  441,
+                  1536,
+                  1095
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 52,
+                  "top": 161,
+                  "right": 53,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "jump_0",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p1/jump_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                129,
+                153,
+                382,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  140,
+                  80,
+                  393,
+                  419
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  129,
+                  153,
+                  382,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  1024,
+                  512,
+                  1536
+                ],
+                "expanded_box": [
+                  0,
+                  953,
+                  583,
+                  1536
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 129,
+                  "top": 153,
+                  "right": 130,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "fall_0",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p1/fall_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                106,
+                187,
+                406,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  135,
+                  152,
+                  435,
+                  457
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  106,
+                  187,
+                  406,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  1024,
+                  1024,
+                  1536
+                ],
+                "expanded_box": [
+                  441,
+                  953,
+                  1095,
+                  1536
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 106,
+                  "top": 187,
+                  "right": 106,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "attack_0",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p1/attack_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                17,
+                204,
+                495,
+                493
+              ],
+              "cleanup": {
+                "component_count": 32,
+                "kept_count": 1,
+                "rejected_count": 31,
+                "main_bbox": [
+                  43,
+                  171,
+                  557,
+                  481
+                ],
+                "main_cell_ratio": 0.9778,
+                "main_overflows_cell": true,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  17,
+                  204,
+                  495,
+                  493
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  1024,
+                  1536,
+                  1536
+                ],
+                "expanded_box": [
+                  953,
+                  953,
+                  1536,
+                  1536
+                ]
+              },
+              "quality": {
+                "status": "warn",
+                "min_edge_margin": 17,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 17,
+                  "top": 204,
+                  "right": 17,
+                  "bottom": 19
+                },
+                "issues": [
+                  "source_subject_overflowed_cell"
+                ]
+              }
+            }
+          ]
+        },
+        "animation_manifest": "p1_animation_manifest.json",
+        "projectile": null
+      },
+      {
+        "player_id": "p2",
+        "character_name": "红衣少年",
+        "role": "ranged",
+        "original_role_type": "hybrid",
+        "original_attack_type": "hybrid",
+        "visual_mode": "faithful_quality_retry",
+        "prompt": "Create a 3x3 sprite sheet for a 2D mobile fighting game on a perfectly flat solid #00ff00 chroma-key background.\nVisual target: game-ready animation frames that preserve the source video's own visual medium, shape language, detail density, line weight, flatness, color palette, and rendering style; not abstract, not a placeholder.\nUse the attached source-video keyframes as visual references. Match their simplicity, facial feature style, outline thickness, shading amount, accessory count, and material treatment. Do not beautify, polish, upscale, or add detail beyond the source evidence.\nThe reference keyframes may contain other characters or background elements; use them only for the named subject and source style evidence. Do not include extra characters or background in the sprite sheet.\nFaithful mode: use the video analysis as the primary visual reference and preserve the recognizable source character identity, entity type, body plan, costume/surface, weapon, color logic, proportions, and silhouette as much as the image model permits.\nDo not silently redesign the source entity into a different species, object category, body plan, or art medium. Do not make a non-human source humanoid unless the video clearly shows a humanoid.\nOne 红衣少年 ranged fighter/entity, facing right in all 9 frames. The subject must be fully visible in every cell in a form compatible with the source video.\nVideo-derived character description: 一个电影化3D奇幻古装少年，黑发扎成高发髻，面部年轻清秀但神情嚣张；穿红色无袖古装上衣，带金色胸饰、金色腰带与护腕，深色裤子。手持红色长枪，枪尖和枪身缠绕橙红火焰，站在火云洞的暖色火光中，动作是下蹲突刺、横扫和释放火焰。；性格/战斗气质：嚣张强势、火气旺、命令式挑衅，适合用火焰突刺和远程火球压制对手。。\nSource form constraints: entity_type=3D模型真人少年角色; body_plan=双足人形，少年身形，双臂持长枪或火焰武器; proportions=儿童或少年比例，身高明显小于成人妖怪，头身比例自然写实，不夸张变形; silhouette=头顶发髻、无袖红衣、短小少年体型、细长火焰长枪构成主要轮廓; surface_material=真人皮肤、黑色头发、红色织物、金属饰件、火焰特效和木/金属枪杆; detail_density=中高，保留古装纹样、金饰、火焰特效和洞窟光照；不要添加过多现代纹身或科幻发光装置; rendering_style=源视频为AI生成电影化3D奇幻写实渲染，人物面部和服装为半写实古装剧质感; motion_style=少年武者式快速突刺、低身位横扫、火焰爆发，兼具近战枪法和火系远程; must_keep=红色无袖古装上衣, 少年身形, 黑发高发髻, 金色腰带和腕饰, 火焰长枪, 火云洞暖橙光照; must_not_change=不要改成成人男性, 不要改成动物妖怪或机械体, 不要变成Q版或二次元魔法少女风, 不要移除红衣与火焰元素, 不要使用现代枪械替代长枪\nWeapon and attack prop: 三昧火焰枪：一柄红色长枪，枪杆细长，枪头和两端缠绕橙红火焰，挥动时拖出火舌轨迹；近战可突刺、挑飞，蓄力可从枪尖喷出火云。\nProjectile idea for separate asset: 小型橙红火球或火云弹，从枪尖旋转飞出，尾部带黑烟和金色火星，命中后产生短暂爆燃。\nShared art direction: 后续九帧应沿用源视频的AI生成电影化3D奇幻古装质感：写实光照、真实毛发和布料、洞窟火光、山林岩壁背景；只为1v1动作做构图适配，不应默认卡通化、像素化、二次元化或Q版化。\nWorld/style evidence: 西游式山林古道与火云洞奇幻世界，妖怪、鬼魅、少年火系武者和古装队伍混杂出现。; 猴妖主色为金黄毛发、浅黄衣袍、虎皮纹和红褐裤子；红衣少年主色为鲜红服装、金色饰件、黑发和橙红火焰；环境户外为灰绿山林与岩石，洞内为暗褐岩壁、红布幔和橙色火光。\nConsistency requirements: 猴妖必须保持金黄猴毛、蓬松鬃毛、浅黄短袍、虎皮纹腰饰和长棍；红衣少年必须保持少年比例、黑发发髻、红色无袖古装、金饰和火焰长枪。两者都应保持源视频的3D半写实电影材质和古装奇幻动作风格。\nUse an invisible 3-column by 3-row grid with equal cells and generous spacing. Do not draw visible panel borders.\nThe sheet must contain exactly 9 poses: exactly 3 columns and exactly 3 rows, with no fourth column, no extra bonus poses, and no cropped partial poses outside the grid.\nScale the subject down when needed so the full body, hair, cape, weapon, slash effect, and extended limbs fit inside each cell. Prefer a smaller readable fighter over a large cropped fighter.\nKeep at least 12% clean #00ff00 margin between every visible part and each cell edge; no head, foot, cape, hair, weapon tip, projectile, or motion effect may touch or cross a cell boundary.\nLeave a clean #00ff00 safety gutter around every cell. No body part, weapon, slash effect, cable, debris, shadow, or projectile may cross into a neighboring cell.\nKeep each pose centered inside its own cell, with a consistent feet baseline for grounded poses and enough green margin on all sides.\nEach cell contains exactly one complete pose of the same source-derived subject, with the source body plan visible, clean edges, and readable silhouette.\nKeep the same source-derived face/surface details, head or front shape, outfit or material, colors, body scale, weapon, and art style across all nine frames.\nKeep details at the source video's level: if the source is flat, low-shadow, sticker-like, low-detail, pixel-like, live-action, 3D, mechanical, or painterly, keep that same level and medium instead of upgrading it to another illustration style.\nFeet should stay aligned to a consistent baseline for grounded poses; jump and fall may lift off the baseline while staying centered in their cells.\nFrame order left-to-right, top-to-bottom: idle standing, idle breathing, run 1, run 2, run 3, run 4, jump, fall, attack.\nThe attack frame must clearly show aiming, throwing, shooting, or casting; the flying object is generated separately, not only inside attack_0.\nAvoid silhouettes, stick figures, flat color mannequins, geometric blobs, toy blocks, rough thumbnails, icons, UI sprites, unintended low-poly forms, or any visual style not supported by the source video evidence.\nNo text, no labels, no watermark, no shadows, no floor, no extra characters, no UI, no panel borders.\nThe background must be one uniform #00ff00 color with no gradient, texture, lighting variation, floor plane, reflection, or shadow.\nAvoid #00ff00 anywhere on the character or weapon.",
+        "reference_images": [
+          "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_02.jpg",
+          "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_04.jpg"
+        ],
+        "draw": {
+          "name": "draw_image",
+          "mode": "right_codes_draw",
+          "status": "ok",
+          "visual_mode": "faithful_quality_retry",
+          "base_url": "https://right.codes/draw",
+          "model": "gpt-image-2",
+          "response_kind": "url",
+          "attempts": 1,
+          "reference_image_count": 2,
+          "draw_queue": {
+            "label": "p2",
+            "concurrency_limit": 2,
+            "queued_at": "2026-06-09T12:43:58.604Z",
+            "started_at": "2026-06-09T12:48:41.698Z",
+            "finished_at": "2026-06-09T12:50:46.448Z",
+            "wait_ms": 283094,
+            "duration_ms": 124750
+          },
+          "output": "p2_sprite_sheet_raw.png",
+          "quality_retry": {
+            "triggered": true,
+            "initial_issues": [
+              "run_0:source_subject_overflowed_cell",
+              "run_3:source_subject_overflowed_cell",
+              "attack_0:visible_content_too_close_to_frame_edge,source_subject_overflowed_cell"
+            ],
+            "final_quality": "warn"
+          }
+        },
+        "postprocess": {
+          "status": "ok",
+          "sheet_size": [
+            1536,
+            1536
+          ],
+          "frame_size": {
+            "width": 512,
+            "height": 512
+          },
+          "layout": [
+            3,
+            3
+          ],
+          "alpha": {
+            "transparent_ratio": 0.8837,
+            "opaque_ratio": 0.1163
+          },
+          "quality": {
+            "status": "warn",
+            "risky_frames": [
+              {
+                "name": "attack_0",
+                "issues": [
+                  "source_subject_overflowed_cell"
+                ]
+              }
+            ]
+          },
+          "frames": [
+            {
+              "name": "idle_0",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2/idle_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                151,
+                128,
+                360,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  137,
+                  99,
+                  346,
+                  463
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  151,
+                  128,
+                  360,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  0,
+                  512,
+                  512
+                ],
+                "expanded_box": [
+                  0,
+                  0,
+                  583,
+                  583
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 151,
+                  "top": 128,
+                  "right": 152,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "idle_1",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2/idle_1.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                150,
+                138,
+                361,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  193,
+                  109,
+                  404,
+                  463
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  150,
+                  138,
+                  361,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  0,
+                  1024,
+                  512
+                ],
+                "expanded_box": [
+                  441,
+                  0,
+                  1095,
+                  583
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 150,
+                  "top": 138,
+                  "right": 151,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "run_0",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2/run_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                95,
+                202,
+                417,
+                492
+              ],
+              "cleanup": {
+                "component_count": 2,
+                "kept_count": 1,
+                "rejected_count": 1,
+                "main_bbox": [
+                  71,
+                  164,
+                  393,
+                  454
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  95,
+                  202,
+                  417,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  0,
+                  1536,
+                  512
+                ],
+                "expanded_box": [
+                  953,
+                  0,
+                  1536,
+                  583
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 95,
+                  "top": 202,
+                  "right": 95,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "run_1",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2/run_1.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                101,
+                192,
+                411,
+                492
+              ],
+              "cleanup": {
+                "component_count": 12,
+                "kept_count": 1,
+                "rejected_count": 11,
+                "main_bbox": [
+                  60,
+                  170,
+                  370,
+                  470
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  101,
+                  192,
+                  411,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  512,
+                  512,
+                  1024
+                ],
+                "expanded_box": [
+                  0,
+                  441,
+                  583,
+                  1095
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 101,
+                  "top": 192,
+                  "right": 101,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "run_2",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2/run_2.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                98,
+                215,
+                414,
+                492
+              ],
+              "cleanup": {
+                "component_count": 9,
+                "kept_count": 1,
+                "rejected_count": 8,
+                "main_bbox": [
+                  101,
+                  191,
+                  417,
+                  468
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  98,
+                  215,
+                  414,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  512,
+                  1024,
+                  1024
+                ],
+                "expanded_box": [
+                  441,
+                  441,
+                  1095,
+                  1095
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 98,
+                  "top": 215,
+                  "right": 98,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "run_3",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2/run_3.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                27,
+                203,
+                484,
+                492
+              ],
+              "cleanup": {
+                "component_count": 4,
+                "kept_count": 1,
+                "rejected_count": 3,
+                "main_bbox": [
+                  71,
+                  187,
+                  528,
+                  476
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  27,
+                  203,
+                  484,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  512,
+                  1536,
+                  1024
+                ],
+                "expanded_box": [
+                  953,
+                  441,
+                  1536,
+                  1095
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 27,
+                  "top": 203,
+                  "right": 28,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "jump_0",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2/jump_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                67,
+                138,
+                444,
+                492
+              ],
+              "cleanup": {
+                "component_count": 8,
+                "kept_count": 1,
+                "rejected_count": 7,
+                "main_bbox": [
+                  60,
+                  81,
+                  437,
+                  435
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  67,
+                  138,
+                  444,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  0,
+                  1024,
+                  512,
+                  1536
+                ],
+                "expanded_box": [
+                  0,
+                  953,
+                  583,
+                  1536
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 67,
+                  "top": 138,
+                  "right": 68,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "fall_0",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2/fall_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                139,
+                128,
+                372,
+                492
+              ],
+              "cleanup": {
+                "component_count": 9,
+                "kept_count": 3,
+                "rejected_count": 6,
+                "main_bbox": [
+                  141,
+                  86,
+                  374,
+                  450
+                ],
+                "main_cell_ratio": 1,
+                "main_overflows_cell": false,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  139,
+                  128,
+                  372,
+                  492
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  512,
+                  1024,
+                  1024,
+                  1536
+                ],
+                "expanded_box": [
+                  441,
+                  953,
+                  1095,
+                  1536
+                ]
+              },
+              "quality": {
+                "status": "ok",
+                "min_edge_margin": 20,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 139,
+                  "top": 128,
+                  "right": 140,
+                  "bottom": 20
+                },
+                "issues": []
+              }
+            },
+            {
+              "name": "attack_0",
+              "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2/attack_0.png",
+              "width": 512,
+              "height": 512,
+              "alpha_bbox": [
+                17,
+                212,
+                496,
+                494
+              ],
+              "cleanup": {
+                "component_count": 11,
+                "kept_count": 2,
+                "rejected_count": 9,
+                "main_bbox": [
+                  45,
+                  172,
+                  528,
+                  453
+                ],
+                "main_cell_ratio": 0.9855,
+                "main_overflows_cell": true,
+                "main_touches_source_edge": false,
+                "alpha_bbox": [
+                  17,
+                  212,
+                  496,
+                  494
+                ],
+                "mode": "component_center",
+                "source_box": [
+                  1024,
+                  1024,
+                  1536,
+                  1536
+                ],
+                "expanded_box": [
+                  953,
+                  953,
+                  1536,
+                  1536
+                ]
+              },
+              "quality": {
+                "status": "warn",
+                "min_edge_margin": 16,
+                "edge_margin_threshold": 10,
+                "margins": {
+                  "left": 17,
+                  "top": 212,
+                  "right": 16,
+                  "bottom": 18
+                },
+                "issues": [
+                  "source_subject_overflowed_cell"
+                ]
+              }
+            }
+          ]
+        },
+        "animation_manifest": "p2_animation_manifest.json",
+        "projectile": {
+          "prompt": "Create a 1x4 sprite sheet for a small 2D game projectile on a perfectly flat solid #00ff00 chroma-key background.\nVisual target: game-ready projectile frames that match the source video's own visual medium, detail density, line weight, color palette, and rendering style; not abstract, not a placeholder.\nUse the attached source-video keyframes as visual references for style, color, outline, and detail level. Do not beautify, polish, upscale, or add detail beyond the source evidence.\nThe reference keyframes may contain characters or background elements; use them only for style and weapon/projectile evidence. Do not include characters or background in the projectile sheet.\nFaithful mode: use the video-derived weapon/projectile as the primary visual reference and keep it recognizable as much as the image model permits.\nProjectile type: 小型橙红火球或火云弹，从枪尖旋转飞出，尾部带黑烟和金色火星，命中后产生短暂爆燃。\nOwner character: 红衣少年. Match the same style and color logic as: 一个电影化3D奇幻古装少年，黑发扎成高发髻，面部年轻清秀但神情嚣张；穿红色无袖古装上衣，带金色胸饰、金色腰带与护腕，深色裤子。手持红色长枪，枪尖和枪身缠绕橙红火焰，站在火云洞的暖色火光中，动作是下蹲突刺、横扫和释放火焰。；性格/战斗气质：嚣张强势、火气旺、命令式挑衅，适合用火焰突刺和远程火球压制对手。。\nOwner source form constraints: entity_type=3D模型真人少年角色; body_plan=双足人形，少年身形，双臂持长枪或火焰武器; proportions=儿童或少年比例，身高明显小于成人妖怪，头身比例自然写实，不夸张变形; silhouette=头顶发髻、无袖红衣、短小少年体型、细长火焰长枪构成主要轮廓; surface_material=真人皮肤、黑色头发、红色织物、金属饰件、火焰特效和木/金属枪杆; detail_density=中高，保留古装纹样、金饰、火焰特效和洞窟光照；不要添加过多现代纹身或科幻发光装置; rendering_style=源视频为AI生成电影化3D奇幻写实渲染，人物面部和服装为半写实古装剧质感; motion_style=少年武者式快速突刺、低身位横扫、火焰爆发，兼具近战枪法和火系远程; must_keep=红色无袖古装上衣, 少年身形, 黑发高发髻, 金色腰带和腕饰, 火焰长枪, 火云洞暖橙光照; must_not_change=不要改成成人男性, 不要改成动物妖怪或机械体, 不要变成Q版或二次元魔法少女风, 不要移除红衣与火焰元素, 不要使用现代枪械替代长枪\nWeapon context: 三昧火焰枪：一柄红色长枪，枪杆细长，枪头和两端缠绕橙红火焰，挥动时拖出火舌轨迹；近战可突刺、挑飞，蓄力可从枪尖喷出火云。\nShared art direction: 后续九帧应沿用源视频的AI生成电影化3D奇幻古装质感：写实光照、真实毛发和布料、洞窟火光、山林岩壁背景；只为1v1动作做构图适配，不应默认卡通化、像素化、二次元化或Q版化。\nFour equal cells, one projectile per cell, facing right or moving right.\nLeave a clean #00ff00 safety gutter around every cell. No trail, sparks, shards, glow, or motion smear may cross into a neighboring cell.\nFrame order left-to-right: launch shape, flying rotation 1, flying rotation 2, looping flying shape.\nCentered composition in each cell, crisp edges, readable silhouette, consistent scale and colors.\nIf the projectile is magic or energy, make it a clearly designed object/effect from the video-derived idea, not a simple colored ball.\nDo not include character, hand, ground, explosion, impact feedback, text, label, watermark, shadow, or floor.\nThe background must be one uniform #00ff00 color with no gradient, texture, lighting variation, floor plane, reflection, or shadow.\nAvoid #00ff00 anywhere in the projectile.",
+          "reference_images": [
+            "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_02.jpg",
+            "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_04.jpg"
+          ],
+          "draw": {
+            "name": "draw_image",
+            "mode": "right_codes_draw",
+            "status": "ok",
+            "visual_mode": "faithful",
+            "base_url": "https://right.codes/draw",
+            "model": "gpt-image-2",
+            "response_kind": "url",
+            "attempts": 1,
+            "reference_image_count": 2,
+            "draw_queue": {
+              "label": "p2_projectile",
+              "concurrency_limit": 2,
+              "queued_at": "2026-06-09T12:40:38.369Z",
+              "started_at": "2026-06-09T12:40:38.369Z",
+              "finished_at": "2026-06-09T12:41:42.978Z",
+              "wait_ms": 0,
+              "duration_ms": 64609
+            },
+            "output": "p2_projectile_sheet_raw.png"
+          },
+          "postprocess": {
+            "status": "ok",
+            "sheet_size": [
+              1024,
+              256
+            ],
+            "frame_size": {
+              "width": 256,
+              "height": 256
+            },
+            "layout": [
+              4,
+              1
+            ],
+            "alpha": {
+              "transparent_ratio": 0.8963,
+              "opaque_ratio": 0.1037
+            },
+            "quality": {
+              "status": "ok",
+              "risky_frames": []
+            },
+            "frames": [
+              {
+                "name": "projectile_0",
+                "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2_projectile/projectile_0.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  21,
+                  102,
+                  235,
+                  153
+                ],
+                "cleanup": {
+                  "component_count": 3,
+                  "kept_count": 1,
+                  "rejected_count": 2,
+                  "main_bbox": [
+                    25,
+                    99,
+                    239,
+                    150
+                  ],
+                  "main_cell_ratio": 1,
+                  "main_overflows_cell": false,
+                  "main_touches_source_edge": false,
+                  "alpha_bbox": [
+                    21,
+                    102,
+                    235,
+                    153
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    0,
+                    0,
+                    256,
+                    256
+                  ],
+                  "expanded_box": [
+                    0,
+                    0,
+                    291,
+                    256
+                  ]
+                },
+                "quality": {
+                  "status": "ok",
+                  "min_edge_margin": 21,
+                  "edge_margin_threshold": 5,
+                  "margins": {
+                    "left": 21,
+                    "top": 102,
+                    "right": 21,
+                    "bottom": 103
+                  },
+                  "issues": []
+                }
+              },
+              {
+                "name": "projectile_1",
+                "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2_projectile/projectile_1.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  21,
+                  97,
+                  235,
+                  158
+                ],
+                "cleanup": {
+                  "component_count": 5,
+                  "kept_count": 1,
+                  "rejected_count": 4,
+                  "main_bbox": [
+                    53,
+                    96,
+                    267,
+                    157
+                  ],
+                  "main_cell_ratio": 1,
+                  "main_overflows_cell": false,
+                  "main_touches_source_edge": false,
+                  "alpha_bbox": [
+                    21,
+                    97,
+                    235,
+                    158
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    256,
+                    0,
+                    512,
+                    256
+                  ],
+                  "expanded_box": [
+                    221,
+                    0,
+                    547,
+                    256
+                  ]
+                },
+                "quality": {
+                  "status": "ok",
+                  "min_edge_margin": 21,
+                  "edge_margin_threshold": 5,
+                  "margins": {
+                    "left": 21,
+                    "top": 97,
+                    "right": 21,
+                    "bottom": 98
+                  },
+                  "issues": []
+                }
+              },
+              {
+                "name": "projectile_2",
+                "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2_projectile/projectile_2.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  17,
+                  99,
+                  239,
+                  157
+                ],
+                "cleanup": {
+                  "component_count": 4,
+                  "kept_count": 1,
+                  "rejected_count": 3,
+                  "main_bbox": [
+                    39,
+                    100,
+                    261,
+                    154
+                  ],
+                  "main_cell_ratio": 1,
+                  "main_overflows_cell": false,
+                  "main_touches_source_edge": false,
+                  "alpha_bbox": [
+                    17,
+                    99,
+                    239,
+                    157
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    512,
+                    0,
+                    768,
+                    256
+                  ],
+                  "expanded_box": [
+                    477,
+                    0,
+                    803,
+                    256
+                  ]
+                },
+                "quality": {
+                  "status": "ok",
+                  "min_edge_margin": 17,
+                  "edge_margin_threshold": 5,
+                  "margins": {
+                    "left": 17,
+                    "top": 99,
+                    "right": 17,
+                    "bottom": 99
+                  },
+                  "issues": []
+                }
+              },
+              {
+                "name": "projectile_3",
+                "path": "../../../../../pull�����ĵط�/Tap-Fight/video_theme_asset_pipeline/theme_packs/real_churenmei_stage_20260609_201010/frames/p2_projectile/projectile_3.png",
+                "width": 256,
+                "height": 256,
+                "alpha_bbox": [
+                  17,
+                  98,
+                  240,
+                  158
+                ],
+                "cleanup": {
+                  "component_count": 2,
+                  "kept_count": 1,
+                  "rejected_count": 1,
+                  "main_bbox": [
+                    38,
+                    96,
+                    261,
+                    151
+                  ],
+                  "main_cell_ratio": 1,
+                  "main_overflows_cell": false,
+                  "main_touches_source_edge": false,
+                  "alpha_bbox": [
+                    17,
+                    98,
+                    240,
+                    158
+                  ],
+                  "mode": "component_center",
+                  "source_box": [
+                    768,
+                    0,
+                    1024,
+                    256
+                  ],
+                  "expanded_box": [
+                    733,
+                    0,
+                    1024,
+                    256
+                  ]
+                },
+                "quality": {
+                  "status": "ok",
+                  "min_edge_margin": 16,
+                  "edge_margin_threshold": 5,
+                  "margins": {
+                    "left": 17,
+                    "top": 98,
+                    "right": 16,
+                    "bottom": 98
+                  },
+                  "issues": []
+                }
+              }
+            ]
+          },
+          "static": "assets/p2_projectile.png",
+          "sheet": "assets/p2_projectile_sheet.png",
+          "manifest": "p2_projectile_manifest.json",
+          "frames_dir": "frames/p2_projectile"
+        }
+      }
+    ],
+    "stage_generation": {
+      "enabled": true,
+      "mode": "generated_stage_assets",
+      "records": [
+        {
+          "key": "background",
+          "file": "background.png",
+          "path": "assets/stage/background.png",
+          "raw": "assets/raw/stage_background_raw.png",
+          "prompt": "Create Tap-Fight stage asset: background.\nWorld: 火云洞与山林古道结合的西游奇幻1v1斗技场，洞内火把、岩石平台和红色布幔形成主战场。.\nSource-video art direction: 后续九帧应沿用源视频的AI生成电影化3D奇幻古装质感：写实光照、真实毛发和布料、洞窟火光、山林岩壁背景；只为1v1动作做构图适配，不应默认卡通化、像素化、二次元化或Q版化。.\nAsset description: vertical 9:16 playable background, no main characters, no large text, leaves room for fighters and HUD；画面可设为火云洞深处的岩石洞窟，远处有火把、红色布幔、暗褐岩壁和少量温泉水汽，底部留出空旷战斗区域，上方保留HUD空间。.\nStyle notes: derived_from_scene：采用第4至第6帧洞窟火光证据，暖橙火焰照明、暗褐岩石、红色布幔、古装奇幻时代感，电影化3D半写实材质；镜头距离适中，不出现主角大脸。.\nMust keep from source evidence: 火云洞式暗褐岩壁; 橙红火把与火光; 红色布幔或洞府装饰; 轻微烟雾和水汽; 电影化3D奇幻写实光照.\nMust avoid: large readable text; main character portraits; busy foreground blocking gameplay; bilibili水印或竖排说明文字; 现代城市元素.\nFinal asset will be normalized to 1080x1920. Compose as a vertical 9:16 playable background for a 1080x1920 portrait canvas, full bleed, no transparent padding.\nDraw a gameplay-readable arena background with open middle space for two fighters, subtle depth, and clear floor/platform contrast.\nNo labels, no UI, no watermark, no large readable text, no full-body fighter portraits.",
+          "reference_images": [
+            "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_04.jpg",
+            "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_05.jpg"
+          ],
+          "draw": {
+            "name": "draw_stage_asset",
+            "mode": "right_codes_draw",
+            "status": "ok",
+            "visual_mode": "faithful",
+            "base_url": "https://right.codes/draw",
+            "model": "gpt-image-2",
+            "response_kind": "url",
+            "attempts": 1,
+            "draw_queue": {
+              "label": "stage_background",
+              "concurrency_limit": 2,
+              "queued_at": "2026-06-09T12:40:38.406Z",
+              "started_at": "2026-06-09T12:42:42.105Z",
+              "finished_at": "2026-06-09T12:43:42.711Z",
+              "wait_ms": 123699,
+              "duration_ms": 60606
+            },
+            "reference_image_count": 2
+          },
+          "postprocess": {
+            "status": "ok",
+            "output_size": [
+              1080,
+              1920
+            ],
+            "expected_size": [
+              1080,
+              1920
+            ],
+            "transparent_expected": false,
+            "resize_mode": "cover_crop_portrait"
+          }
+        },
+        {
+          "key": "platform_left",
+          "file": "platform_left.png",
+          "path": "assets/stage/platform_left.png",
+          "raw": "assets/raw/stage_platform_strip_raw.png",
+          "source": {
+            "key": "platform_strip",
+            "path": "assets/stage/platform_strip.png",
+            "offset": [
+              0,
+              0
+            ],
+            "size": [
+              58,
+              54
+            ],
+            "full_size": [
+              244,
+              54
+            ]
+          },
+          "prompt": "Create Tap-Fight stage asset: platform_strip.\nWorld: 火云洞与山林古道结合的西游奇幻1v1斗技场，洞内火把、岩石平台和红色布幔形成主战场。.\nSource-video art direction: 后续九帧应沿用源视频的AI生成电影化3D奇幻古装质感：写实光照、真实毛发和布料、洞窟火光、山林岩壁背景；只为1v1动作做构图适配，不应默认卡通化、像素化、二次元化或Q版化。.\nAsset description: left, middle and right platform tile visual design for the game stage；三块可站立岩石平台，左平台较低呈断裂石阶，中平台为宽阔主战台，右平台略高带火烧焦边缘，平台下方可有半透明火光反射但背景需透明或可分层。.\nMaterial: 暗褐色洞窟岩石、粗糙石面、少量橙色熔火裂纹和灰尘颗粒。.\nShape language: 不规则天然岩石轮廓，边缘破碎、厚重，支撑细节来自洞内石台和山路碎石；避免规则现代金属平台。.\nMust keep from source evidence: 岩石粗糙纹理; 火光染色的橙色边缘; 古洞窟舞台感; 不规则破碎轮廓.\nMust avoid: characters; logos; text; opaque background; 过度科幻金属平台.\nFinal asset will be normalized to 244x54 transparent PNG to match the existing Tap-Fight stage template asset size. Keep the platform/hazard centered, fill the useful sprite area, no opaque background.\nDraw one continuous horizontal platform strip on transparent background: a left end cap, a tileable center span, and a right end cap in one perfectly aligned row. The strip will be split into 58x54, 128x54, and 58x54 game files, so keep the top edge, bottom edge, lighting, material, and thickness continuous across the whole strip.\nNo labels, no UI, no watermark, no large readable text, no full-body fighter portraits.",
+          "reference_images": [
+            "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_03.jpg",
+            "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_06.jpg"
+          ],
+          "draw": {
+            "name": "draw_stage_asset",
+            "mode": "right_codes_draw",
+            "status": "ok",
+            "visual_mode": "faithful",
+            "base_url": "https://right.codes/draw",
+            "model": "gpt-image-2",
+            "response_kind": "url",
+            "attempts": 2,
+            "draw_queue": {
+              "label": "stage_platform_strip",
+              "concurrency_limit": 2,
+              "queued_at": "2026-06-09T12:40:38.406Z",
+              "started_at": "2026-06-09T12:43:42.711Z",
+              "finished_at": "2026-06-09T12:51:51.496Z",
+              "wait_ms": 184305,
+              "duration_ms": 488785
+            },
+            "reference_image_count": 2,
+            "source_asset": "platform_strip",
+            "derived_output": true
+          },
+          "postprocess": {
+            "status": "ok",
+            "output_size": [
+              58,
+              54
+            ],
+            "expected_size": [
+              58,
+              54
+            ],
+            "transparent_expected": true,
+            "resize_mode": "split_from_platform_strip",
+            "source_size": [
+              244,
+              54
+            ],
+            "source_offset": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "key": "platform_mid",
+          "file": "platform_mid.png",
+          "path": "assets/stage/platform_mid.png",
+          "raw": "assets/raw/stage_platform_strip_raw.png",
+          "source": {
+            "key": "platform_strip",
+            "path": "assets/stage/platform_strip.png",
+            "offset": [
+              58,
+              0
+            ],
+            "size": [
+              128,
+              54
+            ],
+            "full_size": [
+              244,
+              54
+            ]
+          },
+          "prompt": "Create Tap-Fight stage asset: platform_strip.\nWorld: 火云洞与山林古道结合的西游奇幻1v1斗技场，洞内火把、岩石平台和红色布幔形成主战场。.\nSource-video art direction: 后续九帧应沿用源视频的AI生成电影化3D奇幻古装质感：写实光照、真实毛发和布料、洞窟火光、山林岩壁背景；只为1v1动作做构图适配，不应默认卡通化、像素化、二次元化或Q版化。.\nAsset description: left, middle and right platform tile visual design for the game stage；三块可站立岩石平台，左平台较低呈断裂石阶，中平台为宽阔主战台，右平台略高带火烧焦边缘，平台下方可有半透明火光反射但背景需透明或可分层。.\nMaterial: 暗褐色洞窟岩石、粗糙石面、少量橙色熔火裂纹和灰尘颗粒。.\nShape language: 不规则天然岩石轮廓，边缘破碎、厚重，支撑细节来自洞内石台和山路碎石；避免规则现代金属平台。.\nMust keep from source evidence: 岩石粗糙纹理; 火光染色的橙色边缘; 古洞窟舞台感; 不规则破碎轮廓.\nMust avoid: characters; logos; text; opaque background; 过度科幻金属平台.\nFinal asset will be normalized to 244x54 transparent PNG to match the existing Tap-Fight stage template asset size. Keep the platform/hazard centered, fill the useful sprite area, no opaque background.\nDraw one continuous horizontal platform strip on transparent background: a left end cap, a tileable center span, and a right end cap in one perfectly aligned row. The strip will be split into 58x54, 128x54, and 58x54 game files, so keep the top edge, bottom edge, lighting, material, and thickness continuous across the whole strip.\nNo labels, no UI, no watermark, no large readable text, no full-body fighter portraits.",
+          "reference_images": [
+            "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_03.jpg",
+            "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_06.jpg"
+          ],
+          "draw": {
+            "name": "draw_stage_asset",
+            "mode": "right_codes_draw",
+            "status": "ok",
+            "visual_mode": "faithful",
+            "base_url": "https://right.codes/draw",
+            "model": "gpt-image-2",
+            "response_kind": "url",
+            "attempts": 2,
+            "draw_queue": {
+              "label": "stage_platform_strip",
+              "concurrency_limit": 2,
+              "queued_at": "2026-06-09T12:40:38.406Z",
+              "started_at": "2026-06-09T12:43:42.711Z",
+              "finished_at": "2026-06-09T12:51:51.496Z",
+              "wait_ms": 184305,
+              "duration_ms": 488785
+            },
+            "reference_image_count": 2,
+            "source_asset": "platform_strip",
+            "derived_output": true
+          },
+          "postprocess": {
+            "status": "ok",
+            "output_size": [
+              128,
+              54
+            ],
+            "expected_size": [
+              128,
+              54
+            ],
+            "transparent_expected": true,
+            "resize_mode": "split_from_platform_strip",
+            "source_size": [
+              244,
+              54
+            ],
+            "source_offset": [
+              58,
+              0
+            ]
+          }
+        },
+        {
+          "key": "platform_right",
+          "file": "platform_right.png",
+          "path": "assets/stage/platform_right.png",
+          "raw": "assets/raw/stage_platform_strip_raw.png",
+          "source": {
+            "key": "platform_strip",
+            "path": "assets/stage/platform_strip.png",
+            "offset": [
+              186,
+              0
+            ],
+            "size": [
+              58,
+              54
+            ],
+            "full_size": [
+              244,
+              54
+            ]
+          },
+          "prompt": "Create Tap-Fight stage asset: platform_strip.\nWorld: 火云洞与山林古道结合的西游奇幻1v1斗技场，洞内火把、岩石平台和红色布幔形成主战场。.\nSource-video art direction: 后续九帧应沿用源视频的AI生成电影化3D奇幻古装质感：写实光照、真实毛发和布料、洞窟火光、山林岩壁背景；只为1v1动作做构图适配，不应默认卡通化、像素化、二次元化或Q版化。.\nAsset description: left, middle and right platform tile visual design for the game stage；三块可站立岩石平台，左平台较低呈断裂石阶，中平台为宽阔主战台，右平台略高带火烧焦边缘，平台下方可有半透明火光反射但背景需透明或可分层。.\nMaterial: 暗褐色洞窟岩石、粗糙石面、少量橙色熔火裂纹和灰尘颗粒。.\nShape language: 不规则天然岩石轮廓，边缘破碎、厚重，支撑细节来自洞内石台和山路碎石；避免规则现代金属平台。.\nMust keep from source evidence: 岩石粗糙纹理; 火光染色的橙色边缘; 古洞窟舞台感; 不规则破碎轮廓.\nMust avoid: characters; logos; text; opaque background; 过度科幻金属平台.\nFinal asset will be normalized to 244x54 transparent PNG to match the existing Tap-Fight stage template asset size. Keep the platform/hazard centered, fill the useful sprite area, no opaque background.\nDraw one continuous horizontal platform strip on transparent background: a left end cap, a tileable center span, and a right end cap in one perfectly aligned row. The strip will be split into 58x54, 128x54, and 58x54 game files, so keep the top edge, bottom edge, lighting, material, and thickness continuous across the whole strip.\nNo labels, no UI, no watermark, no large readable text, no full-body fighter portraits.",
+          "reference_images": [
+            "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_03.jpg",
+            "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_06.jpg"
+          ],
+          "draw": {
+            "name": "draw_stage_asset",
+            "mode": "right_codes_draw",
+            "status": "ok",
+            "visual_mode": "faithful",
+            "base_url": "https://right.codes/draw",
+            "model": "gpt-image-2",
+            "response_kind": "url",
+            "attempts": 2,
+            "draw_queue": {
+              "label": "stage_platform_strip",
+              "concurrency_limit": 2,
+              "queued_at": "2026-06-09T12:40:38.406Z",
+              "started_at": "2026-06-09T12:43:42.711Z",
+              "finished_at": "2026-06-09T12:51:51.496Z",
+              "wait_ms": 184305,
+              "duration_ms": 488785
+            },
+            "reference_image_count": 2,
+            "source_asset": "platform_strip",
+            "derived_output": true
+          },
+          "postprocess": {
+            "status": "ok",
+            "output_size": [
+              58,
+              54
+            ],
+            "expected_size": [
+              58,
+              54
+            ],
+            "transparent_expected": true,
+            "resize_mode": "split_from_platform_strip",
+            "source_size": [
+              244,
+              54
+            ],
+            "source_offset": [
+              186,
+              0
+            ]
+          }
+        },
+        {
+          "key": "hazard_debris",
+          "file": "hazard_debris.png",
+          "path": "assets/stage/hazard_debris.png",
+          "raw": "assets/raw/stage_hazard_debris_raw.png",
+          "prompt": "Create Tap-Fight stage asset: hazard_debris.\nWorld: 火云洞与山林古道结合的西游奇幻1v1斗技场，洞内火把、岩石平台和红色布幔形成主战场。.\nSource-video art direction: 后续九帧应沿用源视频的AI生成电影化3D奇幻古装质感：写实光照、真实毛发和布料、洞窟火光、山林岩壁背景；只为1v1动作做构图适配，不应默认卡通化、像素化、二次元化或Q版化。.\nAsset description: small debris/hazard object matching the scene style；小型火云洞碎石陷阱，可为燃烧的落石、带火星的焦黑石块或地面喷出的小火舌，用于战斗场景障碍。.\nMaterial: 焦黑岩石、暗褐碎石、橙红火焰、金色火星和少量灰烟。.\nMust keep from source evidence: 洞窟岩石材质; 橙红火焰; 碎石与灰尘; 与火云洞光照一致.\nMust avoid: characters; text; large opaque square background; 现代爆炸桶或科幻地雷.\nFinal asset will be normalized to 48x48 transparent PNG to match the existing Tap-Fight stage template asset size. Keep the platform/hazard centered, fill the useful sprite area, no opaque background.\nDraw one small hazardous debris object or obstacle, transparent background, readable at small game size.\nNo labels, no UI, no watermark, no large readable text, no full-body fighter portraits.",
+          "reference_images": [
+            "../../video_understandings/understanding_p1_14_63f72941/analysis_frames/frame_06.jpg"
+          ],
+          "draw": {
+            "name": "draw_stage_asset",
+            "mode": "right_codes_draw",
+            "status": "ok",
+            "visual_mode": "faithful",
+            "base_url": "https://right.codes/draw",
+            "model": "gpt-image-2",
+            "response_kind": "url",
+            "attempts": 1,
+            "draw_queue": {
+              "label": "stage_hazard_debris",
+              "concurrency_limit": 2,
+              "queued_at": "2026-06-09T12:40:38.406Z",
+              "started_at": "2026-06-09T12:43:54.122Z",
+              "finished_at": "2026-06-09T12:45:26.190Z",
+              "wait_ms": 195716,
+              "duration_ms": 92068
+            },
+            "reference_image_count": 1
+          },
+          "postprocess": {
+            "status": "ok",
+            "output_size": [
+              48,
+              48
+            ],
+            "expected_size": [
+              48,
+              48
+            ],
+            "transparent_expected": true,
+            "resize_mode": "fit_pad_transparent"
+          }
+        }
+      ],
+      "manifest_stage_assets": {
+        "version": "stage_assets.v0.1",
+        "mode": "generated",
+        "dimensions": {
+          "background": "1080x1920",
+          "platform_left": "58x54",
+          "platform_mid": "128x54",
+          "platform_right": "58x54",
+          "hazard_debris": "48x48"
+        },
+        "files": {
+          "background": "assets/stage/background.png",
+          "platform_left": "assets/stage/platform_left.png",
+          "platform_mid": "assets/stage/platform_mid.png",
+          "platform_right": "assets/stage/platform_right.png",
+          "hazard_debris": "assets/stage/hazard_debris.png"
+        },
+        "tap_fight_export_root_files": [
+          "background.png",
+          "platform_left.png",
+          "platform_mid.png",
+          "platform_right.png",
+          "hazard_debris.png"
+        ],
+        "fallback": "stage_template"
+      }
+    }
+  },
+  "warnings": [
+    "p1 sprite sheet triggered quality retry after postprocess warnings: run_0:source_subject_overflowed_cell; run_3:source_subject_overflowed_cell; attack_0:source_subject_overflowed_cell",
+    "p1 sprite sheet still has postprocess quality warnings after retry: run_0:source_subject_overflowed_cell; attack_0:source_subject_overflowed_cell",
+    "p2 sprite sheet triggered quality retry after postprocess warnings: run_0:source_subject_overflowed_cell; run_3:source_subject_overflowed_cell; attack_0:visible_content_too_close_to_frame_edge,source_subject_overflowed_cell",
+    "p2 sprite sheet still has postprocess quality warnings after retry: attack_0:source_subject_overflowed_cell",
+    "stage_platform_strip draw succeeded after 2 attempts; previous transient error: chat/completions failed: terminated; images/generations failed with HTTP 524: <!DOCTYPE html> <!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]--> <!--[if IE 7]> <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]--> <!--[if IE 8]> <html class=\"no-js ie8 oldie\" lang=\"en-US\"> "
+  ]
+}

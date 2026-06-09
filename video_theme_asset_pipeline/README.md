@@ -9,6 +9,12 @@
 -> 输出游戏可加载的 ThemeAssetPackage
 ```
 
+当前主线和文件边界请先看：
+
+```text
+README_当前主线.md
+```
+
 ## 快速开始
 
 1. 安装依赖：
@@ -40,6 +46,23 @@ input_videos/
 ```powershell
 .\package_video.ps1 -Video ".\input_videos\your_video.mp4" -ExportTapFight -TapFightDir "<Tap-Fight目录>"
 ```
+
+如果要同时生成视频风格的背景、平台和危险物：
+
+```powershell
+.\package_video.ps1 `
+  -Video ".\input_videos\your_video.mp4" `
+  -ThemeId "<theme_id>" `
+  -GenerateStageAssets `
+  -DrawConcurrency 2 `
+  -DrawRetries 3 `
+  -DrawTimeoutMs 300000 `
+  -ExportTapFight `
+  -TapFightDir "<Tap-Fight目录>" `
+  -StageTemplate "office_battle_001"
+```
+
+说明：场景资产生成会增加图片请求数。若 draw 服务出现 `HTTP 524` 或连接中断，优先降低 `DrawConcurrency` 并增加 `DrawRetries`。
 
 已有主题包可单独导出：
 
@@ -77,6 +100,7 @@ theme_packs/<theme_id>/frames/
     package.json
     src/
     tools/
+      stage_asset_postprocess.py
   video_understandings/
     示例理解结果
   theme_packs/
@@ -109,7 +133,7 @@ Copy-Item .\config\right-codes.env.example "$env:USERPROFILE\.hei-ke-song\right-
 然后编辑：
 
 ```text
-本机用户目录下的 .hei-ke-song\right-codes.env
+%USERPROFILE%\.hei-ke-song\right-codes.env
 ```
 
 ## 默认策略
@@ -119,6 +143,7 @@ Copy-Item .\config\right-codes.env.example "$env:USERPROFILE\.hei-ke-song\right-
 - 画图模型默认 `gpt-image-2`。
 - 默认严格模式：LLM 或 draw 失败会中断，不会偷偷输出占位素材。
 - 默认 `faithful`：第一轮保留角色名和原视频特征；如果被 IP/相似性 guardrail 拒绝，会第二轮去掉精确角色名但保留光剑、长耳、长袍、兜帽等视觉要素重试一次。
+- 可选场景资产生成只属于素材管线，不修改 Tap-Fight 游戏代码。平台/危险物会在交付前做透明边界清理，避免图片模型生成白底 PNG 后在游戏里露出白边。
 
 如果明确接受原创化改编：
 
